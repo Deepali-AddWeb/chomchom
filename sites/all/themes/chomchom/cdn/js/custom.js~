@@ -1,0 +1,144 @@
+jQuery(document).ready(function(){
+	
+	var nativeLanguage = jQuery.trim(jQuery('#ddcl-edit-field-native-languages-und span span.ui-dropdownchecklist-text').text());
+   	//alert(nativeLanguage);
+   	var languageTolearn = jQuery.trim(jQuery('#ddcl-edit-field-languages-to-learn-und span.ui-dropdownchecklist-text').text());
+   	//alert(languageTolearn);
+   	if(languageTolearn == '' || nativeLanguage == '' ) { 
+	       //alert('comes');
+	       	jQuery('#ddcl-edit-field-native-languages-und span.ui-dropdownchecklist-text').html('<span class="placeholder">Native Language</span>');
+		jQuery('#ddcl-edit-field-languages-to-learn-und span.ui-dropdownchecklist-text').html('<span class="placeholder">Language I Want To Learn</span>');
+   	} 
+
+	/* Custom radio and checkbox design */
+	jQuery('input[type="radio"], input[type="checkbox"]').wrap('<div class="input-rc"></div>');
+	jQuery('.input-rc').append('<span class="input-rc-span"></span>');
+	/* End */
+
+	/* Custom input type file design */
+	jQuery('input[type="file"]').wrap('<div class="input-file"><div class="input-file-sub"></div></div>');
+	jQuery('.input-file').prepend('<span class="input-file-name">File name here</span>');
+	/* End */
+
+	/* Get select file name value */
+	jQuery('.input-file-sub input').change(function() {
+	var filename = jQuery(this).val();
+	//jQuery(".upload-alert").show();/* Show alert message on upload comment popup */
+	jQuery(this).parent().parent().children(".input-file-name").text(filename);
+	});
+	/* End */
+
+	/* Show hide browse button of audio upload */
+	jQuery('.input-rc input[type="checkbox"').change(function() {
+	if(jQuery(this).prop('checked') == true) {
+		jQuery(".input-file").show();
+	} else {
+		jQuery(".input-file").hide();
+	}
+	});
+	/* End */
+
+	/* set height of main container based on window height */
+	var height = jQuery(window).height();
+	var headerHeight = jQuery('header.navbar.container').outerHeight();
+	var footerHeight = jQuery('footer.footer.container').outerHeight();
+	var breadcrumbHeight = jQuery('.breadcrumb').outerHeight();
+	var finalHeight = height - headerHeight - footerHeight - breadcrumbHeight;
+	jQuery('.main-container.container').css('min-height', finalHeight);
+	jQuery('.offcanvas').height(height); // sidebar toggle height
+	jQuery(window).resize(function(){ 
+		var height = jQuery(window).height();
+		var headerHeight = jQuery('header.navbar.container').outerHeight();
+		var footerHeight = jQuery('footer.footer.container').outerHeight();
+		var breadcrumbHeight = jQuery('.breadcrumb').outerHeight();
+		var finalHeight = height - headerHeight - footerHeight - breadcrumbHeight;
+		jQuery('.main-container.container').css('min-height', finalHeight);
+		jQuery('.offcanvas').height(height);
+	});
+	/* End */
+
+	/* Show hide sidebar on click of toggle button */
+	jQuery('.sidebar-toggle-button').click(function() {
+		jQuery('.offcanvas').toggle('slide');
+		jQuery('.sidebar-toggle-button').removeClass('hide-toggle-button');
+		jQuery(this).addClass('hide-toggle-button');
+	});
+
+  /* open popup */
+	jQuery(document).on("click", ".field-close", function() {
+		jQuery(".audio-recoreder-comment-parent").hide();
+		jQuery(".audio-upload-comment-parent").hide();
+	});
+
+	jQuery(document).on("click", ".indented .comment-audio-record", function() {
+		jQuery(".indented .audio-recoreder-comment-parent").show();
+	});
+	jQuery(document).on("click", ".comment-form-parent .comment-audio-record", function() {
+		jQuery(".comment-form-parent .audio-recoreder-comment-parent").show();
+	});
+	jQuery(document).on('click', ".comment-form-parent .record-comment-btn", function() {
+		jQuery(".audio-alert").hide();
+		if(jQuery('.comment-form-parent .media-recorder-preview .media-recorder-audio').attr('src') != null) {
+			jQuery(".comment-form-parent .alert-parent .record-alert").show();
+		}
+	});
+	jQuery(document).on('click', ".indented .record-comment-btn", function() {
+		jQuery(".audio-alert").hide();
+		if(jQuery('.indented .media-recorder-preview .media-recorder-audio').attr('src') != null) {
+			jQuery(".indented .alert-parent .record-alert").show();
+		}
+	});
+
+	jQuery(document).on("click", ".indented .comment-audio-upload", function() {
+		jQuery('.indented .audio-upload-comment-parent .input-file').removeClass('input-file');
+		jQuery('.indented .audio-upload-comment-parent input[type="file"]').unwrap('<div class="input-file"><div class="input-file-sub"></div></div>');
+		jQuery('.indented .audio-upload-comment-parent .input-file-name').remove('.input-file-name');
+		jQuery('.indented .audio-upload-comment-parent input[type="file"]').wrap('<div class="input-file"><div class="input-file-sub"></div></div>');
+		jQuery('.indented .audio-upload-comment-parent .input-file').prepend('<span class="input-file-name">File name here</span>');
+		jQuery(".indented .audio-upload-comment-parent").show();		
+	});
+	jQuery('#edit-field-audio-upload #edit-field-audio-upload-und-0-ajax-wrapper .form-type-managed-file .form-managed-file').append('<span class="overlay-remove-upload-button">click</span>');
+	jQuery('.overlay-remove-upload-button').on("click", function() {
+		alert('hello');
+		jQuery('button#edit-field-audio-upload-und-0-remove-button').trigger('click');
+		
+	});
+	
+	jQuery( document ).ajaxComplete(function() {
+	  	jQuery('#edit-field-audio-upload .input-file').removeClass('input-file');
+		jQuery('#edit-field-audio-upload input[type="file"]').unwrap('<div class="input-file"><div class="input-file-sub"></div></div>');
+		jQuery('#edit-field-audio-upload .input-file-name').remove('.input-file-name');
+		jQuery('#edit-field-audio-upload input[type="file"]').wrap('<div class="input-file"><div class="input-file-sub"></div></div>');
+		jQuery('#edit-field-audio-upload .input-file').prepend('<span class="input-file-name">File name here</span>');
+		//jQuery(".comment-form-parent .audio-upload-comment-parent").show();
+	});
+	jQuery(document).on("click", ".comment-form-parent .comment-audio-upload", function() {
+		jQuery('.indented .audio-upload-comment-parent .input-file').removeClass('input-file');
+		jQuery('.indented .audio-upload-comment-parent input[type="file"]').unwrap('<div class="input-file"><div class="input-file-sub"></div></div>');
+		jQuery('.indented .audio-upload-comment-parent .input-file-name').remove('.input-file-name');
+		jQuery('.indented .audio-upload-comment-parent input[type="file"]').wrap('<div class="input-file"><div class="input-file-sub"></div></div>');
+		jQuery('.indented .audio-upload-comment-parent .input-file').prepend('<span class="input-file-name">File name here</span>');
+		jQuery(".comment-form-parent .audio-upload-comment-parent").show();
+		
+	});
+	jQuery(document).on('click', ".comment-form-parent .upload-comment-btn", function() {
+		jQuery(".audio-alert").hide();
+		if(jQuery('.comment-form-parent .audio-upload-comment-parent input[type="file"]').val() != '') {
+			jQuery(".comment-form-parent .alert-parent .upload-alert").show();
+			jQuery('html,body').animate({
+                          scrollTop: jQuery('#edit-actions').offset().top - 100
+                       	});
+		}
+	});
+	jQuery(document).on('click', ".indented .upload-comment-btn", function() {
+		jQuery(".audio-alert").hide();
+		if(!jQuery('.indented .audio-upload-comment-parent input[type="file"]').val() != '') {
+			jQuery(".indented .alert-parent .upload-alert").show();
+		}
+	});
+	
+	jQuery('fieldset#edit-locale span.fieldset-legend').text('Site Language');
+
+  /* End */
+
+}); 
