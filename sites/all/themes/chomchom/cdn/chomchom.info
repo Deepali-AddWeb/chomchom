@@ -1,4 +1,4 @@
-name = chomchom theme (CDN)
+name = chomchom (CDN)
 description = chomchomtheme.
 core = 7.x
 base theme = bootstrap
@@ -8,6 +8,7 @@ base theme = bootstrap
 ;; Regions
 ;;;;;;;;;;;;;;;;;;;;;
 
+regions[top_nav]     = 'Top Nav'
 regions[navigation]     = 'Navigation'
 regions[header]         = 'Top Bar'
 regions[highlighted]    = 'Highlighted'
