@@ -74,6 +74,9 @@
                 jQuery(".group-business-for-sale").hide();
                 break;
             case '8':
+                jQuery(".group-can-tho").hide();
+                jQuery(".group-sang-tiem-nails").hide();
+                jQuery(".group-business-for-sale").hide();
                 console.log('field not avaliable');
                 break;
             default:
