@@ -60,8 +60,8 @@
 						<div class='main-sub-right-bottom-right-province'>
 							<?php print $row['province'];?>
 						</div>
-						<div class='main-sub-right-bottom-right-update-date'>
-							<?php print $row['changed'];?>
+						<div class='main-sub-right-bottom-right-created'>
+							<?php print $row['created'];?>
 						</div>
 						<div class='main-sub-right-bottom-right-count-image'>
 							<?php print $row['field_image'];?>

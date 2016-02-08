@@ -40,8 +40,8 @@
 						<div class='province'>
 							<?php print $row['province'];?>
 						</div>
-						<div class='update-date'>
-							<?php print $row['changed'];?>
+						<div class='created'>
+							<?php print $row['created'];?>
 						</div>
 						<div class='count-image'>
 							<?php print $row['field_image_1'];?>

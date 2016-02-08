@@ -23,7 +23,12 @@
 			<div class='main-sub-right'>
 				<div class='main-sub-right-top'>
 					<div class='main-sub-right-top-title'>
-						<?php print $row['title'];?>
+						<?php if(isset($row['title']) && !empty($row['title'])) { ?>
+							<div class='main-sub-right-top-title'>
+								<label for="male">Posting Title</label>
+								<?php print $row['title'];?>
+							</div>
+						<?php } ?>
 					</div>
 					<div class='main-sub-right-top-save'>
 						<?php print $row['nothing'];?>
@@ -40,9 +45,13 @@
 						<div class='tho-lam'>
 							<?php print $row['field_tho_lam'];?>
 						</div>
-						<div class='Kinh-Nghiem'>
+						<?php if(isset($row['field_kinh_nghiem']) && !empty($row['field_kinh_nghiem'])) { ?>
+							<div class='Kinh-Nghiem'>
+							<label for="male">Kinh-Nghiem</label>
 							<?php print $row['field_kinh_nghiem'];?>
-						</div>
+							</div>
+						<?php } ?>
+						
 						<div class='Can-License'>
 							<?php print $row['field_can_license'];?>
 						</div>
@@ -63,8 +72,8 @@
 						<div class='main-sub-right-bottom-right-province'>
 							<?php print $row['province'];?>
 						</div>
-						<div class='main-sub-right-bottom-right-update-date'>
-							<?php print $row['changed'];?>
+						<div class='main-sub-right-bottom-right-created'>
+							<?php print $row['created'];?>
 						</div>
 						<div class='main-sub-right-bottom-right-count-image'>
 							<?php print $row['field_image_1'];?>
