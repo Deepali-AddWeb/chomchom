@@ -22,9 +22,12 @@
 			</div>
 			<div class='main-sub-right'>
 				<div class='main-sub-right-top'>
-					<div class='main-sub-right-top-title'>
-						<?php print $row['title'];?>
-					</div>
+					<?php if(isset($row['title']) && !empty($row['title'])) { ?>
+						<div class='main-sub-right-top-title'>
+							<label for="title">Posting Title :</label>
+							<?php print $row['title'];?>
+						</div>
+					<?php } ?>	
 					<div class='main-sub-right-top-save'>
 						<?php print $row['nothing'];?>
 					</div>
@@ -34,23 +37,39 @@
 						<div class='category'>
 							<?php print $row['field_category'];?>
 						</div>
-						<div class='type-of-business'>
-							<?php print $row['field_type_of_business'];?>
-						</div>
-						<div class='monthly-income_'>
-							<?php print $row['field_monthly_income_'];?>
-						</div>
-						<div class='monthly-rent'>
-							<?php print $row['field_monthly_rent'];?>
-						</div>
-						<div class='how-many-sq-ft'>
-							<?php print $row['field_how_many_sq_ft'];?>
-						</div>
-						<div class='sale-price'>
-							<?php print $row['field_sale_price'];?>
-						</div>
+						<?php if(isset($row['field_type_of_business']) && !empty($row['field_type_of_business'])) { ?>	
+							<div class='type-of-business'>
+								<label for="type_of_business">Type Of Business :</label>
+								<?php print $row['field_type_of_business'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_monthly_income_']) && !empty($row['field_monthly_income_'])) { ?>
+							<div class='monthly-income_'>
+								<label for="monthly_income">Monthly Income :</label>
+								<?php print $row['field_monthly_income_'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_monthly_rent']) && !empty($row['field_monthly_rent'])) { ?>
+							<div class='monthly-rent'>
+								<label for="monthly_rent">Monthly Rent :</label>
+								<?php print $row['field_monthly_rent'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_how_many_sq_ft']) && !empty($row['field_how_many_sq_ft'])) { ?>
+							<div class='how-many-sq-ft'>
+								<label for="how_many_sq_ft">How Many SQ/FT :</label>
+								<?php print $row['field_how_many_sq_ft'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_sale_price']) && !empty($row['field_sale_price'])) { ?>
+							<div class='sale-price'>
+								<label for="sale_price">Sale Price :</label>
+								<?php print $row['field_sale_price'];?>
+							</div>
+						<?php } ?>
 					</div>
 					<div class='main-sub-right-bottom-right'>
+						<label for="contact_name">Contact Information:</label>
 						<div class='main-sub-right-bottom-right-contact-name'>
 							<?php print $row['field_contact_name'];?>
 						</div>

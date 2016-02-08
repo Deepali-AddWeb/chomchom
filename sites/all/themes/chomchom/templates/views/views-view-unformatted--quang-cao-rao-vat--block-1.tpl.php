@@ -22,15 +22,19 @@
 			</div>
 			<div class='main-sub-right'>
 				<div class='main-sub-right-top'>
-					<div class='main-sub-right-top-title'>
-						<?php print $row['title'];?>
-					</div>
+					<?php if(isset($row['title']) && !empty($row['title'])) { ?>
+						<div class='main-sub-right-top-title'>
+							<label for="title">Posting Title :</label>
+							<?php print $row['title'];?>
+						</div>
+					<?php } ?>
 					<div class='main-sub-right-top-save'>
 						<?php print $row['nothing'];?>
 					</div>
 				</div>
 				<div class='main-sub-right-bottom'>
 					<div class='main-sub-right-bottom-left'>
+						<label for="contact_name">Contact Information:</label>
 						<div class='contact-name'>
 							<?php print $row['field_contact_name'];?>
 						</div>

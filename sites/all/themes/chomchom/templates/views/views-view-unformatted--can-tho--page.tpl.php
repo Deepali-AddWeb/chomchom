@@ -25,7 +25,7 @@
 					<div class='main-sub-right-top-title'>
 						<?php if(isset($row['title']) && !empty($row['title'])) { ?>
 							<div class='main-sub-right-top-title'>
-								<label for="male">Posting Title</label>
+								<label for="title">Posting Title :</label>
 								<?php print $row['title'];?>
 							</div>
 						<?php } ?>
@@ -47,22 +47,31 @@
 						</div>
 						<?php if(isset($row['field_kinh_nghiem']) && !empty($row['field_kinh_nghiem'])) { ?>
 							<div class='Kinh-Nghiem'>
-							<label for="male">Kinh-Nghiem</label>
+							<label for="Kinh-Nghiem">Kinh-Nghiem:</label>
 							<?php print $row['field_kinh_nghiem'];?>
 							</div>
 						<?php } ?>
-						
-						<div class='Can-License'>
-							<?php print $row['field_can_license'];?>
-						</div>
-						<div class='Khu-Vuc'>
-							<?php print $row['field_khu_vuc'];?>
-						</div>
-						<div class='Tien-Luong'>
-							<?php print $row['field_tien_luong'];?>
-						</div>
+						<?php if(isset($row['field_can_license']) && !empty($row['field_can_license'])) { ?>
+							<div class='Can-License'>
+								<label for="Can-License">Can License:</label>
+								<?php print $row['field_can_license'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_khu_vuc']) && !empty($row['field_khu_vuc'])) { ?>
+							<div class='Khu-Vuc'>
+								<label for="Khu-Vuc">Khu Vuc:</label>
+								<?php print $row['field_khu_vuc'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_tien_luong']) && !empty($row['field_tien_luong'])) { ?>
+							<div class='Tien-Luong'>
+								<label for="Tien-Luong">Tien-Luong:</label>
+								<?php print $row['field_tien_luong'];?>
+							</div>
+						<?php } ?>
 					</div>
 					<div class='main-sub-right-bottom-right'>
+						<label for="contact_name">Contact Information:</label>
 						<div class='main-sub-right-bottom-right-contact-name'>
 							<?php print $row['field_contact_name'];?>
 						</div>

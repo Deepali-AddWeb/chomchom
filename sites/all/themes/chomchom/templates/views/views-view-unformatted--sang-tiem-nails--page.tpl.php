@@ -22,9 +22,12 @@
 			</div>
 			<div class='main-sub-right'>
 				<div class='main-sub-right-top'>
-					<div class='main-sub-right-top-title'>
-						<?php print $row['title'];?>
-					</div>
+					<?php if(isset($row['title']) && !empty($row['title'])) { ?>
+						<div class='main-sub-right-top-title'>
+							<label for="title">Posting Title :</label>
+							<?php print $row['title'];?>
+						</div>
+					<?php } ?>	
 					<div class='main-sub-right-top-save'>
 						<?php print $row['nothing'];?>
 					</div>
@@ -34,44 +37,81 @@
 						<div class='category'>
 							<?php print $row['field_category'];?>
 						</div>
-						<div class='khu-vuc-sang-tiem-nails'>
-							<?php print $row['field_khu_vuc_sang_tiem_nails'];?>
-						</div>
-						<div class='ghe'>
-							<?php print $row['field_ghe'];?>
-						</div>
-						<div class='monthly-rent-sang-tiem'>
-							<?php print $row['field_monthly_rent_sang_tiem'];?>
-						</div>
-						<div class='tiem-sq-ft'>
-							<?php print $row['field_tiem_sq_ft'];?>
-						</div>
-						<div class='ban'>
-							<?php print $row['field_ban'];?>
-						</div>
-						<div class='tho'>
-							<?php print $row['field_tho'];?>
-						</div>
-						<div class='phong-wax'>
-							<?php print $row['field_phong_wax'];?>
-						</div>
-						<div class='phong-massage'>
-							<?php print $row['field_phong_massage'];?>
-						</div>
-						<div class='phong_facial'>
-							<?php print $row['field_phong_facial'];?>
-						</div>
+						<?php if(isset($row['field_khu_vuc_sang_tiem_nails']) && !empty($row['field_khu_vuc_sang_tiem_nails'])) { ?>
+							<div class='khu-vuc-sang-tiem-nails'>
+								<label for="khu-vuc">khu-vuc:</label>
+								<?php print $row['field_khu_vuc_sang_tiem_nails'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_ghe']) && !empty($row['field_ghe'])) { ?>
+							<div class='ghe'>
+								<label for="ghe">#Ghe : </label>
+								<?php print $row['field_ghe'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_monthly_rent_sang_tiem']) && !empty($row['field_monthly_rent_sang_tiem'])) { ?>
+							<div class='monthly-rent-sang-tiem'>
+								<label for="monthly_rent_sang_tiem">Monthly Rent : </label>
+								<?php print $row['field_monthly_rent_sang_tiem'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_tiem_sq_ft']) && !empty($row['field_tiem_sq_ft'])) { ?>
+							<div class='tiem-sq-ft'>
+								<label for="tiem_sq_ft">Tiem_SQ/FT : </label>
+								<?php print $row['field_tiem_sq_ft'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_ban']) && !empty($row['field_ban'])) { ?>
+							<div class='ban'>
+								<label for="ban"># Ban : </label>
+								<?php print $row['field_ban'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_tho']) && !empty($row['field_tho'])) { ?>
+							<div class='tho'>
+								<label for="tho"># Tho : </label>
+								<?php print $row['field_tho'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_phong_wax']) && !empty($row['field_phong_wax'])) { ?>
+							<div class='phong-wax'>
+								<label for="phong_wax">Phong Wax : </label>
+								<?php print $row['field_phong_wax'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_phong_massage']) && !empty($row['field_phong_massage'])) { ?>
+							<div class='phong-massage'>
+								<label for="phong_massage">Phong Message : </label>
+								<?php print $row['field_phong_massage'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_phong_facial']) && !empty($row['field_phong_facial'])) { ?>
+							<div class='phong_facial'>
+								<label for="phong_facial">Phong Facial : </label>
+								<?php print $row['field_phong_facial'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_phong_tan']) && !empty($row['field_phong_tan'])) { ?>
 						<div class='phong-tan'>
+							<label for="phong_tan">Phong Tan : </label>
 							<?php print $row['field_phong_tan'];?>
 						</div>
-						<div class='trong-khu-shopping-center'>
-							<?php print $row['field_trong_khu_shopping_center'];?>
-						</div>
-						<div class='price-gia-ban_'>
-							<?php print $row['field_price_gia_ban_'];?>
-						</div>
+						<?php } ?>
+						<?php if(isset($row['field_trong_khu_shopping_center']) && !empty($row['field_trong_khu_shopping_center'])) { ?>
+							<div class='trong-khu-shopping-center'>
+								<label for="trong-khu-shopping-center">Trong Khu Shopping Center : </label>
+								<?php print $row['field_trong_khu_shopping_center'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_price_gia_ban_']) && !empty($row['field_price_gia_ban_'])) { ?>
+							<div class='price-gia-ban_'>
+								<label for="price_gia_ban_">Price Gia Ban : </label>
+								<?php print $row['field_price_gia_ban_'];?>
+							</div>
+						<?php } ?>
 					</div>
 					<div class='main-sub-right-bottom-right'>
+						<label for="contact_name">Contact Information:</label>
 						<div class='main-sub-right-bottom-right-contact-name'>
 							<?php print $row['field_contact_name'];?>
 						</div>
@@ -79,7 +119,7 @@
 							<?php print $row['field_contact_phone'];?>
 						</div>
 						<div class='main-sub-right-bottom-right-province'>
-							<?php print $row['province'];?>
+							<?php print $row['province_1'];?>
 						</div>
 						<div class='main-sub-right-bottom-right-created'>
 							<?php print $row['created'];?>
