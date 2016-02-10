@@ -44,9 +44,12 @@
 						<div class='province'>
 							<?php print $row['province'];?>
 						</div>
-						<div class='created'>
-							<?php print $row['created'];?>
-						</div>
+						<?php if(isset($row['created']) && !empty($row['created'])) { ?>
+							<div class='main-sub-right-bottom-right-created'>
+								<label for="created">Posted:</label>
+								<?php print $row['created'];?>
+							</div>
+						<?php } ?>
 						<div class='count-image'>
 							<?php print $row['field_image_1'];?>
 						</div>

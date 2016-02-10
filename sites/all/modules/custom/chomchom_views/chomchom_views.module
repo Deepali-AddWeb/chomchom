@@ -1,0 +1,15 @@
+<?php 
+/*
+ * all custom code write here.
+ */
+
+/*
+ * Implements hook_views_query_alter.
+ */
+function chomchom_views_views_query_alter(&$view, &$query){
+	//if (($view->name == 'can_tho') && ($view->current_display == 'page')) {
+	
+	
+	//}
+}
+?>

@@ -167,18 +167,16 @@
 
   </div>
 </div>
+<footer class="footer">
+  <div class="footer-first col-sm-3">
+    <?php print render($page['footer_first']); ?>
+  </div>
+  <div class="footer-second col-sm-6">
+    <?php print render($page['footer_second']); ?>
+  </div>
+  <div class="footer-thrid col-sm-3">
+    <?php print render($page['footer_thrid']); ?>
+  </div>
+  <?php print render($page['footer']); ?>
+</footer>
 
-<?php if (!empty($page['footer'])): ?>
-  <footer class="footer">
-    <div class="footer-first col-sm-3">
-      <?php print render($page['footer_first']); ?>
-    </div>
-    <div class="footer-second col-sm-6">
-      <?php print render($page['footer_second']); ?>
-    </div>
-    <div class="footer-thrid col-sm-3">
-      <?php print render($page['footer_thrid']); ?>
-    </div>
-    <?php print render($page['footer']); ?>
-  </footer>
-<?php endif; ?>

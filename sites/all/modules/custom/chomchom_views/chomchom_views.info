@@ -1,0 +1,3 @@
+name = "chomchom views"
+core = "7.x"
+description = "module used for create custom functionality."
