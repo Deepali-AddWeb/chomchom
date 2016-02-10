@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Search functionality feature.
- */
-
-include_once 'search_functionality.features.inc';

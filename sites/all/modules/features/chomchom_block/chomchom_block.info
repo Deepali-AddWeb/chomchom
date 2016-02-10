@@ -1,0 +1,16 @@
+name = Chomchom block
+core = 7.x
+package = Chomchom Features
+version = 7.x-1.0
+dependencies[] = fe_block
+dependencies[] = lang_dropdown
+dependencies[] = menu
+dependencies[] = quicktabs
+dependencies[] = superfish
+features[fe_block_settings][] = lang_dropdown-language
+features[fe_block_settings][] = menu-menu-footer-menu
+features[fe_block_settings][] = quicktabs-search
+features[fe_block_settings][] = superfish-1
+features[fe_block_settings][] = system-main-menu
+features[fe_block_settings][] = system-user-menu
+features[features_api][] = api:2

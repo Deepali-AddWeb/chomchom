@@ -19,6 +19,10 @@ function chomchom_views_views_query_alter(&$view, &$query){
     (($view->name == 'business_for_sale') && ($view->current_display == 'page'))||
     (($view->name == 'business_for_sale') && ($view->current_display == 'block_1'))
     ) {
+   /* print('<pre style="color:red;">');
+    print_r($_SESSION);
+    print('</pre>');
+    exit;*/
 
     //check in country code set in session
     if(isset($_SESSION['smart_ip']['location']['country_code']) && !empty($_SESSION['smart_ip']['location']['country_code'])){

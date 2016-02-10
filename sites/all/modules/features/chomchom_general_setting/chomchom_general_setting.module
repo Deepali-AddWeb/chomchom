@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Chomchom General Setting feature.
+ */
+
+include_once 'chomchom_general_setting.features.inc';
