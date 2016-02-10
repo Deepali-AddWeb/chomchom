@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Chomchom Listing feature.
+ */
+
+include_once 'chomchom_listing.features.inc';

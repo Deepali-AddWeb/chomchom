@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Chomchom Webform Functionality feature.
+ */
+
+include_once 'chomchom_webform_functionality.features.inc';

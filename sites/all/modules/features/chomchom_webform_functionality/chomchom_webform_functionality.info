@@ -1,0 +1,16 @@
+name = Chomchom Webform Functionality
+core = 7.x
+package = Chomchom Features
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = strongarm
+dependencies[] = uuid_features
+dependencies[] = webform
+__drupal_alter_by_ref[][node][webform] = webform
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[node][] = webform
+features[uuid_node][] = 61382eb0-1bcc-46a0-87fd-6539266c8882
+features[variable][] = comment_webform
+features[variable][] = pathauto_node_webform_pattern
