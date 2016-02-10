@@ -129,10 +129,11 @@
 
   <div class="row">
 
-    <?php if (!empty($page['sidebar_first'])): ?>
+    <?php if (!empty($page['primary_first']) || !empty($page['sidebar_first'])): ?>
       <aside class="col-sm-3" role="complementary">
+        <?php print render($page['primary_first']); ?>        
         <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
+      </aside>  <!-- /#primary-first -->
     <?php endif; ?>
 
     <section<?php print $content_column_class; ?>>

@@ -7,9 +7,104 @@
  * Implements hook_views_query_alter.
  */
 function chomchom_views_views_query_alter(&$view, &$query){
-	//if (($view->name == 'can_tho') && ($view->current_display == 'page')) {
-	
-	
-	//}
+  //Alter query for all category page 
+  if ((($view->name == 'can_tho') && ($view->current_display == 'page')) || 
+    (($view->name == 'can_tho') && ($view->current_display == 'block_1')) || 
+    (($view->name == 'can_tho_toc') && ($view->current_display == 'page')) || 
+    (($view->name == 'can_tho_toc') && ($view->current_display == 'block_1'))||
+    (($view->name == 'quang_cao_rao_vat') && ($view->current_display == 'page')) ||
+    (($view->name == 'quang_cao_rao_vat') && ($view->current_display == 'block_1'))||
+    (($view->name == 'sang_tiem_nails') && ($view->current_display == 'page'))||
+    (($view->name == 'sang_tiem_nails') && ($view->current_display == 'block_1'))||
+    (($view->name == 'business_for_sale') && ($view->current_display == 'page'))||
+    (($view->name == 'business_for_sale') && ($view->current_display == 'block_1'))
+    ) {
+
+    //check in country code set in session
+    if(isset($_SESSION['smart_ip']['location']['country_code']) && !empty($_SESSION['smart_ip']['location']['country_code'])){
+
+      //get country code
+      $country_shortcode = $_SESSION['smart_ip']['location']['country_code'];
+
+      //capitalize country code
+      $country_short =strtolower($country_shortcode);
+
+      //load all inc file from location module using country code
+      $data = module_load_include('inc', 'location', 'supported/location.'.$country_short);
+
+      //load function from using country code 
+      $strfun = 'location_province_list_'.$country_short;
+      $callfunction = $strfun();
+
+      //check region set in session
+      if((isset($_SESSION['smart_ip']['location']['region'])) && (!empty($_SESSION['smart_ip']['location']['region']))){
+
+        //find country code from country field
+        $state_short = array_search($_SESSION['smart_ip']['location']['region'],$callfunction);
+        //check filter set
+        if((isset($query->where[1]['conditions'])) && (!empty($query->where[1]['conditions']))){
+          $filter = $query->where[1]['conditions'];
+
+          //set loop for all filter
+          foreach ($filter as $key => $value) {
+
+            //check state field
+            if($value['field'] == 'location.province'){
+
+              //set state code in filter value
+              $query->where[1]['conditions'][$key]['value']	= $state_short;
+            }
+          }
+        }	
+      }else{//otherwise remove filter
+        //check filter set
+        if((isset($query->where[1]['conditions'])) && (!empty($query->where[1]['conditions']))){
+          $filter = $query->where[1]['conditions'];
+          //set loop for all filter
+          foreach ($filter as $key => $value) {	
+
+            //check state field		
+            if($value['field'] == 'location.province'){
+
+              //unset state filter
+              unset($query->where[1]['conditions'][$key]);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Implement hook_form_alter. 
+ */
+
+function chomchom_views_form_alter(&$form, $form_state, $form_id) {
+  // check views exposed form
+  if($form_id == 'views_exposed_form'){
+
+    //check in country code set in session
+    if(isset($_SESSION['smart_ip']['location']['country_code']) && !empty($_SESSION['smart_ip']['location']['country_code'])){
+      //get country code
+      $country_shortcode = $_SESSION['smart_ip']['location']['country_code'];
+
+      //capitalize country code
+      $country_short =strtolower($country_shortcode);
+
+      //load all inc file from location module using country code
+      $data = module_load_include('inc', 'location', 'supported/location.'.$country_short);
+
+      //load function from using country code 
+      $strfun = 'location_province_list_'.$country_short;
+      $callfunction = $strfun();
+
+      //find country code from country field
+      $state_short = array_search($_SESSION['smart_ip']['location']['region'],$callfunction);
+
+      //set defult user state name in state field 
+      $form['province']['#default_value']= $state_short;
+    }
+  }
 }
 ?>

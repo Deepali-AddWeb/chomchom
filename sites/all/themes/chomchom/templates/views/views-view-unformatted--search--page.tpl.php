@@ -85,7 +85,7 @@
 							<?php print $row['field_contact_phone'];?>
 						</div>
 						<div class='main-sub-right-bottom-right-province'>
-							<?php print $row['province'];?>
+							<?php print $row['province_1'];?>
 						</div>
 						<?php if(isset($row['created']) && !empty($row['created'])) { ?>
 							<div class='main-sub-right-bottom-right-created'>
