@@ -11,7 +11,15 @@ function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, 
   $data = drupal_get_path('module', 'chomchom_fieldgroup') . '/js/chomchom_fieldgroup.js',
   );
   $form['#validate'][] = 'chomchom_fieldgroup_listing_form_validate';
+  $form['#submit'][] = 'chomchom_fieldgroup_listing_form_redirect';
 }
 function chomchom_fieldgroup_listing_form_validate(&$form, &$form_state) {
+}
+function chomchom_fieldgroup_listing_form_redirect(&$form, &$form_state) {
+  $form_tid = $form_state['values']['field_category']['und'][0]['tid'];
+  /*print('form_state::<pre style="color:red;">');
+  print_r($form_state['values']);
+  print('</pre>');
+  exit;*/
 }
 ?>

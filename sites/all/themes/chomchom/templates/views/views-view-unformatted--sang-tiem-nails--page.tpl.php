@@ -29,7 +29,7 @@
 						</div>
 					<?php } ?>	
 					<div class='main-sub-right-top-save'>
-						<?php print $row['nothing'];?>
+						<?php print $row['ops'];?>
 					</div>
 				</div>
 				<div class='main-sub-right-bottom'>
