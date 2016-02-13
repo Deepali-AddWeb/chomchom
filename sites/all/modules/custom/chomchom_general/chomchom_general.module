@@ -1,0 +1,74 @@
+<?php 
+/*
+ * all custom code write here.
+ */
+
+
+/*
+ * Implements hook_cron.
+ */
+function chomchom_general_cron() { 
+  //Get today date 
+  $todate = date('Y-m-d');
+
+  //load listing type all publish node
+  $nodes = node_load_multiple(array(), array('type' => 'listing','status' => 1));
+  foreach($nodes as $nodekey => $nodevalue){
+
+    //featured date set then check today and featured same then black featured date field
+    if (isset($nodevalue->field_featured_date[LANGUAGE_NONE]) && !empty($nodevalue->field_featured_date[LANGUAGE_NONE])) {
+      $fdate = explode(" ",$nodevalue->field_featured_date['und'][0]['value']);
+      if($todate > $fdate[0]){
+        unset($nodevalue->field_featured_date['und']);
+        node_save($nodevalue);
+      }
+    }
+
+    //check expire date set
+    if (isset($nodevalue->field_expire_date[LANGUAGE_NONE]) && !empty($nodevalue->field_expire_date[LANGUAGE_NONE])) {
+      $edate = explode(" ",$nodevalue->field_expire_date[LANGUAGE_NONE][0]['value']);
+
+      //-10 day to expire date
+      $expiredate = date('Y-m-d', strtotime($edate[0]."-10 days"));
+
+      //today and before 10 expired date same then send mail 
+      if ($expiredate == $todate) {
+        $to = "denisha.addweb@gmail.com"; // to e-mail address
+        $from = "test@example.com"; // from e-mail address
+         
+        $subject = "text to display in e-mail subject"; // subject of e-mail
+        $body = "text to display in e-mail body"; //it might be any variable from the form eg. 
+        //params is the array passed to hook_mail function 
+        $params = array(
+            'subject' => $subject,
+            'body' => $body,
+            );
+        drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);
+      }
+
+      //todat date and expire date same then unpublish node
+      if ($todate == $edate[0] ){
+        $nodevalue->status = '0';
+        $to = "denisha.addweb@gmail.com"; // to e-mail address
+        $from = "test@example.com"; // from e-mail address
+     
+        $subject = "text to display in e-mail subject"; // subject of e-mail
+        $body = "text to display in e-mail body"; //it might be any variable from the form eg. 
+        //params is the array passed to hook_mail function 
+        $params = array(
+            'subject' => $subject,
+            'body' => $body,
+            );
+        drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);
+        node_save($nodevalue);
+      }
+
+      //last update node after 10 day node delete 
+      $last_update = date('Y-m-d', $nodevalue->changed);
+      $passdate = date('Y-m-d', strtotime($last_update."+10 days"));
+      if ($todate == $passdate ){
+        node_delete($nodevalue->nid);
+      }
+    } 
+  }
+}

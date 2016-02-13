@@ -13,43 +13,10 @@ function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, 
   $data = drupal_get_path('module', 'chomchom_fieldgroup') . '/js/chomchom_fieldgroup.js',
   );
   $form['#validate'][] = 'chomchom_fieldgroup_listing_form_validate';
-  $form['#submit'][] = 'chomchom_fieldgroup_listing_form_redirect';
+  //$form['#submit'][] = 'chomchom_fieldgroup_listing_form_redirect';
 }
 
 
 function chomchom_fieldgroup_listing_form_validate(&$form, &$form_state) {
 }
 
-
-/*
- * on submit call listing_form_redirect for redirection.
- */
-function chomchom_fieldgroup_listing_form_redirect(&$form, &$form_state) {
-  //get tid from form state
-  if(isset($form_state['values']['field_category'][LANGUAGE_NONE][0]['tid']) && !empty($form_state['values']['field_category'][LANGUAGE_NONE][0]['tid'])){
-    $form_tid = $form_state['values']['field_category'][LANGUAGE_NONE][0]['tid'];
-  }
-  /*1.can tho,2.can tho nails,3.can tho toc,4.sang tiem,5.sang tiem nails,6.business for sale
-  7.Quang Cao & Rao Vat ,8. Business Directory*/
-  switch ($form_tid) {
-    case '1':
-    case '2':
-    case '3':
-        drupal_goto('node/13');
-        break;
-    case '4':
-    case '5':
-    case '6':
-        drupal_goto('node/14');
-        break;
-    case '7':
-        drupal_goto('node/15');
-        break;
-    case '8':
-        drupal_goto('node/16');
-        break;
-    default:
-        break;
-  } 
-}
-?>

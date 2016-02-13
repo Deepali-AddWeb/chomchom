@@ -1,0 +1,97 @@
+<?php 
+/*
+ *@file
+ * commerce custom code write here.
+ */
+
+
+/*
+ * After submit set nid to session
+ */
+function chomchom_fieldgroup_node_insert($node) {
+  //set nid to session
+  $_SESSION['nid'] = $node->nid;
+  if(isset($node->field_category[LANGUAGE_NONE]) && !empty($node->field_category[LANGUAGE_NONE])){
+    $form_tid = $node->field_category[LANGUAGE_NONE][0]['tid'];
+    /* 
+     * 1.can tho,2.can tho nails,3.can tho toc,
+     * 4.sang tiem,5.sang tiem nails,6.business for sale,
+     * 7.Quang Cao & Rao Vat ,8. Business Directory
+     */
+    switch ($form_tid) {
+      case '1':
+      case '2':
+      case '3':
+          drupal_goto('node/13');
+          break;
+      case '4':
+      case '5':
+      case '6':
+          drupal_goto('node/14');
+          break;
+      case '7':
+          drupal_goto('node/15');
+          break;
+      case '8':
+          drupal_goto('node/16');
+          break;
+      default:
+          break;
+    } 
+  }
+}
+
+
+/*
+ * Implement hook_commerce_checkout_complete 
+ */
+function chomchom_commerce_commerce_checkout_complete($order) {
+  //Get line item id
+  $commercelineid = $order->commerce_line_items[LANGUAGE_NONE][0]['line_item_id'];
+  //load line item from line item id
+  $lineitem = commerce_line_item_load($commercelineid);
+  //get product id from line item
+  $productid = $lineitem->commerce_product[LANGUAGE_NONE][0]['product_id'];
+  //load commerce product from product id
+  $commerce_product = commerce_product_load($productid);
+  //Get tid form commerce product
+  $month_tid = $commerce_product->field_month[LANGUAGE_NONE][0]['tid'];
+  //Get term from tid
+  $term = taxonomy_term_load($month_tid);
+  $termname = $term->name;
+  //On tid calculate date for expire 
+  if ($month_tid == '12' || $month_tid == '13') {
+    $month_date = date('Y-m-d', strtotime("+100  year"));
+  }
+  else {
+    $month_date = date('Y-m-d', strtotime("+".$termname));
+  }
+  //if featured date set then set featured date
+  if (isset($commerce_product->field_featured[LANGUAGE_NONE]) && !empty($commerce_product->field_featured[LANGUAGE_NONE])) {
+    $featured_tid = $commerce_product->field_featured[LANGUAGE_NONE][0]['tid'];
+    $featureterm = taxonomy_term_load($featured_tid);
+    $featuretermname = $featureterm->name;
+    $featured_date = date('Y-m-d',strtotime("+".$featuretermname));
+  }
+  //if nid set in session then load it and publish it
+  if (isset($_SESSION['nid']) && !empty($_SESSION['nid'])) {
+    $node = node_load($_SESSION['nid']);
+    $node->status = '1';
+    $node->field_featured_date[LANGUAGE_NONE][0]['value'] = $featured_date;
+    $node->field_expire_date[LANGUAGE_NONE][0]['value'] = $month_date;
+    $to = "denisha.addweb@gmail.com"; // to e-mail address
+    $from = "test@example.com"; // from e-mail address
+     
+    $subject = "text to display in e-mail subject"; // subject of e-mail
+    $body = "text to display in e-mail body"; //it might be any variable from the form eg. 
+    //params is the array passed to hook_mail function 
+    $params = array(
+        'subject' => $subject,
+        'body' => $body,
+        );
+    drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);
+    node_save($node);
+  }
+}
+
+?>

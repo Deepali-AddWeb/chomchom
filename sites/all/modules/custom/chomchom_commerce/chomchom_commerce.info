@@ -1,0 +1,4 @@
+name = "chomchom commerce"
+core = "7.x"
+description = "module used for create commerce custom functionality."
+package = "custom"
