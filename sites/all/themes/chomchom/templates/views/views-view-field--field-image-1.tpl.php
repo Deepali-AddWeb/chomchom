@@ -24,7 +24,9 @@
 ?>
 <?php 
 $count = 0;
-foreach ($row->field_field_image_1 as $key => $value) {
-	$count ++;
+if (isset($row->field_field_image_1) && !empty($row->field_field_image_1)) {
+  foreach ($row->field_field_image_1 as $key => $value) {
+  $count ++;
+  }
 }
  print $count.'Images Available'; ?>

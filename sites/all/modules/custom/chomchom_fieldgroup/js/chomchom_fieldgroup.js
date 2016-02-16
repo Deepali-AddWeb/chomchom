@@ -38,6 +38,7 @@
                 jQuery(".group-business-for-sale").hide();
                 jQuery(".group-sang-tiem-nails").hide();
                 jQuery("#edit-field-kinh-nghiem-toc").hide();
+                jQuery(".group-business-directory").hide();
                 break;
             case '2':
                 jQuery(".group-can-tho").show();
@@ -45,6 +46,7 @@
                 jQuery(".group-sang-tiem-nails").hide();
                 jQuery("#edit-field-kinh-nghiem-toc").hide();
                 jQuery("#edit-field-kinh-nghiem").show();
+                jQuery(".group-business-directory").hide();
                 break;
             case '3':
                 jQuery(".group-can-tho").show();
@@ -52,31 +54,37 @@
                 jQuery(".group-sang-tiem-nails").hide();
                 jQuery("#edit-field-kinh-nghiem").hide();
                 jQuery("#edit-field-kinh-nghiem-toc").show();
+                jQuery(".group-business-directory").hide();
                 break;
             case '4':
                jQuery(".group-sang-tiem-nails").show();
                jQuery(".group-can-tho").hide();
                jQuery(".group-business-for-sale").hide();
+               jQuery(".group-business-directory").hide();
                 break;
             case '5':
                 jQuery(".group-business-for-sale").hide();
                 jQuery(".group-can-tho").hide();
                 jQuery(".group-sang-tiem-nails").show();
+                jQuery(".group-business-directory").hide();
                 break;
             case '6':
                 jQuery(".group-can-tho").hide();
                 jQuery(".group-sang-tiem-nails").hide();
-                jQuery(".group-business-for-sale").show(); 
+                jQuery(".group-business-for-sale").show();
+                jQuery(".group-business-directory").hide(); 
                 break;
             case '7':
                 jQuery(".group-can-tho").hide();
                 jQuery(".group-sang-tiem-nails").hide();
                 jQuery(".group-business-for-sale").hide();
+                jQuery(".group-business-directory").hide();
                 break;
             case '8':
                 jQuery(".group-can-tho").hide();
                 jQuery(".group-sang-tiem-nails").hide();
                 jQuery(".group-business-for-sale").hide();
+                jQuery(".group-business-directory").show();
                 console.log('field not avaliable');
                 break;
             default:
