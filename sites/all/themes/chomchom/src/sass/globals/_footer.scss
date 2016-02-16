@@ -1,0 +1,122 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Footer SCSS
+ */
+
+.footer {
+  display: inline-block;
+  width: 100%;
+  padding-top: 24px;
+  background-color: $footer;
+  #block-block-1 {
+    margin-left: 20px;
+    h2 {
+      color: $green;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    p {
+      color: $light;
+    }
+  }
+  #block-block-4 {
+    text-align: center;
+    p {
+      color: $black-dark;
+    }
+  }
+  #block-block-7 {
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  #block-menu-menu-footer-menu {
+    text-align: center;
+    ul {
+      margin: 5px 0;
+      li {
+        display: inline-block;
+        a {
+          padding: 0 10px;
+          border-right: 1px solid $dark-gray;
+          color: $dark-gray;
+          font-size: 12px;
+          line-height: 10px;
+          text-transform: capitalize;
+          &:hover {
+            background-color: transparent;
+            color: $green;
+          }
+        }
+        &:last-child {
+          a {
+            border-right: none;
+          }
+        }
+      }
+    }
+  }
+  #block-block-3 {
+    margin: 5px 0;
+    color: $light;
+    text-align: center;
+    a {
+      color: $light;
+      text-decoration: none;
+      &:hover {
+        color: $green;
+      }
+    }
+  }
+  #block-block-2 {
+    float: right;
+    margin-right: 20px;
+    h2 {
+      margin-left: 0;
+      color: $green;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .twitter {
+      display: inline-block;
+      height: 18px;
+      width: 20px;
+      background-image: url($twitter);
+      background-position: center;
+      background-repeat: no-repeat;
+      text-indent: -9999px;
+      &:hover {
+        opacity: .5;
+      }
+    }
+    .google {
+      display: inline-block;
+      height: 18px;
+      width: 27px;
+      background-image: url($google);
+      background-position: center;
+      background-repeat: no-repeat;
+      text-indent: -9999px;
+      &:hover {
+        opacity: .5;
+      }
+    }
+    .facebook {
+      display: inline-block;
+      height: 18px;
+      width: 10px;
+      background-image: url($facebook1);
+      background-position: center;
+      background-repeat: no-repeat;
+      text-indent: -9999px;
+      &:hover {
+        opacity: .5;
+      }
+    }
+    a {
+      margin-right: 20px;
+      font-size: 25px;
+    }
+  }
+}
