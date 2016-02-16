@@ -18,7 +18,7 @@
     <div class='main'>
 		<div class='main-sub-top'>
 			<div class='main-sub-left'>
-				<?php print $row['field_image_1'];?>
+				<?php print $row['field_image'];?>
 			</div>
 			<div class='main-sub-right'>
 				<div class='main-sub-right-top'>
@@ -86,7 +86,7 @@
 							</div>
 						<?php } ?>
 						<div class='main-sub-right-bottom-right-count-image'>
-							<?php print $row['field_image'];?>
+							<?php print $row['field_image_1'];?>
 						</div>
 					</div>
 				</div>

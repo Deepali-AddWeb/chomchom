@@ -71,7 +71,7 @@ function chomchom_fieldgroup_listing_form_validate($form, &$form_state) {
 /**
  * Implements validate_fields for validation.
  */
-function validate_fields($group, $form, $form_state, $exclude_field) {
+function validate_fields($group, $form, $form_state, $exclude_field = array()) {
   //Get field names from field group
   $field_names = $form_state['complete form']['#groups'][$group]->children;
   foreach ($field_names as $fn => $fv) {
