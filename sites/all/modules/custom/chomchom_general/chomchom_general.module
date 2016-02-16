@@ -45,15 +45,6 @@ function chomchom_general_cron() {
             );
         drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);
       }
-      print('nodevalue::<pre style="color:red;">');
-      print_r($nodevalue);
-      print('</pre>');
-      print('todate::<pre style="color:red;">');
-      print_r($todate);
-      print('</pre>');
-      print('edate[0]::<pre style="color:red;">');
-      print_r($edate[0]);
-      print('</pre>');
       //todat date and expire date same then unpublish node
       if ($todate == $edate[0] ){
         $nodevalue->status = '0';
@@ -70,7 +61,6 @@ function chomchom_general_cron() {
         drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);
         node_save($nodevalue);
       }
-      exit;
       //last update node after 10 day node delete 
       $last_update = date('Y-m-d', $nodevalue->changed);
       $passdate = date('Y-m-d', strtotime($last_update."+10 days"));

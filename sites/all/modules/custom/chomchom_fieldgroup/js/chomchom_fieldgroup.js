@@ -10,7 +10,7 @@
 
       setTimeout(function(){
         //call user define function fieldgrouplevel on load pass value
-        fieldgrouplevel(jQuery("#edit-field-category-und-0-tid-select-2").val());
+        fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']").val());
       }, 500);
 
        //call user define function fieldgrouplevel on change pass value

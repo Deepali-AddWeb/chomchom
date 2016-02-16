@@ -12,11 +12,86 @@ function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, 
   $form['#attached']['js'] = array(
   $data = drupal_get_path('module', 'chomchom_fieldgroup') . '/js/chomchom_fieldgroup.js',
   );
+  $content_type = 'listing';
+  //get all field form listing content type
+  $fields = field_info_instances("node", $content_type);
+  $common_fields = array('body', 'field_contact_name', 'field_contact_phone', 'field_alternative_phone', 'field_featured_date', 'field_expire_date', 'field_category', 'field_image');
+  //loop for field
+  foreach ($fields as $key => $value) {
+    //Remove common field
+    if (!in_array($key, $common_fields)) {
+      // Add * to field
+      $title = $form[$key][LANGUAGE_NONE]['#title'];
+      $form[$key][LANGUAGE_NONE]['#title'] = $title.'<span title="This field is required." class="form-required">*</span>';
+    }
+  }
   $form['#validate'][] = 'chomchom_fieldgroup_listing_form_validate';
-  //$form['#submit'][] = 'chomchom_fieldgroup_listing_form_redirect';
 }
 
 
-function chomchom_fieldgroup_listing_form_validate(&$form, &$form_state) {
+/**
+ * Implements chomchom_fieldgroup_listing_form_validate for validation.
+ */
+function chomchom_fieldgroup_listing_form_validate($form, &$form_state) {
+  if (isset($form_state['values']['field_category'][LANGUAGE_NONE]) && !empty($form_state['values']['field_category'][LANGUAGE_NONE])) {
+    $select_tid = $form_state['values']['field_category'][LANGUAGE_NONE][0]['tid'];
+    /* 
+     * 1.can tho,2.can tho nails,3.can tho toc,
+     * 4.sang tiem,5.sang tiem nails,6.business for sale,
+     * 7.Quang Cao & Rao Vat ,8. Business Directory
+     */
+    switch ($select_tid) {
+      case '1':
+      case '2':
+        $exclude_field = array('field_kinh_nghiem_toc');
+        validate_fields('group_can_tho', $form, $form_state, $exclude_field);
+        break;
+      case '3':
+        $exclude_field = array('field_kinh_nghiem');
+        validate_fields('group_can_tho', $form, $form_state, $exclude_field);
+        break;
+      case '4':
+      case '5':
+        validate_fields('group_sang_tiem_nails', $form, $form_state);
+        break;
+      case '6':
+        validate_fields('group_business_for_sale', $form, $form_state);
+        break;
+      case '7':
+          break;
+      case '8':
+          break;
+      default:
+          break;
+    }
+  }
 }
 
+
+/**
+ * Implements validate_fields for validation.
+ */
+function validate_fields($group, $form, $form_state, $exclude_field) {
+  //Get field names from field group
+  $field_names = $form_state['complete form']['#groups'][$group]->children;
+  foreach ($field_names as $fn => $fv) {
+    //Check can tho group same field remove from required
+    if (!in_array($fv, $exclude_field)) {
+      if (isset($form[$fv][LANGUAGE_NONE]['select'])) {
+        //Select or other field
+        $title = $form[$fv][LANGUAGE_NONE]['select']['#title'];
+      }
+      else {
+        // Simple field
+        $title = $form[$fv][LANGUAGE_NONE]['#title'];
+      }
+      //Title remove * sign
+      $title = explode('<', $title);
+      //Check field empty
+      if (empty($form_state['values'][$fv][LANGUAGE_NONE][0]['value'])) {
+        //set error message
+        form_set_error($fv, t($title['0'] . ' field is required.'));
+      }
+    }
+  }
+}
