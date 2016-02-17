@@ -35,6 +35,8 @@ function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, 
       }
       $title = $form[$key][LANGUAGE_NONE]['#title'];
       $form[$key][LANGUAGE_NONE]['#title'] = $title.'<span title="This field is required." class="form-required">*</span>';
+
+      
     }
   }
   $form['#validate'][] = 'chomchom_fieldgroup_listing_form_validate';

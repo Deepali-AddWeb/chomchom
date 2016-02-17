@@ -8,7 +8,7 @@
 /*
  * After submit set nid to session
  */
-function chomchom_fieldgroup_node_insert($node) {
+function chomchom_commerce_node_insert($node) {
   //set nid to session
   $_SESSION['nid'] = $node->nid;
   if(isset($node->field_category[LANGUAGE_NONE]) && !empty($node->field_category[LANGUAGE_NONE])){
@@ -95,4 +95,14 @@ function chomchom_commerce_commerce_checkout_complete($order) {
   }
 }
 
-?>
+
+/*
+ * Implement template_preprocess_page 
+ */
+function chomchom_commerce_preprocess_page(&$variables) {
+  if(isset($variables['node']) && !empty($variables['node'])) {
+    if ($variables['node']->type == 'product_display') {
+    $_SESSION['nid'] = $_GET['nid'];
+    } 
+  } 
+}
