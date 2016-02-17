@@ -1,0 +1,344 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Form SCSS
+ */
+
+/* Filter */
+.region-primary-first {
+  padding: 10px 20px;
+  background-color: $full-gray;
+  #block-block-8 {
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid $dark-gray;
+    color: $black;
+    font-size: 14px;
+    text-transform: uppercase;
+    .filter {
+      display: inline-block;
+      margin-right: 16px;
+    }
+    .user-region {
+      display: inline-block;
+      color: $orange;
+      font-weight: bold;
+    }
+  }
+  #quicktabs-search {
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        padding: 0;
+        &.active {
+          a {
+            padding: 10px;
+            background-color: $light-gray;
+            color: $white;
+            font-size: 10px;
+            font-weight: bold;
+            &:hover {
+              background-color: $light-gray;
+            }
+          }
+        }
+        a {
+          display: inline-block;
+          padding: 10px;
+          background-color: $dark-gray;
+          color: $white;
+          font-size: 10px;
+          font-weight: bold;
+          text-decoration: none;
+          &:hover {
+            background-color: $light-gray;
+          }
+        }
+      }
+    }
+  }
+  #quicktabs-container-search {
+    margin-top: 16px;
+    .views-exposed-form {
+      .views-submit-button {
+        float: left;
+        button {
+          float: left;
+          height: 42px;
+          width: auto;
+          padding: 20px 28px;
+          border: none;
+          background-color: $orange;
+          font-size: 12px;
+          line-height: 0;
+          font-weight: bold;
+          text-transform: uppercase;
+          @include border-radius(0);
+          &:hover {
+            background-color: $light-gray;
+          }
+        }
+      }
+      .views-reset-button {
+        display: inline-block;
+        margin-top: 14px;
+        padding: 0;
+        .btn-default {
+          border: none;
+          background-color: transparent;
+          line-height: 0;
+          &:hover {
+            color: $green;
+          }
+          &:focus {
+            border: none;
+            background-color: transparent;
+            outline: 0;
+          }
+        }
+      }
+      .views-exposed-widget {
+        float: none;
+        padding: 0;
+      }
+      select {
+        height: 40px;
+        margin-bottom: 16px !important;
+        border: none;
+        background-image: url($downarrow-black);
+        background-position: calc(100% - 14px);
+        background-repeat: no-repeat;
+        color: $dark-gray;
+        font-style: italic;
+        @include border-radius(0);
+        @include box-shadow(none);
+        @include appearance(none);
+        &:focus {
+          margin: 0;
+          border: none;
+          @include border-radius(0);
+          @include box-shadow(none);
+          @include appearance(none);
+        }
+      }
+      #edit-city-wrapper {
+        padding-bottom: 20px;
+        border-bottom: 2px solid $dark-gray;
+        #edit-city {
+          height: 40px;
+          border: none;
+          color: $dark-gray;
+          font-style: italic;
+          @include border-radius(0);
+          @include box-shadow(none);
+          @include appearance(none);
+        }
+      }
+    }
+  }
+}
+/* end */
+
+
+/**
+ *  Inner page
+ */
+
+/* email to seller section */
+#block-webform-client-block-17 {
+  padding: 15px 60px 15px 22px;
+  border-bottom: 4px solid $gray;
+  background-color: $light-gray;
+  .block-title {
+    color: $white;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  #webform-client-form-17 {
+    width: 100%;
+    #edit-submitted-first-name,
+    #edit-submitted-last-name {
+      float: left;
+      width: 32%;
+      margin-right: 15px;
+      font-size: 13px;
+    }
+    #edit-submitted-email {
+      float: left;
+      width: 32%;
+      margin-right: 0;
+      font-size: 13px;
+    }
+    input {
+      color: $dark-gray;
+      font-style: italic;
+      @include border-radius(0);
+    }
+    #edit-submitted-enter-your-message-text {
+      display: inline-block;
+      height: auto;
+      width: 66%;
+      margin-top: 13px;
+      padding-top: 10px;
+      font-size: 13px;
+      font-style: italic;
+      @include border-radius(0);
+    }
+    #edit-submitted-seller-email {
+      display: none;
+    }
+    .form-actions {
+      float: right;
+      clear: none;
+      button {
+        height: 42px;
+        width: auto;
+        padding: 20px 28px;
+        border: none;
+        background-color: $orange;
+        color: $white;
+        font-size: 12px;
+        line-height: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        @include border-radius(0);
+        &:hover {
+          background-color: $green;
+        }
+      }
+    }
+    .grippie {
+      display: none;
+    }
+    .webform-component-checkboxes {
+      float: left;
+      margin: 0;
+      margin-left: 0;
+      color: $dark-gray;
+      .input-rc {
+        display: inline-block;
+        input[type='checkbox'] {
+          display: none;
+          opacity: 0;
+        }
+        input[type='checkbox'] + .input-rc-span {
+          float: left;
+          display: inline-block;
+          height: 18px;
+          width: 18px;
+          margin: 0 10px -2px 0;
+          background-image: url($uncheck);
+          background-repeat: no-repeat;
+          cursor: pointer;
+          content: '';
+          @include border-radius(0 3px 3px 3px);
+        }
+        input[type='checkbox']:checked + .input-rc-span {
+          background-image: url($check);
+          background-repeat: no-repeat;
+        }
+      }
+      label {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+
+/**
+ * User register page css
+ */
+
+/* login */
+.tabs--primary {
+  width: 100%;
+  margin-top: 12px;
+  border-bottom: none;
+  text-align: center;
+  li {
+    margin-right: 3px;
+    &.active {
+      border: none;
+      background-color: $light-gray;
+      @include border-radius(0);
+      @include box-shadow(none);
+      @include appearance(none);
+      > a {
+        border-width: 0;
+        background-color: $light-gray;
+        color: $white;
+        font-weight: bold;
+        &:hover {
+          border-width: 0;
+          background-color: $light-gray;
+          color: $white;
+          font-weight: bold;
+          @include border-radius(0);
+        }
+        &:focus {
+          border-width: 0;
+          background-color: $light-gray;
+          color: $white;
+          font-weight: bold;
+          @include border-radius(0);
+        }
+      }
+    }
+    > a {
+      margin-right: 0;
+    }
+    a {
+      border: none;
+      background-color: $dark-gray;
+      color: $white;
+      font-weight: bold;
+      @include border-radius(0);
+      @include box-shadow(none);
+      @include appearance(none);
+      &:hover {
+        border: none;
+        background-color: $light-gray;
+        color: $white;
+        font-weight: bold;
+        @include border-radius(0);
+        @include box-shadow(none);
+        @include appearance(none);
+      }
+      &:focus {
+        border: none;
+        background-color: $dark-gray;
+        color: $white;
+        font-weight: bold;
+        @include border-radius(0);
+        @include box-shadow(none);
+        @include appearance(none);
+      }
+    }
+  }
+}
+#edit-actions {
+  button {
+    height: 42px;
+    width: auto;
+    border: none;
+    background-color: $orange;
+    color: $white;
+    font-weight: bold;
+    @include border-radius(0);
+    &:hover {
+      background-color: $light-gray;
+    }
+  }
+}
+#edit-name,
+#edit-pass,
+#edit-mail {
+  @include border-radius(0);
+}

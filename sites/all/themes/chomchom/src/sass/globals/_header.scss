@@ -1,0 +1,226 @@
+/**
+ * @file
+ * SCSS file to generate CSS.
+ *
+ * Header SCSS.
+ */
+
+
+/**
+ * Header section
+ */
+
+header {
+  .top-nav {
+    display: inline-block;
+    width: 100%;
+    background-color: $black;
+    #block-lang-dropdown-language {
+      float: left;
+      margin-left: 40px;
+      border: none;
+      background-color: transparent;
+      img {
+        float: left;
+        margin-top: 10px;
+      }
+      select {
+        float: left;
+        display: inline-block;
+        height: auto;
+        min-width: 95px;
+        width: auto !important;
+        padding: 5px 10px;
+        border: 0 none;
+        @include border-radius(0);
+        background-color: transparent;
+        color: $white;
+        font-size: 11px;
+        cursor: pointer;
+        @include box-shadow(none);
+        @include appearance(none);
+        option {
+          padding-left: 10px;
+          background-color: transparent;
+        }
+      }
+      .form-control {
+        &:focus {
+          padding-left: 10px;
+          border-color: transparent;
+          @include box-shadow(none);
+        }
+      }
+    }
+    #block-system-user-menu {
+      float: right;
+      ul.menu {
+        float: right;
+        display: inline-block;
+        margin: 03px 10px 0 0;
+        li {
+          display: inline-block;
+          &:last-child a {
+            border-right: none;
+          }
+          a {
+            padding: 0 05px;
+            border-right: 1px solid $white;
+            color: $white;
+            font-size: 9px;
+            font-weight: bold;
+            font-family: arial;
+            text-transform: uppercase;
+            &:hover {
+              background-color: transparent;
+              color: $orange;
+            }
+          }
+        }
+      }
+    }
+  }
+  /* Dropdown menu */
+  .navbar-header {
+    margin: 12px 100px 0 0;
+    .logo {
+      margin-left: 40px;
+    }
+  }
+  .navbar-collapse {
+    margin-bottom: 20px;
+    border-bottom: 3px solid $gray;
+  }
+  #block-superfish-1 {
+    float: left;
+    ul {
+      li {
+        margin: 0;
+        padding: 20px;
+      }
+      &.menu {
+        > li {
+          .sf-depth-1 {
+            padding: 10px 25px 10px 10px;
+            border: 2px solid transparent;
+            color: $black;
+            font-weight: bold;
+          }
+          a {
+            padding: 10px;
+            color: $white;
+            text-decoration: none;
+          }
+          ul {
+            li {
+              &:hover {
+                a {
+                  background-color: $light-gray;
+                  color: $white;
+                }
+              }
+            }
+          }
+          .sf-sub-indicator {
+            display: inline-block;
+            height: 7px;
+            width: 10px;
+            margin: 3px 0 0;
+            padding-left: 3px;
+            background-image: url($down-arrow);
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+          }
+          &:hover {
+            .sf-depth-1 {
+              border: 2px solid $black;
+              font-weight: bold;
+            }
+            ul {
+              margin: 28px 0 0 20px;
+              padding-left: 0 !important;
+              border: 2px solid $black;
+              background: transparent;
+              background-color: $dark-gray;
+              @include border-radius(0);
+            }
+          }
+          &.active-trail {
+            .sf-depth-1 {
+              border: 2px solid $black;
+            }
+          }
+        }
+        li {
+          &:hover {
+            ul {
+              li {
+                margin: 0;
+                padding: 0;
+              }
+            }
+          }
+        }
+      }
+      &.sf-menu {
+        ul {
+          padding: 0 !important;
+          border: none;
+        }
+        li {
+          .active-trail {
+            a {
+              background-color: $black-dark;
+            }
+          }
+        }
+      }
+    }
+  }
+  #block-block-5 {
+    float: right;
+    width: 135px !important;
+    margin-top: 20px;
+    background-color: $orange;
+    strong {
+      float: left;
+      width: 135px;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
+    a {
+      padding-top: 03px;
+      border-top: 1px solid $white;
+      color: $white;
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: $black-dark;
+    }
+  }
+  #block-block-6 {
+    float: right;
+    margin: 20px 0 0 10px;
+    background-color: $black-dark;
+    p {
+      a {
+        display: inline-block;
+        height: 21px;
+        width: 21px;
+        padding: 20px 28px;
+        background-image: url($search1);
+        background-position: center;
+        background-repeat: no-repeat;
+        text-indent: -9999px;
+      }
+    }
+  }
+  /* end */
+}
