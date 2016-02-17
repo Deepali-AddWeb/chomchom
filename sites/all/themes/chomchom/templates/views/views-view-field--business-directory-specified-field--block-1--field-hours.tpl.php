@@ -24,7 +24,13 @@
 ?>
 <?php 
 if (isset($row->field_field_hours[0]['rendered']['#markup']) && !empty($row->field_field_hours[0]['rendered']['#markup'])) {
-	$today = explode("day:",$row->field_field_hours[0]['rendered']['#markup']);
+  $today = explode("day:",$row->field_field_hours[0]['rendered']['#markup']);
+  $todaystatus = explode("NOW",$today[0]);
+  if (trim(strip_tags($todaystatus[0])) == 'CLOSED') {
+    print $todaystatus[0] ."NOW";
+ }else {
     print 'today'.$today[1];
+    print $todaystatus[0] ."NOW";
+  }
 }
  ?>
