@@ -11,7 +11,7 @@
 function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, $form_id) {
 
   if (isset($form['nid']['#value']) && !empty($form['nid']['#value'])) {
-    $form['field_category']['#access'] = 0 ;
+    //$form['field_category']['#access'] = 0 ;
   }
   $form['#attached']['js'] = array(
   $data = drupal_get_path('module', 'chomchom_fieldgroup') . '/js/chomchom_fieldgroup.js',
@@ -36,7 +36,9 @@ function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, 
       $title = $form[$key][LANGUAGE_NONE]['#title'];
       $form[$key][LANGUAGE_NONE]['#title'] = $title.'<span title="This field is required." class="form-required">*</span>';
 
-      
+      if (isset($form[$key][LANGUAGE_NONE]['#options']['_none']) && !empty($form[$key][LANGUAGE_NONE]['#options']['_none'])) {
+        unset($form[$key][LANGUAGE_NONE]['#options']['_none']);
+      }
     }
   }
   $form['#validate'][] = 'chomchom_fieldgroup_listing_form_validate';

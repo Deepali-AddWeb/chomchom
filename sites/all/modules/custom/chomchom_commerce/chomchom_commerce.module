@@ -103,6 +103,15 @@ function chomchom_commerce_preprocess_page(&$variables) {
   if(isset($variables['node']) && !empty($variables['node'])) {
     if ($variables['node']->type == 'product_display') {
     $_SESSION['nid'] = $_GET['nid'];
-    } 
+    }
+  } 
+}
+function chomchom_commerce_preprocess_html(&$variables) {
+  $node = node_load(arg(1));
+  if (isset($node->type) && !empty($node->type)) {
+    if ($node->type == 'listing') {
+    $tid = $node->field_category[LANGUAGE_NONE][0]['tid'];
+    $variables['classes_array'][] = "taxonomy-".$tid;
+    }
   } 
 }
