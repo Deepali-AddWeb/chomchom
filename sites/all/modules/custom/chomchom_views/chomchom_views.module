@@ -17,7 +17,9 @@ function chomchom_views_views_query_alter(&$view, &$query){
     (($view->name == 'sang_tiem_nails') && ($view->current_display == 'page'))||
     (($view->name == 'sang_tiem_nails') && ($view->current_display == 'block_1'))||
     (($view->name == 'business_for_sale') && ($view->current_display == 'page'))||
-    (($view->name == 'business_for_sale') && ($view->current_display == 'block_1'))
+    (($view->name == 'business_for_sale') && ($view->current_display == 'block_1'))||
+    (($view->name == 'business_directory') && ($view->current_display == 'page'))||
+    (($view->name == 'business_directory') && ($view->current_display == 'block_1'))
     ) {
    /* print('<pre style="color:red;">');
     print_r($_SESSION);
@@ -82,6 +84,7 @@ function chomchom_views_views_query_alter(&$view, &$query){
   (($view->name == 'can_tho_toc') && ($view->current_display == 'page')) ||
   (($view->name == 'quang_cao_rao_vat') && ($view->current_display == 'page')) ||
   (($view->name == 'sang_tiem_nails') && ($view->current_display == 'page'))||
+  (($view->name == 'business_directory') && ($view->current_display == 'page'))||
   (($view->name == 'business_for_sale') && ($view->current_display == 'page')))
    {
     if (isset($_REQUEST['sort_order']) && !empty($_REQUEST['sort_order'])) {
@@ -173,6 +176,7 @@ function chomchom_views_form_views_exposed_form_alter(&$form, &$form_state){
     ($form['#id'] == 'views-exposed-form-can-tho-toc-page') ||
     ($form['#id'] == 'views-exposed-form-sang-tiem-nails-page') ||
     ($form['#id'] == 'views-exposed-form-business-for-sale-page') ||
+    ($form['#id'] == 'views-exposed-form-business-directory-page') ||
     ($form['#id'] == 'views-exposed-form-quang-cao-rao-vat-page')){
     $form['sort_order']['#options']['ASC'] = 'Oldest to Newest';
     $form['sort_order']['#options']['DESC'] = 'Newest to Oldest';
