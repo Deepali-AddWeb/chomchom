@@ -8,6 +8,7 @@
 /*
  * After submit set nid to session
  */
+/*
 function chomchom_commerce_node_insert($node) {
   //set nid to session
   $_SESSION['nid'] = $node->nid;
@@ -18,7 +19,7 @@ function chomchom_commerce_node_insert($node) {
      * 4.sang tiem,5.sang tiem nails,6.business for sale,
      * 7.Quang Cao & Rao Vat ,8. Business Directory
      */
-    switch ($form_tid) {
+  /*  switch ($form_tid) {
       case '1':
       case '2':
       case '3':
@@ -40,7 +41,7 @@ function chomchom_commerce_node_insert($node) {
     } 
   }
 }
-
+*/
 
 /*
  * Implement hook_commerce_checkout_complete 
