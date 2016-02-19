@@ -1,9 +1,167 @@
-/**
+/*
  * @file
  * SCSS file to generate CSS.
  *
  * Form SCSS
  */
+
+
+/**
+ * Common css
+ */
+
+/* checkbox */
+.input-rc {
+  display: inline-block;
+  input[type='checkbox'] {
+    display: none;
+    opacity: 0;
+  }
+  input[type='checkbox'] + .input-rc-span {
+    float: left;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    margin: 0 10px -2px 0;
+    background-image: url($uncheck);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    content: '';
+    @include border-radius(0 3px 3px 3px);
+  }
+  input[type='checkbox']:checked + .input-rc-span {
+    background-image: url($check);
+    background-repeat: no-repeat;
+  }
+}
+/* end */
+
+/* radio button */
+.radio-rc {
+  display: inline-block;
+  input[type='radio'] {
+    display: none;
+    opacity: 0;
+  }
+  input[type='radio'] + .radio-rc-span {
+    float: left;
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    margin: 0 10px -2px 0;
+    background-image: url($radio-uncheck);
+    background-repeat: no-repeat;
+    background-size: 18px;
+    cursor: pointer;
+    content: '';
+    @include border-radius(0 3px 3px 3px);
+  }
+  input[type='radio']:checked + .radio-rc-span {
+    background-image: url($radio-check);
+    background-repeat: no-repeat;
+    background-size: 18px;
+  }
+}
+/* end */
+
+/* text box */
+input[type='text'] {
+  &.form-control {
+    height: 40px;
+    color: $dark-gray;
+    font-style: italic;
+    @include border-radius(0);
+  }
+}
+/* end */
+
+/* file upload */
+input[type='file'] {
+  padding: 0;
+}
+/* end */
+
+/* panel heading in back-end side */
+.panel {
+  @include border-radius(0);
+  &.panel-default {
+    > .panel-heading {
+      background-color: $light-gray;
+      color: $white;
+      font-weight: bold;
+      text-transform: capitalize;
+      @include border-radius(0);
+    }
+    &.form-wrapper {
+      margin-bottom: 25px;
+    }
+  }
+}
+/* location fieldset */
+fieldset {
+  margin-bottom: 30px;
+}
+/* end */
+
+/* autocomplete */
+.input-group-addon {
+  @include border-radius(0);
+}
+/* end */
+
+/* text area */
+textarea {
+  &.text-full {
+    @include border-radius(0);
+  }
+}
+/* end */
+
+/* button */
+.btn {
+  @include border-radius(0);
+}
+/* end */
+
+/* table in back-end side */
+table {
+  thead {
+    background-color: $light-gray;
+    color: $white;
+    th {
+      label {
+        margin-top: 05px;
+        padding-left: 15px;
+      }
+    }
+  }
+}
+/* end */
+
+/* select button */
+select,
+select.form-control {
+  height: 40px;
+  border-color: $gray;
+  border-style: solid;
+  border-width: 1px;
+  background-image: url($downarrow-black);
+  background-position: calc(100% - 14px);
+  background-repeat: no-repeat;
+  color: $dark-gray;
+  font-style: italic;
+  @include box-shadow(none);
+  @include border-radius(0);
+  @include appearance(none);
+  &:focus {
+    border-color: $gray;
+    @include border-radius(0);
+    @include appearance(none);
+    @include box-shadow(none);
+  }
+}
+/* end */
+
 
 /* Filter */
 .region-primary-first {
@@ -66,7 +224,6 @@
         float: left;
         button {
           float: left;
-          height: 42px;
           width: auto;
           padding: 20px 28px;
           border: none;
@@ -83,11 +240,13 @@
       }
       .views-reset-button {
         display: inline-block;
-        margin-top: 14px;
+        margin-top: 0;
         padding: 0;
-        .btn-default {
+        button {
+          width: auto;
           border: none;
           background-color: transparent;
+          color: $light-gray;
           line-height: 0;
           &:hover {
             color: $green;
@@ -104,27 +263,15 @@
         padding: 0;
       }
       select {
-        height: 40px;
         margin-bottom: 16px !important;
         border: none;
-        background-image: url($downarrow-black);
-        background-position: calc(100% - 14px);
-        background-repeat: no-repeat;
-        color: $dark-gray;
-        font-style: italic;
-        @include border-radius(0);
-        @include box-shadow(none);
-        @include appearance(none);
         &:focus {
           margin: 0;
           border: none;
-          @include border-radius(0);
-          @include box-shadow(none);
-          @include appearance(none);
         }
       }
       #edit-city-wrapper {
-        padding-bottom: 20px;
+        padding-bottom: 15px;
         border-bottom: 2px solid $dark-gray;
         #edit-city {
           height: 40px;
@@ -140,6 +287,37 @@
   }
 }
 /* end */
+
+/* All Listing exposed filter section */
+.views-exposed-form {
+  margin: 15px 0 10px;
+  .form-item-sort-by {
+    display: none;
+  }
+  .views-exposed-widget {
+    padding: 0 15px 0 0;
+  }
+  select {
+    width: 250px;
+  }
+  .btn {
+    height: 40px;
+    width: 100px;
+    border: none;
+    background-color: $orange;
+    font-weight: bold;
+    @include border-radius(0);
+    &:hover {
+      background-color: $light-gray;
+    }
+    &:focus {
+      background-color: $light-gray;
+      outline: none;
+    }
+  }
+}
+/* end */
+
 
 
 /**
@@ -221,29 +399,6 @@
       margin: 0;
       margin-left: 0;
       color: $dark-gray;
-      .input-rc {
-        display: inline-block;
-        input[type='checkbox'] {
-          display: none;
-          opacity: 0;
-        }
-        input[type='checkbox'] + .input-rc-span {
-          float: left;
-          display: inline-block;
-          height: 18px;
-          width: 18px;
-          margin: 0 10px -2px 0;
-          background-image: url($uncheck);
-          background-repeat: no-repeat;
-          cursor: pointer;
-          content: '';
-          @include border-radius(0 3px 3px 3px);
-        }
-        input[type='checkbox']:checked + .input-rc-span {
-          background-image: url($check);
-          background-repeat: no-repeat;
-        }
-      }
       label {
         padding-left: 0;
       }
@@ -341,4 +496,265 @@
 #edit-pass,
 #edit-mail {
   @include border-radius(0);
+}
+
+
+/**
+ *  Back-end css
+ */
+
+/* Post an add for anonymous user */
+#listing-node-form {
+  .panel-collapse {
+    select {
+      width: 350px;
+      background-color: transparent;
+    }
+  }
+  #gmap-auto1map-gmap0 {
+    margin-bottom: 30px;
+  }
+  #edit-field-category {
+    select {
+      width: 250px;
+      margin-right: 15px;
+      background-color: transparent;
+    }
+    label {
+      margin: 17px 10px 0 0;
+    }
+  }
+  #edit-body-und-0-format {
+    display: none;
+  }
+  .help-block {
+    display: none;
+  }
+  .group-can-tho {
+    width: 100%;
+    h3 {
+      width: 100%;
+      padding: 10px 15px;
+      background-color: $light-gray;
+      color: $white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    > .form-group {
+      float: left;
+      height: auto;
+      width: 33.33%;
+    }
+  }
+  /* end */
+
+  /* Business directory category */
+  #edit-field-hours {
+    select {
+      height: 30px;
+      width: 90px;
+      margin-right: 10px;
+    }
+    a {
+      padding: 5px 15px;
+      background-color: $red;
+      color: $white;
+      text-decoration: none;
+      &:hover {
+        background-color: $light-gray;
+      }
+    }
+  }
+  #edit-actions {
+    margin-top: 12px;
+  }
+}
+/* end */
+
+/* commerce add to cart */
+.commerce-add-to-cart {
+  button {
+    width: auto;
+    padding: 20px 22px;
+    border: none;
+    background-color: $orange;
+    font-size: 12px;
+    line-height: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    @include border-radius(0);
+    &:hover {
+      background-color: $light-gray;
+    }
+    &:focus {
+      background-color: $orange;
+    }
+  }
+}
+/* end */
+
+/* cart page */
+#views-form-commerce-cart-form-default {
+  tbody {
+    tr {
+      td {
+        a {
+          color: $light-gray;
+          text-decoration: none;
+          &:hover {
+            color: $blue;
+          }
+        }
+        button {
+          width: auto;
+          padding: 14px 10px;
+          border: none;
+          background-color: $red;
+          font-size: 12px;
+          line-height: 0;
+          font-weight: bold;
+          text-transform: uppercase;
+          @include border-radius(0);
+          &:hover {
+            background-color: $light-gray;
+          }
+          &:focus {
+            background-color: $red;
+          }
+        }
+      }
+    }
+  }
+  .line-item-total {
+    padding: 10px;
+    background-color: $light-gray;
+    color: $white;
+  }
+}
+/* end */
+
+/* checkout page*/
+#commerce-checkout-form-checkout {
+  input {
+    margin-bottom: 15px;
+  }
+  button {
+    float: none;
+    width: auto;
+    padding: 20px 28px;
+    border: none;
+    background-color: $orange;
+    color: $white;
+    font-size: 12px;
+    line-height: 0;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    @include border-radius(0);
+    &:hover {
+      background-color: $light-gray;
+      color: $white;
+    }
+  }
+  .button-operator {
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .view-commerce-cart-summary {
+    table {
+      tr {
+        td {
+          background-color: $gray;
+        }
+      }
+    }
+  }
+  #addressfield-wrapper {
+    .form-group {
+      width: 100%;
+    }
+  }
+}
+/* end */
+
+/* review page */
+#commerce-checkout-form-review {
+  #edit-checkout-review {
+    border: 2px solid $dark-gray;
+    table {
+      tr {
+        &.pane-title {
+          background-color: $light-gray;
+          color: $white;
+          td {
+            border: none;
+          }
+        }
+        &.pane-data {
+          &:hover {
+            background-color: transparent;
+          }
+          td {
+            &.pane-data-full {
+              table {
+                tbody {
+                  tr {
+                    background-color: $dark-gray;
+                    color: $white;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  #payment-details {
+    input {
+      width: 54%;
+    }
+    select {
+      float: left;
+      width: 24%;
+    }
+    label {
+      float: left;
+      width: 100px;
+      margin: 10px 15px 0 0;
+    }
+    span {
+      &.commerce-month-year-divider {
+        float: left;
+        margin: 0 20px;
+        font-size: 30px;
+      }
+    }
+  }
+  #edit-commerce-payment-payment-method {
+    img {
+      display: inline-block;
+    }
+  }
+  #edit-buttons {
+    &.checkout-buttons {
+      button {
+        height: 40px;
+        background-color: $orange;
+        color: $white;
+        font-weight: bold;
+        text-decoration: none;
+        &:hover {
+          background-color: $light-gray;
+        }
+      }
+    }
+    span {
+      &.button-operator {
+        margin: 0 8px;
+        font-size: 20px;
+      }
+    }
+  }
 }
