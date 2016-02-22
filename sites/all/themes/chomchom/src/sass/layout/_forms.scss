@@ -513,6 +513,7 @@ select.form-control {
   }
   #gmap-auto1map-gmap0 {
     margin-bottom: 30px;
+    width: 100% !important;
   }
   #edit-field-category {
     select {
@@ -533,17 +534,35 @@ select.form-control {
   .group-can-tho {
     width: 100%;
     h3 {
-      width: 100%;
-      padding: 10px 15px;
-      background-color: $light-gray;
-      color: $white;
-      font-size: 16px;
-      font-weight: bold;
+      display: none;
     }
     > .form-group {
       float: left;
       height: auto;
       width: 33.33%;
+    }
+  }
+  .group-sang-tiem-nails {
+    h3 {
+      display: none;
+    }
+    > .form-group {
+      float: left;
+      height: 130px;
+      width: 33.33%;
+      margin-top: 15px;
+    }
+  }
+  #switch_edit-body-und-0-value {
+    display: none !important;
+  }
+  .form-item-locations-0-province {
+    .input-group-addon {
+      display: inline-block;
+      height: 40px;
+      width: auto;
+      padding: 9px;
+      white-space: normal;
     }
   }
   /* end */
@@ -552,8 +571,8 @@ select.form-control {
   #edit-field-hours {
     select {
       height: 30px;
-      width: 90px;
-      margin-right: 10px;
+      width: 85px;
+      margin: 0 10px 0 05px;
     }
     a {
       padding: 5px 15px;
