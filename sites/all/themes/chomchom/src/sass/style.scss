@@ -14,6 +14,14 @@
 @import 'components/fonts';
 @import 'layout/forms';
 
+/* common css */
+.view-empty {
+  margin: 15px 0;
+  padding: 20px;
+  background-color: $error;
+  color: $maroon;
+}
+
 
 /**
  *  Content section
@@ -488,21 +496,26 @@
 /* end */
 
 /* Business directory second page */
+#block-views-business-directory-block-1 {
+  h2 {
+    margin-bottom: 0;
+  }
+}
 .view-business-directory {
+  .view-header {
+    margin-top: 25px;
+  }
   .views-row {
     padding: 10px;
     border-top: 2px solid $gray;
     border-right: 3px solid $gray;
     border-bottom: 2px solid $gray;
     border-left: 3px solid $gray;
-    background-color: $skyblue;
     @include box-shadow(none);
-    &:first-child {
-      border-top: none;
-    }
     .business-top {
       .business-top-left {
         img {
+          margin-right: 25px;
           @include border-radius(10px);
         }
       }
@@ -534,13 +547,26 @@
           }
         }
         .business-top-right-thrid {
+          display: inline-block;
+          margin: 10px 0 35px;
           .business-top-right-thrid-first {
             display: inline-block;
+            width: 50%;
+            padding-left: 35px;
+            background-image: url($phone1);
+            background-position: 4px 4px;
+            background-repeat: no-repeat;
+            font-size: 18px;
+            font-weight: bold;
           }
           .business-top-right-thrid-second {
             float: right;
             display: inline-block;
-            margin-left: 20px;
+            width: 50%;
+            padding-left: 50px;
+            background-image: url($watch);
+            background-position: -16px -8px;
+            background-repeat: no-repeat;
           }
         }
       }
@@ -551,8 +577,6 @@
         margin-left: 50px;
         a {
           float: left;
-          padding: 0 44px;
-          border-right: 2px solid $blue;
           color: $blue;
           font-weight: bold;
           text-decoration: none;
@@ -560,15 +584,26 @@
             color: $green;
           }
         }
+        > div {
+          display: inline-block;
+          padding: 0 44px;
+          border-right: 2px solid $blue;
+          &:last-child {
+            border-right: none;
+          }
+        }
       }
       .business-bottom-bottom {
         display: inline-block;
         width: 100%;
         margin-top: 15px;
-        color: $dark-gray;
-        font-size: 12px;
+        color: $light-gray;
+        font-size: 13px;
         font-style: italic;
       }
+    }
+    &.fea-listing {
+      background-color: $light-skyblue;
     }
   }
 }
