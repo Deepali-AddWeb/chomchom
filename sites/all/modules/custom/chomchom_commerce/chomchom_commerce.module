@@ -4,11 +4,10 @@
  * commerce custom code write here.
  */
 
-
 /*
  * After submit set nid to session
  */
-/*
+
 function chomchom_commerce_node_insert($node) {
   //set nid to session
   $_SESSION['nid'] = $node->nid;
@@ -19,7 +18,7 @@ function chomchom_commerce_node_insert($node) {
      * 4.sang tiem,5.sang tiem nails,6.business for sale,
      * 7.Quang Cao & Rao Vat ,8. Business Directory
      */
-  /*  switch ($form_tid) {
+    switch ($form_tid) {
       case '1':
       case '2':
       case '3':
@@ -41,7 +40,7 @@ function chomchom_commerce_node_insert($node) {
     } 
   }
 }
-*/
+
 
 /*
  * Implement hook_commerce_checkout_complete 
@@ -80,7 +79,7 @@ function chomchom_commerce_commerce_checkout_complete($order) {
     $node->status = '1';
     $node->field_featured_date[LANGUAGE_NONE][0]['value'] = $featured_date;
     $node->field_expire_date[LANGUAGE_NONE][0]['value'] = $month_date;
-    $to = "denisha.addweb@gmail.com"; // to e-mail address
+    /*$to = "denisha.addweb@gmail.com"; // to e-mail address
     $from = "test@example.com"; // from e-mail address
      
     $subject = "text to display in e-mail subject"; // subject of e-mail
@@ -90,9 +89,9 @@ function chomchom_commerce_commerce_checkout_complete($order) {
         'subject' => $subject,
         'body' => $body,
         );
-    drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);
+    drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);*/
     node_save($node);
-    unset($_SESSION['nid']);
+    //unset($_SESSION['nid']);
   }
 }
 
@@ -100,10 +99,13 @@ function chomchom_commerce_commerce_checkout_complete($order) {
 /*
  * Implement template_preprocess_page 
  */
+
 function chomchom_commerce_preprocess_page(&$variables) {
   if(isset($variables['node']) && !empty($variables['node'])) {
     if ($variables['node']->type == 'product_display') {
-    $_SESSION['nid'] = $_GET['nid'];
+      if (isset($_GET['nid']) && !empty($_GET['nid'])){
+        $_SESSION['nid'] = $_GET['nid'];
+      }
     }
   } 
 }
