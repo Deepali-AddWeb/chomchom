@@ -36,6 +36,7 @@ header {
         background-color: transparent;
         color: $white;
         font-size: 11px;
+        font-style: normal;
         cursor: pointer;
         @include box-shadow(none);
         @include appearance(none);
@@ -75,6 +76,9 @@ header {
               background-color: transparent;
               color: $orange;
             }
+            &:focus {
+              background-color: transparent;
+            }
           }
         }
       }
@@ -90,13 +94,14 @@ header {
   .navbar-collapse {
     margin-bottom: 20px;
     border-bottom: 3px solid $gray;
+    text-transform: uppercase;
   }
   #block-superfish-1 {
     float: left;
     ul {
       li {
         margin: 0;
-        padding: 20px;
+        padding: 15px;
       }
       &.menu {
         > li {
@@ -138,7 +143,7 @@ header {
               font-weight: bold;
             }
             ul {
-              margin: 28px 0 0 20px;
+              margin: 28px 0 0 16px;
               padding-left: 0 !important;
               border: 2px solid $black;
               background: transparent;
@@ -181,7 +186,7 @@ header {
   #block-block-5 {
     float: right;
     width: 135px !important;
-    margin-top: 20px;
+    margin-top: 15px;
     background-color: $orange;
     strong {
       float: left;
@@ -207,7 +212,7 @@ header {
   }
   #block-block-6 {
     float: right;
-    margin: 20px 0 0 10px;
+    margin: 15px 0 0 10px;
     background-color: $black-dark;
     p {
       a {

@@ -5,13 +5,17 @@
  * All variables used in SCSS are defined in this file.
  */
 
-
+/* color variable */
 $white:           #FFF;
 $black:           #000;
 $blue:            #0A7CD9;
+$red:             #F00;
 $skyblue:         #DEF1FE;
+$silver:          #E5E5E5;
+$light-silver:    #F2EFF1;
 $black-dark:      #373737;
 $orange:          #F8921C;
+$dark-orange:     #FD911D;
 $gray:            #E0E0E0;
 $light-gray:      #363636;
 $dark-gray:       #8D8D8D;
@@ -20,7 +24,6 @@ $gray-footer:     #B6B6B6;
 $footer:          #060606;
 $green:           #5CB445;
 $light:           #D0D0D0;
-
 
 /* background images variable */
 $down-arrow:         '../images/downarrow.png';
@@ -31,10 +34,16 @@ $google:             '../images/g+.png';
 $facebook1:          '../images/facebook.png';
 $phone1:             '../images/phone.png';
 $location1:          '../images/lcaotion.png';
+$dark-location1:     '../images/dark-location.png';
 $slider-prev-arrow:  '../images/arrow.png';
 $slider-next-arrow1: '../images/arrow1.png';
-$uncheck:           '../images/uncheck.png';
+$uncheck:            '../images/uncheck.png';
 $check:              '../images/check.png';
+$watch:              '../images/watch.png';
+$edit:               '../images/edit.png';
+$radio-check:      '../images/radio-checked.png';
+$radio-uncheck:      '../images/radio.png';
+
 
 /* Mixin - groups of css declarations */
 @mixin width($value, $value1) {

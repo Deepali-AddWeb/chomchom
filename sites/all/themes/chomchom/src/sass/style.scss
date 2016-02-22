@@ -33,15 +33,20 @@
     color: $white;
     font-size: 14px;
     font-weight: bold;
+    text-transform: capitalize;
   }
 }
-.page-header {
+.view-header {
   margin-top: 14px;
-  padding: 10px 0 10px 20px;
+  padding: 9px 0 9px 20px;
   background-color: $light-gray;
   color: $white;
   font-size: 14px;
   font-weight: bold;
+  text-transform: capitalize;
+}
+.page-header {
+  display: none;
 }
 .views-row {
   margin-top: 10px 0;
@@ -68,12 +73,12 @@
     border-bottom: 1px solid $gray;
     .main-sub-right-top-save {
       float: right;
-      padding: 03px 10px;
-      border: 1px solid $black;
-      color: rgb(0, 112, 216);
-      font-weight: bold;
+      margin-bottom: 2px;
       a {
+        padding: 03px 10px;
+        border: 1px solid $black;
         color: $blue;
+        font-weight: bold;
         text-decoration: none;
         &:hover {
           color: $light-gray;
@@ -142,14 +147,19 @@
     border: 1px solid $gray;
     border-bottom: 3px solid $gray;
   }
+  &.region {
+    margin-top: 10px;
+  }
   h1 {
     display: none;
   }
   .innerpage-heading {
     width: 100%;
+    margin-bottom: 10px;
     padding: 9px 15px;
     background-color: $light-gray;
     color: $white;
+    text-transform: capitalize;
     .views-field-title {
       float: left;
       a {
@@ -334,3 +344,234 @@
     }
   }
 }
+
+/* Business directory page */
+.taxonomy-8 {
+  .view-business-directory-specified-field {
+    &.view-display-id-block_1 {
+      padding: 28px;
+      .views-field-title {
+        color: $black-dark;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+      .views-field-nothing {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        .full-address {
+          max-width: 40%;
+          width: 100%;
+          margin-top: 05px;
+          background-image: url($dark-location1);
+          background-position: -21px -8px;
+          background-repeat: no-repeat;
+          background-size: 60px;
+          font-size: 15px;
+          a {
+            margin-top: 10px;
+            font-size: 15px;
+          }
+        }
+      }
+      .views-field-field-contact-phone {
+        .field-content {
+          display: inline-block;
+          width: 100%;
+          margin: 15px 0 28px;
+          padding-left: 34px;
+          background-image: url($phone1);
+          background-repeat: no-repeat;
+          background-size: 20px auto;
+          font-size: 19px;
+          font-weight: bold;
+
+        }
+      }
+      .views-field-field-hours {
+        float: left;
+        height: 75px;
+        width: 50%;
+        margin-bottom: 15px;
+        padding: 15px;
+        border: 1px solid $light-gray;
+        border-right: none;
+        border-left: none;
+        background-color: $light-silver;
+        background-image: url($watch);
+        background-position: 0 6px;
+        background-repeat: no-repeat;
+        .oh-current-closed {
+          padding-left: 41px;
+          color: $green;
+          font-weight: bold;
+        }
+      }
+      .views-field-field-website {
+        float: left;
+        height: 75px;
+        width: 50%;
+        padding: 24px 15px 15px;
+        border: 1px solid $light-gray;
+        border-right: none;
+        border-left: none;
+        background-color: $silver;
+        .views-label-field-website {
+          float: left;
+          margin-right: 15px;
+          color: $orange;
+          font-size: 21px;
+          font-weight: bold;
+        }
+        .field-content {
+          a {
+            color: $light-gray;
+            font-size: 21px;
+            text-decoration: none;
+            &:hover {
+              color: $green;
+            }
+          }
+        }
+      }
+    }
+    &.view-display-id-block {
+      padding: 24px;
+      .views-field {
+        margin-top: 24px;
+        line-height: 24px;
+        &.views-field-field-tagline {
+          display: inline-block;
+          width: calc(100% + 48px);
+          margin-left: -24px;
+          padding: 10px 0 10px 20px;
+          background-color: $light-gray;
+          color: $white;
+          font-size: 18px;
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+        .views-label {
+          float: left;
+          max-width: 200px;
+          width: 100%;
+          color: $light-gray;
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+        .field-content {
+          display: inline-block;
+          width: calc(100% - 215px);
+          a {
+            color: $light-gray;
+            text-decoration: none;
+            &:hover {
+              color: $green;
+            }
+          }
+        }
+        .inline-text {
+          color: $light-gray;
+          font-weight: bold;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+  .bxslider-ths-field_image-processed {
+    margin: 27px;
+    border: none;
+  }
+}
+/* end */
+
+/* Business directory second page */
+.view-business-directory {
+  .views-row {
+    padding: 10px;
+    border-top: 2px solid $gray;
+    border-right: 3px solid $gray;
+    border-bottom: 2px solid $gray;
+    border-left: 3px solid $gray;
+    background-color: $skyblue;
+    @include box-shadow(none);
+    &:first-child {
+      border-top: none;
+    }
+    .business-top {
+      .business-top-left {
+        img {
+          @include border-radius(10px);
+        }
+      }
+      .business-top-right {
+        display: inline-block;
+        .business-top-right-first {
+          a {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: $black;
+            font-size: 24px;
+            text-decoration: none;
+            text-transform: capitalize;
+          }
+        }
+        .business-top-right-second {
+          height: 40px;
+          padding-left: 34px;
+          background-image: url($location1);
+          background-position: 0 0;
+          background-repeat: no-repeat;
+          background-size: 17px;
+          .adr {
+            div,
+            span {
+              display: inline-block;
+              text-transform: capitalize;
+            }
+          }
+        }
+        .business-top-right-thrid {
+          .business-top-right-thrid-first {
+            display: inline-block;
+          }
+          .business-top-right-thrid-second {
+            float: right;
+            display: inline-block;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+    .business-bottom {
+      .business-bottom-top {
+        width: calc(100% - 100px);
+        margin-left: 50px;
+        a {
+          float: left;
+          padding: 0 44px;
+          border-right: 2px solid $blue;
+          color: $blue;
+          font-weight: bold;
+          text-decoration: none;
+          &:hover {
+            color: $green;
+          }
+        }
+      }
+      .business-bottom-bottom {
+        display: inline-block;
+        width: 100%;
+        margin-top: 15px;
+        color: $dark-gray;
+        font-size: 12px;
+        font-style: italic;
+      }
+    }
+  }
+}
+/* end */
+
+
