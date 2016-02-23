@@ -10,7 +10,7 @@
  */
 function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, $form_id) {
 
-  if (isset($form['nid']['#value']) && !empty($form['nid']['#value'])) {
+  if (isset($form['nid']['#value']) && !empty($form['nid']['#value'])) {  
     //$form['field_category']['#access'] = 0 ;
   }
   $form['#attached']['js'] = array(
@@ -76,6 +76,7 @@ function chomchom_fieldgroup_listing_form_validate($form, &$form_state) {
       case '7':
           break;
       case '8':
+        $exclude_field = array('field_hours');
         validate_fields('group_business_directory', $form, $form_state);
           break;
       default:
@@ -91,13 +92,14 @@ function chomchom_fieldgroup_listing_form_validate($form, &$form_state) {
 function validate_fields($group, $form, $form_state, $exclude_field = array()) {
   /*print('form_state::<pre style="color:red;">');
   print_r($form_state['values']);
-  print('</pre>');
-  exit;*/
+  print('</pre>');*/
   //Get field names from field group
   $field_names = $form_state['complete form']['#groups'][$group]->children;
+
   foreach ($field_names as $fn => $fv) {
     //Check can tho group same field remove from required
     if (!in_array($fv, $exclude_field)) {
+      
       if (isset($form[$fv][LANGUAGE_NONE]['select'])) {
         //Select or other field
         $title = $form[$fv][LANGUAGE_NONE]['select']['#title'];
@@ -108,16 +110,25 @@ function validate_fields($group, $form, $form_state, $exclude_field = array()) {
       }
       //Title remove * sign
       $title = explode('<', $title);
+
       //Check field empty
-      if((isset($form_state['values'][$fv][LANGUAGE_NONE][0]['value'])) && (empty($form_state['values'][$fv][LANGUAGE_NONE][0]['value']))){
+      /*print('fv::<pre style="color:red;">');
+      print_r($fv);
+      print('</pre>');*/
+
+      if (empty($form_state['values'][$fv][LANGUAGE_NONE]) || array_key_exists('value', $form_state['values'][$fv][LANGUAGE_NONE][0]) && (empty($form_state['values'][$fv][LANGUAGE_NONE][0]['value']))){
+        echo "string";
         form_set_error($fv, t($title['0'] . ' field is required.'));
       }
-      elseif((isset($form_state['values'][$fv][LANGUAGE_NONE][0]['url'])) && (empty($form_state['values'][$fv][LANGUAGE_NONE][0]['url']))) {
+      elseif (empty($form_state['values'][$fv][LANGUAGE_NONE]) || array_key_exists('url', $form_state['values'][$fv][LANGUAGE_NONE][0]) && (empty($form_state['values'][$fv][LANGUAGE_NONE][0]['url']))) {
+        echo "string1";
         form_set_error($fv, t($title['0'] . ' field is required.'));
       }
-      elseif((isset($form_state['values'][$fv][LANGUAGE_NONE][0]['name'])) && (empty($form_state['values'][$fv][LANGUAGE_NONE][0]['name']))) {
+      elseif (empty($form_state['values'][$fv][LANGUAGE_NONE]) || array_key_exists('name', $form_state['values'][$fv][LANGUAGE_NONE][0]) && (empty($form_state['values'][$fv][LANGUAGE_NONE][0]['name']))) {
+        echo "string2";
         form_set_error($fv, t($title['0'] . ' field is required.'));
       }
     }
   }
+  //exit;
 }

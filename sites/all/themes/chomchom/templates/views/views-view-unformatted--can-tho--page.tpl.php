@@ -45,6 +45,12 @@
 						<div class='tho-lam'>
 							<?php print $row['field_tho_lam'];?>
 						</div>
+						<?php if(isset($row['field_kinh_nghiem_toc']) && !empty($row['field_kinh_nghiem_toc'])) { ?>
+							<div class='Kinh-Nghiem'>
+							<label for="Kinh-Nghiem">Kinh-Nghiem:</label>
+							<?php print $row['field_kinh_nghiem_toc'];?>
+							</div>
+						<?php } ?>
 						<?php if(isset($row['field_kinh_nghiem']) && !empty($row['field_kinh_nghiem'])) { ?>
 							<div class='Kinh-Nghiem'>
 							<label for="Kinh-Nghiem">Kinh-Nghiem:</label>
@@ -98,6 +104,6 @@
 		<?php print $row['body'];?>
 		</div>
 	</div>
-
+	
   </div>
 <?php endforeach; ?>

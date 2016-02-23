@@ -3,13 +3,24 @@
  * all custom code write here.
  */
 
+/*
+function twilio_data(){
+$path = libraries_get_path('twilio');
+require($path . "/Services/Twilio.php");
+$accountSID = variable_get('twilio_account');
+$authToken = variable_get('twilio_token');
+$client = new Services_Twilio($accountSID, $authToken);
+return $client;
+}*/
+
 
 /*
  * Implements hook_cron.
  */
-function chomchom_general_cron() { 
+function chomchom_general_cron() {
   //Get today date 
   $todate = date('Y-m-d');
+
 
   //load listing type all publish node
   $nodes = node_load_multiple(array(), array('type' => 'listing','status' => 1));
@@ -47,6 +58,21 @@ function chomchom_general_cron() {
       }
       //todat date and expire date same then unpublish node
       if ($todate == $edate[0] ){
+        $user = user_load($nodevalue->uid);
+        if (isset($user->twilio_user) && !empty($user->twilio_user)) {
+         /* $from = variable_get('twilio_number');
+
+     $phone_numbers = $user->twilio_user['country'].$user->twilio_user['number'];
+          //$client->account->sms_messages->create($from, $phone_numbers, 'test');
+        print('user::<pre style="color:red;">');
+        print_r($user);
+        print('</pre>');
+        print('$edate[0]::<pre style="color:red;">');
+        print_r($phone_numbers);
+        print('</pre>');
+        exit;*/
+        }
+        
         $nodevalue->status = '0';
         $to = "denisha.addweb@gmail.com"; // to e-mail address
         $from = "test@example.com"; // from e-mail address
@@ -70,3 +96,4 @@ function chomchom_general_cron() {
     } 
   }
 }
+
