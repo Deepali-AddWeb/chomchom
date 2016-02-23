@@ -120,6 +120,17 @@ textarea {
 /* button */
 .btn {
   @include border-radius(0);
+  &:focus {
+    outline: 0;
+  }
+}
+button {
+  &:hover {
+    outline: 0;
+  }
+  &:focus {
+    outline: 0;
+  }
 }
 /* end */
 
@@ -161,6 +172,13 @@ select.form-control {
   }
 }
 /* end */
+
+.grippie {
+  display: none;
+}
+.form-required {
+  color: $red;
+}
 
 
 /* Filter */
@@ -512,14 +530,19 @@ select.form-control {
     }
   }
   #gmap-auto1map-gmap0 {
-    margin-bottom: 30px;
     width: 100% !important;
+    margin-bottom: 30px;
   }
   #edit-field-category {
     select {
       width: 250px;
       margin-right: 15px;
       background-color: transparent;
+      &:last-child {
+        > option:first-child {
+          display: none;
+        }
+      }
     }
     label {
       margin: 17px 10px 0 0;
@@ -565,6 +588,21 @@ select.form-control {
       white-space: normal;
     }
   }
+  #edit-field-featured-date,
+  #edit-field-expire-date {
+    display: none;
+  }
+  #edit-field-tiem-sq-ft {
+    clear: both;
+  }
+  #edit-field-ghe {
+    input {
+      width: 90%;
+    }
+  }
+  #edit-locations-0-province {
+    width: 314px;
+  }
   /* end */
 
   /* Business directory category */
@@ -576,7 +614,7 @@ select.form-control {
     }
     a {
       padding: 5px 15px;
-      background-color: $red;
+      background-color: $orange;
       color: $white;
       text-decoration: none;
       &:hover {
@@ -628,7 +666,7 @@ select.form-control {
           width: auto;
           padding: 14px 10px;
           border: none;
-          background-color: $red;
+          background-color: $orange;
           font-size: 12px;
           line-height: 0;
           font-weight: bold;
@@ -638,7 +676,7 @@ select.form-control {
             background-color: $light-gray;
           }
           &:focus {
-            background-color: $red;
+            background-color: $orange;
           }
         }
       }
@@ -694,6 +732,10 @@ select.form-control {
       width: 100%;
     }
   }
+  .messages {
+    margin-bottom: 15px;
+    padding: 15px 10px;
+    }
 }
 /* end */
 
@@ -754,6 +796,15 @@ select.form-control {
   #edit-commerce-payment-payment-method {
     img {
       display: inline-block;
+      &.commerce-paypal-icon {
+        margin-top: -13px;
+      }
+    }
+    .commerce-paypal-icons {
+      margin-top: 15px;
+      }
+    .radio {
+      margin-top: 25px;
     }
   }
   #edit-buttons {
@@ -774,6 +825,18 @@ select.form-control {
         margin: 0 8px;
         font-size: 20px;
       }
+    }
+  }
+}
+#commerce-paypal-wps-redirect-form {
+  button {
+    margin-top: 10px;
+    border: none;
+    background-color: $orange;
+    color: $white;
+    font-weight: bold;
+    &:hover {
+      background-color: $light-gray;
     }
   }
 }
