@@ -176,6 +176,9 @@ select.form-control {
 .grippie {
   display: none;
 }
+.form-required {
+  color: $red;
+}
 
 
 /* Filter */
@@ -535,6 +538,11 @@ select.form-control {
       width: 250px;
       margin-right: 15px;
       background-color: transparent;
+      &:last-child {
+        > option:first-child {
+          display: none;
+        }
+      }
     }
     label {
       margin: 17px 10px 0 0;
@@ -788,6 +796,15 @@ select.form-control {
   #edit-commerce-payment-payment-method {
     img {
       display: inline-block;
+      &.commerce-paypal-icon {
+        margin-top: -13px;
+      }
+    }
+    .commerce-paypal-icons {
+      margin-top: 15px;
+      }
+    .radio {
+      margin-top: 25px;
     }
   }
   #edit-buttons {
@@ -808,6 +825,18 @@ select.form-control {
         margin: 0 8px;
         font-size: 20px;
       }
+    }
+  }
+}
+#commerce-paypal-wps-redirect-form {
+  button {
+    margin-top: 10px;
+    border: none;
+    background-color: $orange;
+    color: $white;
+    font-weight: bold;
+    &:hover {
+      background-color: $light-gray;
     }
   }
 }

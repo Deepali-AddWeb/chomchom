@@ -17,9 +17,7 @@
 /* common css */
 .view-empty {
   margin: 15px 0;
-  padding: 20px;
-  background-color: $error;
-  color: $maroon;
+  color: $black;
 }
 
 
@@ -604,6 +602,49 @@
     }
     &.fea-listing {
       background-color: $light-skyblue;
+    }
+  }
+}
+/* end */
+
+/* Unpublish ads */
+
+#block-views-unpublish-ads-block {
+  .views-row {
+    padding: 15px;
+    .views-field-title {
+      display: inline-block;
+      width: 150px;
+    }
+    .views-field-field-category {
+      display: inline-block;
+    }
+    .views-field-nid {
+      display: inline-block;
+      width: 150px;
+      text-align: center;
+      .field-content {
+        a {
+          padding: 08px;
+          background-color: $orange;
+          color: $white;
+          font-weight: bold;
+          text-decoration: none;
+          &:hover {
+            background-color: $light-gray;
+          }
+          &:focus {
+            outline: 0;
+          }
+        }
+      }
+    }
+    .views-label {
+      display: inline-block;
+    }
+    .field-content {
+      display: inline-block;
+      width: 150px;
     }
   }
 }
