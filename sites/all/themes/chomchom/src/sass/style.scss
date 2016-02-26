@@ -41,7 +41,7 @@ body {
     padding: 10px 0 10px 20px;
     background-color: $light-black;
     color: $white;
-    font-size: 15px;
+    font-size: 16px;
     font-family: $opensans-bold;
     text-transform: capitalize;
   }
@@ -51,7 +51,7 @@ body {
   padding: 9px 0 9px 20px;
   background-color: $light-black;
   color: $white;
-  font-size: 14px;
+  font-size: 16px;
   font-family: $opensans-bold;
   text-transform: capitalize;
 }
@@ -68,11 +68,11 @@ body {
     label[for=title] {
       color: $black;
       font-size: 15px;
-      font-family: $opensans-regular;
+      font-family: $opensans-bold;
     }
     a {
       color: $black;
-      font-size: 18px;
+      font-size: 19px;
       font-family: $opensans-bold;
       text-decoration: none;
     }
@@ -89,7 +89,7 @@ body {
         padding: 03px 10px;
         border: 1px solid $black;
         color: $blue;
-        font-weight: bold;
+        font-family: $opensans-bold;
         text-decoration: none;
         &:hover {
           color: $light-gray;
@@ -107,14 +107,15 @@ body {
   .main-sub-right-bottom-left {
     display: inline-block;
     margin-top: 4px;
-    font-size: 11px;
+    font-size: 12px;
+    font-family: $opensans-semibold;
     label {
       font-weight: normal;
     }
     .category {
       color: $black;
       font-size: 13px;
-      font-family: $opensans-semibold;
+      font-family: $opensans-extrabold;
       text-decoration: none;
     }
   }
@@ -122,11 +123,12 @@ body {
     float: right;
     margin: 4px 30px 0 0;
     color: $light-gray;
-    font-size: 11px;
+    font-size: 12px;
+    font-family: $opensans-semibold;
     label[for=contact_name] {
       color: $black;
       font-size: 13px;
-      font-family: $opensans-semibold;
+      font-family: $opensans-extrabold;
     }
     label {
       color: #333;
@@ -139,7 +141,7 @@ body {
       border-top: 1px solid $gray;
       background-color: $skyblue;
       font-size: 12px;
-      font-style: italic;
+      font-family: $opensans-italic;
     }
   }
 }
@@ -364,9 +366,9 @@ body {
     &.view-display-id-block_1 {
       padding: 28px;
       .views-field-title {
-        color: $black-dark;
+        color: $black;
         font-size: 20px;
-        font-weight: bold;
+        font-family: $opensans-bold;
         text-transform: capitalize;
       }
       .views-field-nothing {
@@ -383,9 +385,12 @@ body {
           background-repeat: no-repeat;
           background-size: 60px;
           font-size: 15px;
+          font-family: $opensans-semibold;
           a {
             margin-top: 10px;
+            color: $blue-cd;
             font-size: 15px;
+            font-family: $opensans-bold;
           }
         }
       }
@@ -399,8 +404,7 @@ body {
           background-repeat: no-repeat;
           background-size: 20px auto;
           font-size: 19px;
-          font-weight: bold;
-
+          font-family: $opensans-bold;
         }
       }
       .views-field-field-hours {
@@ -416,10 +420,14 @@ body {
         background-image: url($watch);
         background-position: 0 6px;
         background-repeat: no-repeat;
+        .oh-display-times {
+          color: $black;
+          font-family: $opensans-semibold;
+        }
         .oh-current-closed {
           padding-left: 41px;
           color: $green;
-          font-weight: bold;
+          font-family: $opensans-bold;
         }
       }
       .views-field-field-website {
@@ -436,12 +444,14 @@ body {
           margin-right: 15px;
           color: $orange;
           font-size: 21px;
-          font-weight: bold;
+          font-family: $opensans-bold;
         }
         .field-content {
           a {
+            margin-top: 5px;
             color: $light-gray;
-            font-size: 21px;
+            font-size: 18px;
+            font-family: $opensans-bold;
             text-decoration: none;
             &:hover {
               color: $green;
@@ -463,7 +473,7 @@ body {
           background-color: $light-gray;
           color: $white;
           font-size: 18px;
-          font-weight: bold;
+          font-family: $opensans-bold;
           text-transform: capitalize;
         }
         .views-label {
@@ -471,12 +481,14 @@ body {
           max-width: 200px;
           width: 100%;
           color: $light-gray;
-          font-weight: bold;
+          font-family: $opensans-bold;
           text-transform: capitalize;
         }
         .field-content {
           display: inline-block;
           width: calc(100% - 215px);
+          font-size: 13px;
+          font-family: $opensans-semibold;
           a {
             color: $light-gray;
             text-decoration: none;
@@ -487,7 +499,7 @@ body {
         }
         .inline-text {
           color: $light-gray;
-          font-weight: bold;
+          font-family: $opensans-bold;
           text-transform: capitalize;
         }
       }
@@ -531,7 +543,8 @@ body {
             display: inline-block;
             margin-bottom: 10px;
             color: $black;
-            font-size: 24px;
+            font-size: 22px;
+            font-family: $opensans-bold;
             text-decoration: none;
             text-transform: capitalize;
           }
@@ -542,6 +555,8 @@ body {
           background-image: url($red-location);
           background-position: -13px -5px;
           background-repeat: no-repeat;
+          color: $black;
+          font-family: $opensans-semibold;
           .adr {
             div,
             span {
@@ -560,8 +575,9 @@ body {
             background-image: url($red-phone);
             background-position: -10px -6px;
             background-repeat: no-repeat;
+            color: $black;
             font-size: 18px;
-            font-weight: bold;
+            font-family: $opensans-bold;
           }
           .business-top-right-thrid-second {
             float: right;
@@ -571,6 +587,8 @@ body {
             background-image: url($red-watch);
             background-position: -8px -4px;
             background-repeat: no-repeat;
+            color: $black;
+            font-family: $opensans-semibold;
           }
         }
       }
@@ -581,8 +599,9 @@ body {
         margin-left: 50px;
         a {
           float: left;
-          color: $blue;
+          color: $blue-cd;
           font-weight: bold;
+          font-family: $opensans-bold;
           text-decoration: none;
           &:hover {
             color: $green;
@@ -603,7 +622,7 @@ body {
         margin-top: 15px;
         color: $light-gray;
         font-size: 13px;
-        font-style: italic;
+        font-family: $opensans-italic;
       }
     }
     &.fea-listing {

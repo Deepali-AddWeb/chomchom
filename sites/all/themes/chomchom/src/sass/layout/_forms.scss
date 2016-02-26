@@ -119,16 +119,21 @@ textarea {
 
 /* button */
 .btn {
+  font-family: $opensans-italic;
   @include border-radius(0);
   &:focus {
+    font-family: $opensans-italic;
     outline: 0;
   }
 }
 button {
+  font-family: $opensans-italic;
   &:hover {
+    font-family: $opensans-italic;
     outline: 0;
   }
   &:focus {
+    font-family: $opensans-italic;
     outline: 0;
   }
 }
@@ -160,7 +165,7 @@ select.form-control {
   background-position: calc(100% - 14px);
   background-repeat: no-repeat;
   color: $dark-gray;
-  font-style: italic;
+  font-family: $opensans-italic;
   @include box-shadow(none);
   @include border-radius(0);
   @include appearance(none);
@@ -199,7 +204,7 @@ select.form-control {
     .user-region {
       display: inline-block;
       color: $orange;
-      font-weight: bold;
+      font-family: $opensans-bold;
     }
   }
   #quicktabs-search {
@@ -214,7 +219,7 @@ select.form-control {
             background-color: $light-black;
             color: $white;
             font-size: 11px;
-            font-weight: bold;
+            font-family: $opensans-bold;
             &:hover {
               background-color: $light-gray;
             }
@@ -226,7 +231,7 @@ select.form-control {
           background-color: $dark-gray;
           color: $white;
           font-size: 11px;
-          font-weight: bold;
+          font-family: $opensans-bold;
           text-decoration: none;
           &:hover {
             background-color: $light-gray;
@@ -258,7 +263,7 @@ select.form-control {
       }
       .views-reset-button {
         display: inline-block;
-        margin-top: 0;
+        margin-top: 8px;
         padding: 0;
         button {
           width: auto;
@@ -274,6 +279,9 @@ select.form-control {
             background-color: transparent;
             outline: 0;
           }
+        }
+        .btn {
+          height: 0;
         }
       }
       .views-exposed-widget {

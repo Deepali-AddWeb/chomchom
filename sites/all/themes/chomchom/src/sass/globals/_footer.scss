@@ -15,10 +15,11 @@
     h2 {
       color: $green;
       font-size: 24px;
-      font-weight: bold;
+      font-family: $opensans-bold;
     }
     p {
       color: $light;
+      font-family: $opensans-regular;
     }
   }
   #block-block-4 {
@@ -40,7 +41,7 @@
         a {
           padding: 0 10px;
           border-right: 1px solid $dark-gray;
-          color: $dark-gray;
+          color: $silver;
           font-size: 12px;
           line-height: 10px;
           text-transform: capitalize;
@@ -59,7 +60,7 @@
   }
   #block-block-3 {
     margin: 5px 0;
-    color: $light;
+    color: $silver;
     text-align: center;
     a {
       color: $light;
@@ -76,7 +77,7 @@
       margin-left: 0;
       color: $green;
       font-size: 24px;
-      font-weight: bold;
+      font-family: $opensans-bold;
     }
     .twitter {
       display: inline-block;
