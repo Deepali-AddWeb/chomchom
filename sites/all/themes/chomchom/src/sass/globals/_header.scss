@@ -22,7 +22,9 @@ header {
       background-color: transparent;
       img {
         float: left;
-        margin-top: 10px;
+        height: 12px;
+        width: 18px;
+        margin-top: 8px;
       }
       select {
         float: left;
@@ -68,9 +70,9 @@ header {
             padding: 0 05px;
             border-right: 1px solid $white;
             color: $white;
-            font-size: 10px;
-            font-weight: bold;
-            font-family: arial;
+            font-size: 11px;
+            line-height: 12px;
+            font-family: $opensans-bold;
             text-transform: uppercase;
             &:hover {
               background-color: transparent;
@@ -86,14 +88,14 @@ header {
   }
   /* Dropdown menu */
   .navbar-header {
-    margin: 12px 100px 0 0;
+    margin: 12px 75px 0 0;
     .logo {
       margin-left: 40px;
     }
   }
   .navbar-collapse {
     margin-bottom: 20px;
-    border-bottom: 3px solid $gray;
+    border-bottom: 3px solid #E1E1E1;
     text-transform: uppercase;
   }
   #block-superfish-1 {
@@ -101,14 +103,14 @@ header {
     ul {
       li {
         margin: 0;
-        padding: 15px;
+        padding: 15px 10px;
       }
       &.menu {
         > li {
           .sf-depth-1 {
-            padding: 10px 25px 10px 10px;
             border: 2px solid transparent;
-            color: $black;
+            color: $light-gray;
+            font-size: 17px;
             font-weight: bold;
           }
           a {
@@ -140,6 +142,8 @@ header {
           &:hover {
             .sf-depth-1 {
               border: 2px solid $black;
+              color: $light-gray;
+              font-size: 17px;
               font-weight: bold;
             }
             ul {
@@ -186,20 +190,23 @@ header {
   #block-block-5 {
     float: right;
     width: 135px !important;
-    margin-top: 15px;
+    margin-top: 12px;
     background-color: $orange;
     strong {
       float: left;
       width: 135px;
-      font-size: 14px;
-      font-weight: bold;
+      color: $white;
+      font-size: 15px;
+      font-family: $opensans-extrabold;
       text-align: center;
     }
     p {
+      color: $white;
+      font-size: 13px;
+      font-family: $opensans-semibold;
       text-align: center;
     }
     a {
-      padding-top: 03px;
       border-top: 1px solid $white;
       color: $white;
       font-size: 12px;
@@ -207,13 +214,13 @@ header {
       text-decoration: none;
     }
     &:hover {
-      background-color: $black-dark;
+      background-color: $light-gray;
     }
   }
   #block-block-6 {
     float: right;
-    margin: 15px 0 0 10px;
-    background-color: $black-dark;
+    margin: 12px 0 0 10px;
+    background-color: $light-black;
     p {
       a {
         display: inline-block;

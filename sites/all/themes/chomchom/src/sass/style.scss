@@ -14,6 +14,10 @@
 @import 'components/fonts';
 @import 'layout/forms';
 
+body {
+  font-family: $opensans-regular;
+}
+
 /* common css */
 .view-empty {
   margin: 15px 0;
@@ -35,20 +39,20 @@
   h2 {
     margin-top: 0;
     padding: 10px 0 10px 20px;
-    background-color: $light-gray;
+    background-color: $light-black;
     color: $white;
-    font-size: 14px;
-    font-weight: bold;
+    font-size: 15px;
+    font-family: $opensans-bold;
     text-transform: capitalize;
   }
 }
 .view-header {
   margin-top: 14px;
   padding: 9px 0 9px 20px;
-  background-color: $light-gray;
+  background-color: $light-black;
   color: $white;
   font-size: 14px;
-  font-weight: bold;
+  font-family: $opensans-bold;
   text-transform: capitalize;
 }
 .page-header {
@@ -63,12 +67,13 @@
     line-height: 0;
     label[for=title] {
       color: $black;
-      font-size: 14px;
+      font-size: 15px;
+      font-family: $opensans-regular;
     }
     a {
       color: $black;
-      font-size: 19px;
-      font-weight: bold;
+      font-size: 18px;
+      font-family: $opensans-bold;
       text-decoration: none;
     }
   }
@@ -102,13 +107,14 @@
   .main-sub-right-bottom-left {
     display: inline-block;
     margin-top: 4px;
-    font-size: 12px;
+    font-size: 11px;
     label {
       font-weight: normal;
     }
     .category {
       color: $black;
-      font-weight: bold;
+      font-size: 13px;
+      font-family: $opensans-semibold;
       text-decoration: none;
     }
   }
@@ -116,10 +122,11 @@
     float: right;
     margin: 4px 30px 0 0;
     color: $light-gray;
-    font-size: 12px;
+    font-size: 11px;
     label[for=contact_name] {
       color: $black;
-      font-weight: bold;
+      font-size: 13px;
+      font-family: $opensans-semibold;
     }
     label {
       color: #333;
@@ -493,7 +500,7 @@
 }
 /* end */
 
-/* Business directory second page */
+/* Business directory listing page */
 #block-views-business-directory-block-1 {
   h2 {
     margin-bottom: 0;
@@ -532,10 +539,9 @@
         .business-top-right-second {
           height: 40px;
           padding-left: 34px;
-          background-image: url($location1);
-          background-position: 0 0;
+          background-image: url($red-location);
+          background-position: -13px -5px;
           background-repeat: no-repeat;
-          background-size: 17px;
           .adr {
             div,
             span {
@@ -551,8 +557,8 @@
             display: inline-block;
             width: 50%;
             padding-left: 35px;
-            background-image: url($phone1);
-            background-position: 4px 4px;
+            background-image: url($red-phone);
+            background-position: -10px -6px;
             background-repeat: no-repeat;
             font-size: 18px;
             font-weight: bold;
@@ -562,8 +568,8 @@
             display: inline-block;
             width: 50%;
             padding-left: 50px;
-            background-image: url($watch);
-            background-position: -16px -8px;
+            background-image: url($red-watch);
+            background-position: -8px -4px;
             background-repeat: no-repeat;
           }
         }
@@ -614,14 +620,12 @@
     padding: 15px;
     .views-field-title {
       display: inline-block;
-      width: 150px;
     }
     .views-field-field-category {
       display: inline-block;
     }
     .views-field-nid {
       display: inline-block;
-      width: 150px;
       text-align: center;
       .field-content {
         a {
@@ -644,7 +648,6 @@
     }
     .field-content {
       display: inline-block;
-      width: 150px;
     }
   }
 }
