@@ -66,7 +66,7 @@ body {
     display: inline-block;
     line-height: 0;
     label[for=title] {
-      color: $black;
+      color: $light-black;
       font-size: 15px;
       font-family: $opensans-bold;
     }
@@ -179,15 +179,15 @@ body {
       float: left;
       a {
         color: $white;
-        font-size: 22px;
-        font-weight: bold;
+        font-size: 16px;
+        font-family: $opensans-bold;
         text-decoration: none;
       }
     }
     .views-field-created {
       float: right;
       display: inline-block;
-      margin-top: 14px;
+      margin-top: 9px;
       color: $gray-footer;
       font-size: 16px;
       line-height: 0;
@@ -200,99 +200,107 @@ body {
     border: 1px solid $gray;
     background-color: $skyblue;
   }
-  .views-field-nothing {
-    width: calc(100% - 275px);
-    margin: 20px auto 0;
-    padding-top: 20px;
-    border-top: 1px solid $full-gray;
-    text-align: center;
-    .contact-name {
-      display: inline-block;
-      width: 100%;
-      color: $black;
-      font-size: 18px;
-      font-weight: bold;
-      text-align: center;
-      text-transform: uppercase;
-      .name {
-        display: inline-block;
-        margin-left: 12px;
-      }
-    }
-    .alternative-phone {
-      display: inline-block;
-      margin-top: 12px;
-      color: $black;
-      font-size: 17px;
-      font-weight: bold;
-      text-align: center;
-      .phone {
-        display: inline-block;
-        padding: 10px 36px;
-        background-color: $orange;
-        background-image: url($phone1);
-        background-position: 13px 12px;
-        background-repeat: no-repeat;
-        text-align: center;
-        @include border-radius(4px);
-      }
-      span {
-        display: inline-block;
-        margin: 0 20px;
-        font-size: 18px;
-        text-align: center;
-      }
-      .alternate-phone {
-        display: inline-block;
-        padding: 10px 36px;
-        background-color: $orange;
-        background-image: url($phone1);
-        background-position: 13px 12px;
-        background-repeat: no-repeat;
-        color: $black;
-        font-weight: bold;
-        text-align: center;
-        @include border-radius(4px);
-      }
-    }
-    .full-address {
-      float: left;
-      display: inline-block;
-      margin-top: 15px;
-      padding-left: 35px;
-      background-image: url($location1);
-      background-position: 0 08px;
-      background-repeat: no-repeat;
-      background-size: 17px 30px;
-      color: $black;
-      font-size: 18px;
-      text-align: left;
-      text-transform: capitalize;
-    }
-    .address {
-      .street-address {
-        display: inline-block;
-      }
-      .country-name {
-        display: inline-block;
-      }
-    }
-    a {
-      float: left;
-      color: $blue;
-      font-size: 17px;
-      font-weight: bold;
-      text-decoration: none;
-      &:hover {
-        color: $dark-gray;
-      }
-    }
-  }
-  .views-field-body {
-    p {
+  .view-common-field-listing {
+    .top {
+      margin-bottom: 20px;
       color: $dark-gray;
-      font-size: 14px;
-      font-style: italic;
+      font-size: 12px;
+      font-family: $opensans-italic;
+    }
+    .bottom {
+      width: calc(100% - 275px);
+      margin: 0 auto;
+      padding-top: 15px;
+      border-top: 1px solid $gray;
+      text-align: center;
+      .contact-name {
+        display: inline-block;
+        width: 100%;
+        color: $black;
+        font-size: 18px;
+        font-family: $opensans-bold;
+        text-align: center;
+        text-transform: uppercase;
+        .name {
+          display: inline-block;
+          margin-left: 12px;
+        }
+      }
+      .phone {
+        .phone-first {
+          display: inline-block;
+          margin-top: 10px;
+          padding: 10px 21px 10px 38px;
+          background-color: $orange;
+          background-image: url($phone1);
+          background-position: 15px 13px;
+          background-repeat: no-repeat;
+          color: $black;
+          font-size: 16px;
+          font-family: $opensans-semibold;
+          text-align: center;
+          @include border-radius(4px);
+        }
+        .phone-second {
+          display: inline-block;
+          padding: 10px 21px 10px 38px;
+          background-color: $orange;
+          background-image: url($phone1);
+          background-position: 15px 13px;
+          background-repeat: no-repeat;
+          color: $black;
+          font-size: 16px;
+          font-family: $opensans-semibold;
+          text-align: center;
+          @include border-radius(4px);
+        }
+        .or {
+          margin: 0 12px 0 10px;
+          color: $black;
+          font-size: 16px;
+          font-family: $opensans-bold;
+        }
+        .full-address {
+          float: left;
+          display: inline-block;
+          margin-top: 15px;
+          padding-left: 35px;
+          background-image: url($location1);
+          background-position: 0 08px;
+          background-repeat: no-repeat;
+          background-size: 17px 30px;
+          color: $black;
+          font-size: 16px;
+          text-align: left;
+          text-transform: capitalize;
+          .address {
+            font-family: $opensans-semibold;
+            .street-address {
+              display: inline-block;
+            }
+            .country-name {
+              display: inline-block;
+            }
+          }
+          a {
+            float: left;
+            color: $blue;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            &:hover {
+              color: $dark-gray;
+            }
+          }
+        }
+      }
+    }
+    .views-field-body {
+      p {
+        color: $dark-gray;
+        font-size: 14px;
+        font-style: italic;
+      }
     }
   }
   /* end */

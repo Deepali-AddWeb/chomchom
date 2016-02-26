@@ -37,6 +37,10 @@
 /* end */
 
 /* radio button */
+.radio label,
+.checkbox label {
+  padding-left: 0;
+}
 .radio-rc {
   display: inline-block;
   input[type='radio'] {
@@ -119,17 +123,17 @@ textarea {
 
 /* button */
 .btn {
-  font-family: $opensans-italic;
+  font-family: $opensans-bold;
   @include border-radius(0);
   &:focus {
-    font-family: $opensans-italic;
+    font-family: $opensans-bold;
     outline: 0;
   }
 }
 button {
-  font-family: $opensans-italic;
+  font-family: $opensans-bold;
   &:hover {
-    font-family: $opensans-italic;
+    font-family: $opensans-bold;
     outline: 0;
   }
   &:focus {
@@ -221,7 +225,7 @@ select.form-control {
             font-size: 11px;
             font-family: $opensans-bold;
             &:hover {
-              background-color: $light-gray;
+              background-color: $light-black;
             }
           }
         }
@@ -234,7 +238,7 @@ select.form-control {
           font-family: $opensans-bold;
           text-decoration: none;
           &:hover {
-            background-color: $light-gray;
+            background-color: $light-black;
           }
         }
       }
@@ -257,7 +261,7 @@ select.form-control {
           text-transform: uppercase;
           @include border-radius(0);
           &:hover {
-            background-color: $light-gray;
+            background-color: $light-black;
           }
         }
       }
@@ -354,7 +358,7 @@ select.form-control {
 #block-webform-client-block-17 {
   padding: 15px 60px 15px 22px;
   border-bottom: 4px solid $gray;
-  background-color: $light-gray;
+  background-color: $light-black;
   .block-title {
     color: $white;
     font-size: 15px;
@@ -447,25 +451,25 @@ select.form-control {
     margin-right: 3px;
     &.active {
       border: none;
-      background-color: $light-gray;
+      background-color: $light-black;
       @include border-radius(0);
       @include box-shadow(none);
       @include appearance(none);
       > a {
         border-width: 0;
-        background-color: $light-gray;
+        background-color: $light-black;
         color: $white;
         font-weight: bold;
         &:hover {
           border-width: 0;
-          background-color: $light-gray;
+          background-color: $light-black;
           color: $white;
           font-weight: bold;
           @include border-radius(0);
         }
         &:focus {
           border-width: 0;
-          background-color: $light-gray;
+          background-color: $light-black;
           color: $white;
           font-weight: bold;
           @include border-radius(0);
@@ -485,7 +489,7 @@ select.form-control {
       @include appearance(none);
       &:hover {
         border: none;
-        background-color: $light-gray;
+        background-color: $light-black;
         color: $white;
         font-weight: bold;
         @include border-radius(0);
@@ -494,7 +498,7 @@ select.form-control {
       }
       &:focus {
         border: none;
-        background-color: $dark-gray;
+        background-color: $light-black;
         color: $white;
         font-weight: bold;
         @include border-radius(0);

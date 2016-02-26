@@ -144,7 +144,7 @@ header {
               border: 2px solid $black;
               color: $light-gray;
               font-size: 17px;
-              font-weight: bold;
+              font-family: $opensans-bold;
             }
             ul {
               margin: 28px 0 0 16px;
@@ -214,7 +214,7 @@ header {
       text-decoration: none;
     }
     &:hover {
-      background-color: $light-gray;
+      background-color: $light-black;
     }
   }
   #block-block-6 {
