@@ -9,14 +9,9 @@
  * Implements hook_form_alter.
  */
 function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, $form_id) {
+  //change category field weight
   $form['field_category']['#weight'] = -6 ;
- /* print('<pre style="color:red;">');
-  print_r($form);
-  print('</pre>');
-  exit;*/
-  if (isset($form['nid']['#value']) && !empty($form['nid']['#value'])) {  
-    //$form['field_category']['#access'] = 0 ;
-  }
+
   $form['#attached']['js'] = array(
   $data = drupal_get_path('module', 'chomchom_fieldgroup') . '/js/chomchom_fieldgroup.js',
   );
@@ -53,6 +48,22 @@ function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, 
  * Implements chomchom_fieldgroup_listing_form_validate for validation.
  */
 function chomchom_fieldgroup_listing_form_validate($form, &$form_state) {
+  
+  //Hours field is requried
+  $days = $form_state['values']['field_hours'][LANGUAGE_NONE];
+  $flag = '0';
+  foreach ($days as $key => $value) {
+    if((isset($value['starthours'])) && (!empty($value['starthours']))){
+      $flag = '1';
+    }
+  }
+  if($flag != '1'){
+    form_set_error('field_hours',  'Hours field is required.');
+  }
+
+  if(empty($form_state['input']['locations'][0]['province'])){
+    form_set_error($form_state['input']['locations'][0]['province'],  'State/Province field is required.');
+  }
   if (isset($form_state['values']['field_category'][LANGUAGE_NONE]) && !empty($form_state['values']['field_category'][LANGUAGE_NONE])) {
     $select_tid = $form_state['values']['field_category'][LANGUAGE_NONE][0]['tid'];
     /* 
@@ -94,9 +105,6 @@ function chomchom_fieldgroup_listing_form_validate($form, &$form_state) {
  * Implements validate_fields for validation.
  */
 function validate_fields($group, $form, $form_state, $exclude_field = array()) {
-  /*print('form_state::<pre style="color:red;">');
-  print_r($form_state['values']);
-  print('</pre>');*/
   //Get field names from field group
   $field_names = $form_state['complete form']['#groups'][$group]->children;
 
@@ -116,23 +124,16 @@ function validate_fields($group, $form, $form_state, $exclude_field = array()) {
       $title = explode('<', $title);
 
       //Check field empty
-      /*print('fv::<pre style="color:red;">');
-      print_r($fv);
-      print('</pre>');*/
 
       if (empty($form_state['values'][$fv][LANGUAGE_NONE]) || array_key_exists('value', $form_state['values'][$fv][LANGUAGE_NONE][0]) && (empty($form_state['values'][$fv][LANGUAGE_NONE][0]['value']))){
-        echo "string";
         form_set_error($fv, t($title['0'] . ' field is required.'));
       }
       elseif (empty($form_state['values'][$fv][LANGUAGE_NONE]) || array_key_exists('url', $form_state['values'][$fv][LANGUAGE_NONE][0]) && (empty($form_state['values'][$fv][LANGUAGE_NONE][0]['url']))) {
-        echo "string1";
         form_set_error($fv, t($title['0'] . ' field is required.'));
       }
       elseif (empty($form_state['values'][$fv][LANGUAGE_NONE]) || array_key_exists('name', $form_state['values'][$fv][LANGUAGE_NONE][0]) && (empty($form_state['values'][$fv][LANGUAGE_NONE][0]['name']))) {
-        echo "string2";
         form_set_error($fv, t($title['0'] . ' field is required.'));
       }
     }
   }
-  //exit;
 }

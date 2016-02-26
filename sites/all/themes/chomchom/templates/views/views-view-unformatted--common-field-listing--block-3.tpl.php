@@ -24,10 +24,9 @@
       <div class='name'><?php print $row['field_contact_name'];?></div>
     </div>
     <div class="phone">
-      <?php //$output = ''; ?>
-      <?php $output = $row['field_contact_phone'];?>
+      <?php print $output = $row['field_contact_phone'];?>
       <?php if(isset($row['field_alternative_phone']) && !empty($row['field_alternative_phone'])){
-      	print $output .='<span>or</span>'.$row['field_alternative_phone'];
+      	print $outputche ='<span>or</span>'.$row['field_alternative_phone'];
       	}?>
     </div>
     <div class='full-address'>

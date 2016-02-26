@@ -15,6 +15,11 @@
         jQuery("#quicktabs-search ul.quicktabs-tabs li").removeClass("active");
         jQuery("#quicktabs-search ul.quicktabs-tabs li:nth-child(2)").addClass("active");
       }
+
+      //disable category field in edit form 
+      if (jQuery(".node-type-listing").hasClass("page-node-edit")) {
+        jQuery("#edit-field-category select").attr("disabled", true);   
+      }
     }
   };
 }(jQuery));

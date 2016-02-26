@@ -7,7 +7,7 @@
 
   Drupal.behaviors.chomchomfieldgroup = {
     attach: function (context, settings) {
-
+      jQuery("label[for='edit-locations-0-province']").append( "<span title='This field is required.' class='form-required'>*</span>" );
       setTimeout(function(){
         //call user define function fieldgrouplevel on load pass value
         fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']").val());
