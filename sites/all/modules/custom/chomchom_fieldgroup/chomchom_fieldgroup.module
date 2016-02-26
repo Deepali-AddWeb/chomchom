@@ -9,7 +9,11 @@
  * Implements hook_form_alter.
  */
 function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, $form_id) {
-
+  $form['field_category']['#weight'] = -6 ;
+ /* print('<pre style="color:red;">');
+  print_r($form);
+  print('</pre>');
+  exit;*/
   if (isset($form['nid']['#value']) && !empty($form['nid']['#value'])) {  
     //$form['field_category']['#access'] = 0 ;
   }

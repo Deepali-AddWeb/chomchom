@@ -3,15 +3,74 @@
  * all custom code write here.
  */
 
+
 /*
-function twilio_data(){
-$path = libraries_get_path('twilio');
-require($path . "/Services/Twilio.php");
-$accountSID = variable_get('twilio_account');
-$authToken = variable_get('twilio_token');
-$client = new Services_Twilio($accountSID, $authToken);
-return $client;
-}*/
+ * Implements custom function for twilio configration
+ */
+function twilio_configration() {
+  $path = libraries_get_path('twilio');
+  require($path . "/Services/Twilio.php");
+  $accountSID = variable_get('twilio_account');
+  $authToken = variable_get('twilio_token');
+  $client = new Services_Twilio($accountSID, $authToken);
+  return $client;
+}
+
+
+/*
+ * Implements custom function for body text
+ */
+function body_text($nodevalue,$value='') {
+  if(isset($value) && !empty($value)){
+    $data = 'Your ads will expire in '.$value.' days.';
+  }else{
+    $data = 'Your ads will expire';
+  }
+  return $data;
+}
+
+
+/*
+ * Implements custom function for sms
+ */
+function sms_send($nodevalue,$value=''){
+
+  $user = user_load($nodevalue->uid);
+  if (isset($user->twilio_user) && !empty($user->twilio_user)) {
+    $client = twilio_configration();
+    $from = variable_get('twilio_number');
+    $phone_numbers = '+'.$user->twilio_user['country'].$user->twilio_user['number'];
+    try{
+    $message = $client->account->messages->create(array(
+        "From" => $from,
+        "To" => $phone_numbers,
+        "Body" => body_text($nodevalue,$value),
+    ));
+    // Display a confirmation message on the screen
+    echo "Sent message";
+    }catch (Exception $e) {
+        echo 'Error: ' . $e->getMessage();
+    } 
+  }
+}
+
+
+/*
+ * Implements custom function for message
+ */
+function message_send($nodevalue,$value=''){
+  $user = user_load($nodevalue->uid);
+  $to = $user->mail; // to e-mail address
+  $from = variable_get('site_mail'); // from e-mail address
+
+  $subject = "To inform you about your Ads"; // subject of e-mail
+  //params is the array passed to hook_mail function 
+  $params = array(
+    'subject' => $subject,
+    'body' => body_text($nodevalue,$value),
+  );
+  drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);  
+}
 
 
 /*
@@ -20,7 +79,6 @@ return $client;
 function chomchom_general_cron() {
   //Get today date 
   $todate = date('Y-m-d');
-
 
   //load listing type all publish node
   $nodes = node_load_multiple(array(), array('type' => 'listing','status' => 1));
@@ -39,54 +97,23 @@ function chomchom_general_cron() {
     if (isset($nodevalue->field_expire_date[LANGUAGE_NONE]) && !empty($nodevalue->field_expire_date[LANGUAGE_NONE])) {
       $edate = explode(" ",$nodevalue->field_expire_date[LANGUAGE_NONE][0]['value']);
 
-      //-10 day to expire date
-      $expiredate = date('Y-m-d', strtotime($edate[0]."-10 days"));
-
-      //today and before 10 expired date same then send mail 
-      if ($expiredate == $todate) {
-        $to = "denisha.addweb@gmail.com"; // to e-mail address
-        $from = "test@example.com"; // from e-mail address
-         
-        $subject = "text to display in e-mail subject"; // subject of e-mail
-        $body = "text to display in e-mail body"; //it might be any variable from the form eg. 
-        //params is the array passed to hook_mail function 
-        $params = array(
-            'subject' => $subject,
-            'body' => $body,
-            );
-        drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);
+      $days = array("10", "5", "1");
+      foreach ($days as $key => $value) {
+        $expiredate = date('Y-m-d', strtotime($edate[0]."-".$value." days"));
+        if ($expiredate == $todate) {        
+          message_send($nodevalue,$value);
+          sms_send($nodevalue,$value);
+        }
       }
+
       //todat date and expire date same then unpublish node
       if ($todate == $edate[0] ){
-        $user = user_load($nodevalue->uid);
-        if (isset($user->twilio_user) && !empty($user->twilio_user)) {
-         /* $from = variable_get('twilio_number');
-
-     $phone_numbers = $user->twilio_user['country'].$user->twilio_user['number'];
-          //$client->account->sms_messages->create($from, $phone_numbers, 'test');
-        print('user::<pre style="color:red;">');
-        print_r($user);
-        print('</pre>');
-        print('$edate[0]::<pre style="color:red;">');
-        print_r($phone_numbers);
-        print('</pre>');
-        exit;*/
-        }
-        
-        $nodevalue->status = '0';
-        $to = "denisha.addweb@gmail.com"; // to e-mail address
-        $from = "test@example.com"; // from e-mail address
-     
-        $subject = "text to display in e-mail subject"; // subject of e-mail
-        $body = "text to display in e-mail body"; //it might be any variable from the form eg. 
-        //params is the array passed to hook_mail function 
-        $params = array(
-            'subject' => $subject,
-            'body' => $body,
-            );
-        drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);
+        sms_send($nodevalue);
+        message_send($nodevalue);
+        $nodevalue->status = '0';        
         node_save($nodevalue);
       }
+
       //last update node after 10 day node delete 
       $last_update = date('Y-m-d', $nodevalue->changed);
       $passdate = date('Y-m-d', strtotime($last_update."+10 days"));
