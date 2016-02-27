@@ -37,6 +37,10 @@
 /* end */
 
 /* radio button */
+.radio label,
+.checkbox label {
+  padding-left: 0;
+}
 .radio-rc {
   display: inline-block;
   input[type='radio'] {
@@ -119,16 +123,21 @@ textarea {
 
 /* button */
 .btn {
+  font-family: $opensans-bold;
   @include border-radius(0);
   &:focus {
+    font-family: $opensans-bold;
     outline: 0;
   }
 }
 button {
+  font-family: $opensans-bold;
   &:hover {
+    font-family: $opensans-bold;
     outline: 0;
   }
   &:focus {
+    font-family: $opensans-italic;
     outline: 0;
   }
 }
@@ -160,7 +169,7 @@ select.form-control {
   background-position: calc(100% - 14px);
   background-repeat: no-repeat;
   color: $dark-gray;
-  font-style: italic;
+  font-family: $opensans-italic;
   @include box-shadow(none);
   @include border-radius(0);
   @include appearance(none);
@@ -199,7 +208,7 @@ select.form-control {
     .user-region {
       display: inline-block;
       color: $orange;
-      font-weight: bold;
+      font-family: $opensans-bold;
     }
   }
   #quicktabs-search {
@@ -214,9 +223,9 @@ select.form-control {
             background-color: $light-black;
             color: $white;
             font-size: 11px;
-            font-weight: bold;
+            font-family: $opensans-bold;
             &:hover {
-              background-color: $light-gray;
+              background-color: $light-black;
             }
           }
         }
@@ -226,10 +235,10 @@ select.form-control {
           background-color: $dark-gray;
           color: $white;
           font-size: 11px;
-          font-weight: bold;
+          font-family: $opensans-bold;
           text-decoration: none;
           &:hover {
-            background-color: $light-gray;
+            background-color: $light-black;
           }
         }
       }
@@ -252,13 +261,13 @@ select.form-control {
           text-transform: uppercase;
           @include border-radius(0);
           &:hover {
-            background-color: $light-gray;
+            background-color: $light-black;
           }
         }
       }
       .views-reset-button {
         display: inline-block;
-        margin-top: 0;
+        margin-top: 8px;
         padding: 0;
         button {
           width: auto;
@@ -274,6 +283,9 @@ select.form-control {
             background-color: transparent;
             outline: 0;
           }
+        }
+        .btn {
+          height: 0;
         }
       }
       .views-exposed-widget {
@@ -346,7 +358,7 @@ select.form-control {
 #block-webform-client-block-17 {
   padding: 15px 60px 15px 22px;
   border-bottom: 4px solid $gray;
-  background-color: $light-gray;
+  background-color: $light-black;
   .block-title {
     color: $white;
     font-size: 15px;
@@ -439,25 +451,25 @@ select.form-control {
     margin-right: 3px;
     &.active {
       border: none;
-      background-color: $light-gray;
+      background-color: $light-black;
       @include border-radius(0);
       @include box-shadow(none);
       @include appearance(none);
       > a {
         border-width: 0;
-        background-color: $light-gray;
+        background-color: $light-black;
         color: $white;
         font-weight: bold;
         &:hover {
           border-width: 0;
-          background-color: $light-gray;
+          background-color: $light-black;
           color: $white;
           font-weight: bold;
           @include border-radius(0);
         }
         &:focus {
           border-width: 0;
-          background-color: $light-gray;
+          background-color: $light-black;
           color: $white;
           font-weight: bold;
           @include border-radius(0);
@@ -477,7 +489,7 @@ select.form-control {
       @include appearance(none);
       &:hover {
         border: none;
-        background-color: $light-gray;
+        background-color: $light-black;
         color: $white;
         font-weight: bold;
         @include border-radius(0);
@@ -486,7 +498,7 @@ select.form-control {
       }
       &:focus {
         border: none;
-        background-color: $dark-gray;
+        background-color: $light-black;
         color: $white;
         font-weight: bold;
         @include border-radius(0);
