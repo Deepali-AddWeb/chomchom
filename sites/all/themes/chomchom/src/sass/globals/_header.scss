@@ -37,8 +37,9 @@ header {
         @include border-radius(0);
         background-color: transparent;
         color: $white;
-        font-size: 11px;
+        font-size: 12px;
         font-style: normal;
+        font-family: $opensans-bold;
         cursor: pointer;
         @include box-shadow(none);
         @include appearance(none);
@@ -234,5 +235,39 @@ header {
       }
     }
   }
-  /* end */
+}
+/* end */
+
+
+/**
+ *  Responsive designing
+ */
+
+/* --- small desktop monitor view --------------------------------------------------------------- */
+@media screen and (max-width: 1200px){
+  
+}
+
+/* --- i-pad landscape & portrait view ---------------------------------------------------------- */
+@media screen and (max-width: 1024px){
+  header {
+    #block-superfish-1 {
+      margin-left: 20px;
+    }
+  }
+}
+
+/* --- i-pad portrait view only ----------------------------------------------------------------- */
+@media screen and (max-width: 992px){
+  
+}
+
+/* --- mobile landscape & portrait view --------------------------------------------------------- */
+@media screen and (max-width: 767px){
+  
+}
+
+/* --- mobile portrait view only ---------------------------------------------------------------- */
+@media screen and (max-width: 480px){
+  
 }

@@ -275,6 +275,7 @@ select.form-control {
           background-color: transparent;
           color: $light-gray;
           line-height: 0;
+          font-family: $opensans-regular;
           &:hover {
             color: $green;
           }
@@ -361,8 +362,8 @@ select.form-control {
   background-color: $light-black;
   .block-title {
     color: $white;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 18px;
+    font-family: $opensans-bold;
     text-transform: uppercase;
   }
   h2 {
@@ -429,6 +430,7 @@ select.form-control {
       margin: 0;
       margin-left: 0;
       color: $dark-gray;
+      font-family: verdana;
       label {
         padding-left: 0;
       }

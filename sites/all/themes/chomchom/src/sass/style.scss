@@ -47,21 +47,23 @@ body {
   }
 }
 .view-header {
-  margin-top: 14px;
-  padding: 9px 0 9px 20px;
-  background-color: $light-black;
-  color: $white;
-  font-size: 16px;
-  font-family: $opensans-bold;
-  text-transform: capitalize;
+  .page-title-all-listing {
+    margin-top: 16px;
+    padding: 9px 0 9px 20px;
+    background-color: $light-black;
+    color: $white;
+    font-size: 16px;
+    font-family: $opensans-bold;
+    text-transform: capitalize;
+  }
 }
 .page-header {
   display: none;
 }
 .views-row {
   margin-top: 10px 0;
-  border: 1px solid $gray;
-  box-shadow: 0 02px 0 $gray;
+  border: 1px solid $light;
+  box-shadow: 0 2px 0 $light;
   .main-sub-right-top-title {
     display: inline-block;
     line-height: 0;
@@ -148,6 +150,25 @@ body {
 
 
 /**
+ *  Responsive designing
+ */
+
+ /* --- i-pad landscape & portrait view ---------------------------------------------------------- */
+@media screen and (max-width: 1024px){
+  .views-row {
+    .main-sub-right-bottom-left {
+      width: 30%;
+    }
+    .main-sub-right-bottom-right {
+      width: 30%;
+      float: right;
+    }
+  }
+}
+
+
+
+/**
  *  Inner page
  */
 /* Address */
@@ -172,9 +193,10 @@ body {
     width: 100%;
     margin-bottom: 10px;
     padding: 9px 15px;
-    background-color: $light-gray;
+    background-color: $light-black;
     color: $white;
     text-transform: capitalize;
+    font-family: $opensans-semibold;
     .views-field-title {
       float: left;
       a {
@@ -211,14 +233,14 @@ body {
       width: calc(100% - 275px);
       margin: 0 auto;
       padding-top: 15px;
-      border-top: 1px solid $gray;
+      border-top: 1px solid $light;
       text-align: center;
       .contact-name {
         display: inline-block;
         width: 100%;
         color: $black;
         font-size: 18px;
-        font-family: $opensans-bold;
+        font-family: $opensans-extrabold;
         text-align: center;
         text-transform: uppercase;
         .name {
@@ -286,7 +308,7 @@ body {
             float: left;
             color: $blue;
             font-size: 17px;
-            font-weight: bold;
+            font-family: $opensans-bold;
             text-decoration: none;
             &:hover {
               color: $dark-gray;
@@ -311,9 +333,9 @@ body {
     .views-row {
       .field-content {
         display: inline-block;
-        color: $black;
+        color: $light-black;
         font-size: 14px;
-        font-weight: bold;
+        font-family: $opensans-bold;
       }
       .views-label {
         display: inline-block;
@@ -385,20 +407,31 @@ body {
         padding: 0;
         border: none;
         .full-address {
-          max-width: 40%;
+          max-width: 44%;
           width: 100%;
           margin-top: 05px;
+          padding-left: 32px;
           background-image: url($dark-location1);
           background-position: -21px -8px;
           background-repeat: no-repeat;
           background-size: 60px;
           font-size: 15px;
           font-family: $opensans-semibold;
+          .address {
+            text-transform: capitalize;
+            .adr {
+              div,span {
+                display: inline-block;
+                font-family: $opensans-semibold;
+              }
+            }
+          }
           a {
-            margin-top: 10px;
-            color: $blue-cd;
+            color: $blue;
             font-size: 15px;
             font-family: $opensans-bold;
+            text-decoration: none;
+            line-height: 35px;
           }
         }
       }
@@ -406,7 +439,7 @@ body {
         .field-content {
           display: inline-block;
           width: 100%;
-          margin: 15px 0 28px;
+          margin-bottom: 25px;
           padding-left: 34px;
           background-image: url($phone1);
           background-repeat: no-repeat;
@@ -436,6 +469,7 @@ body {
           padding-left: 41px;
           color: $green;
           font-family: $opensans-bold;
+          line-height: 25px;
         }
       }
       .views-field-field-website {
@@ -478,11 +512,13 @@ body {
           width: calc(100% + 48px);
           margin-left: -24px;
           padding: 10px 0 10px 20px;
-          background-color: $light-gray;
-          color: $white;
-          font-size: 18px;
-          font-family: $opensans-bold;
-          text-transform: capitalize;
+          background-color: $light-black;
+          .field-content {
+            color: $white;
+            font-size: 18px;
+            font-family: $opensans-bold;
+            text-transform: capitalize;
+          }
         }
         .views-label {
           float: left;
@@ -516,6 +552,24 @@ body {
   .bxslider-ths-field_image-processed {
     margin: 27px;
     border: none;
+    .bx-viewport {
+      border: none;
+    }
+    ul {
+      li {
+        img {
+          padding-right: 0 !important ;
+          @include border-radius(7px);
+        }
+      }
+    }
+    .bx-wrapper {
+      ul {
+        li {
+          margin-right: 3px;
+        }
+      }
+    }
   }
 }
 /* end */

@@ -19,31 +19,33 @@
     }
     p {
       color: $light;
+      line-height: 24px;
       font-family: $opensans-regular;
     }
   }
   #block-block-4 {
+    line-height: 28px;
     text-align: center;
     p {
       color: $black-dark;
     }
   }
   #block-block-7 {
-    margin-bottom: 8px;
+    line-height: 32px;
     text-align: center;
   }
   #block-menu-menu-footer-menu {
+    line-height: 28px;
     text-align: center;
     ul {
-      margin: 5px 0;
       li {
         display: inline-block;
         a {
           padding: 0 10px;
-          border-right: 1px solid $dark-gray;
+          border-right: 2px solid $dark-gray;
           color: $silver;
-          font-size: 12px;
-          line-height: 10px;
+          font-size: 10px;
+          line-height: 14px;
           text-transform: capitalize;
           &:hover {
             background-color: transparent;
@@ -59,15 +61,18 @@
     }
   }
   #block-block-3 {
-    margin: 5px 0;
     color: $silver;
     text-align: center;
+    line-height: 28px;
     a {
       color: $light;
       text-decoration: none;
       &:hover {
         color: $green;
       }
+    }
+    p {
+      font-size: 16px;
     }
   }
   #block-block-2 {
