@@ -48,22 +48,26 @@ function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, 
  * Implements chomchom_fieldgroup_listing_form_validate for validation.
  */
 function chomchom_fieldgroup_listing_form_validate($form, &$form_state) {
-  
-  //Hours field is requried
-  $days = $form_state['values']['field_hours'][LANGUAGE_NONE];
-  $flag = '0';
-  foreach ($days as $key => $value) {
-    if((isset($value['starthours'])) && (!empty($value['starthours']))){
-      $flag = '1';
-    }
-  }
-  if($flag != '1'){
-    form_set_error('field_hours',  'Hours field is required.');
-  }
-
+  //state field validation
   if(empty($form_state['input']['locations'][0]['province'])){
     form_set_error($form_state['input']['locations'][0]['province'],  'State/Province field is required.');
   }
+  //Hours field is requried
+  if (isset($form_state['values']['field_category'][LANGUAGE_NONE]) && !empty($form_state['values']['field_category'][LANGUAGE_NONE])) {
+    if ($form_state['values']['field_category'][LANGUAGE_NONE][0]['tid'] == 8) {
+      $days = $form_state['values']['field_hours'][LANGUAGE_NONE];
+      $flag = '0';
+      foreach ($days as $key => $value) {
+        if((isset($value['starthours'])) && (!empty($value['starthours']))){
+          $flag = '1';
+        }
+      }
+      if($flag != '1'){
+        form_set_error('field_hours',  'Hours field is required.');
+      }
+    }
+  }  
+
   if (isset($form_state['values']['field_category'][LANGUAGE_NONE]) && !empty($form_state['values']['field_category'][LANGUAGE_NONE])) {
     $select_tid = $form_state['values']['field_category'][LANGUAGE_NONE][0]['tid'];
     /* 
