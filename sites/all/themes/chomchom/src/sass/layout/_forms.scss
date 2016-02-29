@@ -319,6 +319,59 @@ select.form-control {
 }
 /* end */
 
+
+/**
+ *  Responsive designing
+ */
+
+/* small desktop monitor view */
+@media screen and (max-width: 1200px) {
+  .region-primary-first {
+    #quicktabs-container-search {
+      .views-exposed-form {
+        .views-submit-button {
+          button {
+            padding: 0 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* i-pad landscape & portrait view */
+@media screen and (max-width: 1024px) {
+  .region-primary-first {
+    #quicktabs-container-search {
+      margin-top: 16px;
+      .views-exposed-form {
+        .views-submit-button {
+          float: left;
+          button {
+            padding: 0 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* i-pad portrait view only */
+@media screen and (max-width: 992px){
+
+}
+
+/* mobile landscape & portrait view */
+@media screen and (max-width: 767px){
+
+}
+
+/* mobile portrait view only */
+@media screen and (max-width: 480px){
+
+}
+
+
 /* All Listing exposed filter section */
 .views-exposed-form {
   margin: 15px 0 10px;
@@ -380,6 +433,7 @@ select.form-control {
     }
     #edit-submitted-email {
       float: left;
+      height: 40px;
       width: 32%;
       margin-right: 0;
       font-size: 13px;
@@ -436,6 +490,86 @@ select.form-control {
       }
     }
   }
+}
+
+
+/**
+ * Responsive designing
+ */
+
+ /* small desktop monitor view */
+@media screen and (max-width: 1200px){
+  #block-webform-client-block-17 {
+    padding: 15px 22px;
+    #webform-client-form-17 {
+      #edit-submitted-first-name,
+      #edit-submitted-last-name,
+      #edit-submitted-email {
+        display: inline-block;
+        width: 31%;
+      }
+      .form-actions {
+        float: none;
+        button {
+          margin-left: 10px;
+        }
+      }
+      #edit-submitted-enter-your-message-text {
+        width: 64%;
+      }
+    }
+  }
+}
+
+/* i-pad landscape & portrait view */
+@media screen and (max-width: 1024px){
+  #block-webform-client-block-17 {
+    #webform-client-form-17 {
+      #edit-submitted-first-name {
+        width: 31%;
+      }
+      .form-actions {
+        button {
+          padding: 20px;
+        }
+      }
+    }
+    .webform-component-checkboxes {
+      margin-right: 10px;
+    }
+  }
+}
+
+/* i-pad portrait view only */
+@media screen and (max-width: 992px){
+  #block-webform-client-block-17 {
+    padding: 15px 22px;
+    #webform-client-form-17 {
+      #edit-submitted-first-name,
+      #edit-submitted-last-name,
+      #edit-submitted-email,
+      #edit-submitted-enter-your-message-text {
+        width: 100%;
+        margin-top: 10px;
+      }
+      .form-actions {
+        float: none;
+        button {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+/* mobile landscape & portrait view */
+@media screen and (max-width: 767px){
+
+}
+
+/* mobile portrait view only */
+@media screen and (max-width: 480px){
+
 }
 
 

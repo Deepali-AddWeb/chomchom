@@ -62,8 +62,8 @@
   }
   #block-block-3 {
     color: $silver;
-    text-align: center;
     line-height: 28px;
+    text-align: center;
     a {
       color: $light;
       text-decoration: none;
@@ -125,4 +125,40 @@
       font-size: 25px;
     }
   }
+}
+
+
+/**
+ * Responsive design
+ */
+
+/* small desktop monitor view */
+@media screen and (max-width: 1200px){
+
+}
+
+/* i-pad landscape & portrait view */
+@media screen and (max-width: 1024px){
+
+}
+
+/* i-pad portrait view only */
+@media screen and (max-width: 992px){
+  footer {
+    #block-block-3 {
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+/* mobile landscape & portrait view */
+@media screen and (max-width: 767px){
+
+}
+
+/* mobile portrait view only */
+@media screen and (max-width: 480px){
+
 }

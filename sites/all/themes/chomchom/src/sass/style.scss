@@ -14,11 +14,11 @@
 @import 'components/fonts';
 @import 'layout/forms';
 
+
+/* common css */
 body {
   font-family: $opensans-regular;
 }
-
-/* common css */
 .view-empty {
   margin: 15px 0;
   color: $black;
@@ -26,8 +26,9 @@ body {
 
 
 /**
- *  Content section
+ *  Content section of home page
  */
+
 .container {
   .jumbotron {
     margin: 0;
@@ -64,77 +65,82 @@ body {
   margin-top: 10px 0;
   border: 1px solid $light;
   box-shadow: 0 2px 0 $light;
-  .main-sub-right-top-title {
+  .main-sub-top {
     display: inline-block;
-    line-height: 0;
-    label[for=title] {
-      color: $light-black;
-      font-size: 15px;
-      font-family: $opensans-bold;
-    }
-    a {
-      color: $black;
-      font-size: 19px;
-      font-family: $opensans-bold;
-      text-decoration: none;
-    }
-  }
-  .main-sub-right-top {
-    display: inline-block;
-    width: calc(100% - 170px);
-    padding-bottom: 6px;
-    border-bottom: 1px solid $gray;
-    .main-sub-right-top-save {
-      float: right;
-      margin-bottom: 2px;
+    width: 100%;
+    padding: 10px;
+    .main-sub-right-top-title {
+      display: inline-block;
+      line-height: 0;
+      label[for=title] {
+        color: $light-black;
+        font-size: 15px;
+        font-family: $opensans-bold;
+      }
       a {
-        padding: 03px 10px;
-        border: 1px solid $black;
-        color: $blue;
+        color: $black;
+        font-size: 19px;
         font-family: $opensans-bold;
         text-decoration: none;
-        &:hover {
-          color: $light-gray;
+      }
+    }
+    .main-sub-right-top {
+      display: inline-block;
+      width: calc(100% - 170px);
+      padding-bottom: 6px;
+      border-bottom: 1px solid $gray;
+      .main-sub-right-top-save {
+        float: right;
+        margin-bottom: 2px;
+        a {
+          padding: 03px 10px;
+          border: 1px solid $black;
+          color: $blue;
+          font-family: $opensans-bold;
+          text-decoration: none;
+          &:hover {
+            color: $light-gray;
+          }
         }
       }
     }
-  }
-  img {
-    float: left;
-    margin: 0 15px 0 0;
-  }
-  .main-sub-top {
-    padding: 10px;
-  }
-  .main-sub-right-bottom-left {
-    display: inline-block;
-    margin-top: 4px;
-    font-size: 12px;
-    font-family: $opensans-semibold;
-    label {
-      font-weight: normal;
+    img {
+      float: left;
+      margin: 0 15px 0 0;
     }
-    .category {
-      color: $black;
-      font-size: 13px;
-      font-family: $opensans-extrabold;
-      text-decoration: none;
+    .main-sub-top {
+      padding: 10px;
     }
-  }
-  .main-sub-right-bottom-right {
-    float: right;
-    margin: 4px 30px 0 0;
-    color: $light-gray;
-    font-size: 12px;
-    font-family: $opensans-semibold;
-    label[for=contact_name] {
-      color: $black;
-      font-size: 13px;
-      font-family: $opensans-extrabold;
+    .main-sub-right-bottom-left {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 12px;
+      font-family: $opensans-semibold;
+      label {
+        font-weight: normal;
+      }
+      .category {
+        color: $black;
+        font-size: 13px;
+        font-family: $opensans-extrabold;
+        text-decoration: none;
+      }
     }
-    label {
-      color: #333;
-      font-weight: normal;
+    .main-sub-right-bottom-right {
+      float: right;
+      margin: 4px 30px 0 0;
+      color: $light-gray;
+      font-size: 12px;
+      font-family: $opensans-semibold;
+      label[for=contact_name] {
+        color: $black;
+        font-size: 13px;
+        font-family: $opensans-extrabold;
+      }
+      label {
+        color: #333;
+        font-weight: normal;
+      }
     }
   }
   .main-sub-bottom {
@@ -147,30 +153,56 @@ body {
     }
   }
 }
-
+/* end */
 
 /**
  *  Responsive designing
  */
 
- /* --- i-pad landscape & portrait view ---------------------------------------------------------- */
+ /* i-pad landscape & portrait view */
 @media screen and (max-width: 1024px){
   .views-row {
-    .main-sub-right-bottom-left {
-      width: 30%;
+    .main-sub-top {
+      .main-sub-right-bottom-left {
+        width: 30%;
+      }
+      .main-sub-right-bottom-right {
+        float: right;
+        width: 30%;
+      }
     }
-    .main-sub-right-bottom-right {
-      width: 30%;
-      float: right;
+  }
+}
+
+/* i-pad portrait view only */
+@media screen and (max-width: 992px){
+  .views-row {
+    .main-sub-top {
+      .main-sub-right-top-title {
+        label[for=title] {
+          font-size: 12px;
+        }
+        a {
+          font-size: 16px;
+          line-height: 15px;
+        }
+      }
+      .main-sub-right-bottom-left {
+        width: calc(100% - 200px);
+      }
+      .main-sub-right-bottom-right {
+        width: calc(100% - 155px);
+        margin: 10px 0 0;
+      }
     }
   }
 }
 
 
-
 /**
  *  Inner page
  */
+
 /* Address */
 .node-type-listing {
   .views-row {
@@ -195,8 +227,8 @@ body {
     padding: 9px 15px;
     background-color: $light-black;
     color: $white;
-    text-transform: capitalize;
     font-family: $opensans-semibold;
+    text-transform: capitalize;
     .views-field-title {
       float: left;
       a {
@@ -329,7 +361,8 @@ body {
 
   /* Specific Items Listing */
   #block-views-common-field-listing-block-1 {
-    margin: 20px 0 25px;
+    margin: 20px 0;
+    padding: 15px;
     .views-row {
       .field-content {
         display: inline-block;
@@ -390,6 +423,11 @@ body {
   }
 }
 
+
+
+
+
+
 /* Business directory page */
 .taxonomy-8 {
   .view-business-directory-specified-field {
@@ -420,7 +458,8 @@ body {
           .address {
             text-transform: capitalize;
             .adr {
-              div,span {
+              div,
+              span {
                 display: inline-block;
                 font-family: $opensans-semibold;
               }
@@ -429,9 +468,9 @@ body {
           a {
             color: $blue;
             font-size: 15px;
+            line-height: 35px;
             font-family: $opensans-bold;
             text-decoration: none;
-            line-height: 35px;
           }
         }
       }
@@ -468,8 +507,8 @@ body {
         .oh-current-closed {
           padding-left: 41px;
           color: $green;
-          font-family: $opensans-bold;
           line-height: 25px;
+          font-family: $opensans-bold;
         }
       }
       .views-field-field-website {
@@ -558,21 +597,143 @@ body {
     ul {
       li {
         img {
-          padding-right: 0 !important ;
+          padding-right: 0 !important;
           @include border-radius(7px);
         }
       }
     }
     .bx-wrapper {
+      .bx-viewport {
+        margin-top: 15px;
+      }
       ul {
         li {
-          margin-right: 3px;
+          margin-right: 4px;
         }
       }
     }
   }
 }
 /* end */
+
+
+/**
+ * Responsive design
+ */
+
+/* small desktop monitor view */
+@media screen and (max-width: 1200px){
+  .taxonomy-8 {
+    .view-business-directory-specified-field {
+      &.view-display-id-block_1 {
+        .views-field-field-website {
+          .views-label-field-website {
+            font-size: 18px;
+          }
+          .field-content {
+            a {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      &.view-display-id-block {
+        .views-field { 
+          .views-label {
+            max-width: 115px;
+          }
+        }
+      }
+    }
+  }
+
+
+  .node-type-listing {
+    .view-common-field-listing {
+      .bottom {
+        width: calc(100% - 200px);
+      }
+    }
+  }
+}
+
+/* i-pad landscape & portrait view */
+@media screen and (max-width: 1024px){
+  .taxonomy-8 {
+    .view-business-directory-specified-field {
+      &.view-display-id-block_1 {
+        .views-field-field-website {
+          .views-label-field-website {
+            font-size: 17px;
+          }
+          .field-content {
+            a {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      &.view-display-id-block {
+        .views-field { 
+          .views-label {
+            max-width: 115px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* i-pad portrait view only */
+@media screen and (max-width: 992px){
+  .taxonomy-8 {
+    .view-business-directory-specified-field {
+      &.view-display-id-block_1 {
+        .views-field-field-hours {
+          width: 100%
+        }
+        .views-field-field-website{
+            width: 100%;
+        }
+        .field-content {
+          a {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+  .node-type-listing {
+    .view-common-field-listing {
+      .bottom {
+        width: calc(100% - 30px);
+      }
+    }
+    #block-views-common-field-listing-block-1 {
+      .views-row {
+        .views-label {
+          width: 24%;
+        }
+      }
+    }
+  }
+}
+
+/* mobile landscape & portrait view */
+@media screen and (max-width: 767px){
+
+}
+
+/* mobile portrait view only */
+@media screen and (max-width: 480px){
+
+}
+
 
 /* Business directory listing page */
 #block-views-business-directory-block-1 {
@@ -593,6 +754,7 @@ body {
     @include box-shadow(none);
     .business-top {
       .business-top-left {
+        display: inline-block;
         img {
           margin-right: 25px;
           @include border-radius(10px);
@@ -629,7 +791,7 @@ body {
         }
         .business-top-right-thrid {
           display: inline-block;
-          margin: 10px 0 35px;
+          margin: 10px 0 25px;
           .business-top-right-thrid-first {
             display: inline-block;
             width: 50%;
@@ -694,8 +856,77 @@ body {
 }
 /* end */
 
-/* Unpublish ads */
 
+/**
+ * Responsive design
+ */
+
+/* small desktop monitor view */
+@media screen and (max-width: 1200px){
+  .view-business-directory {
+    .views-row {
+      .business-bottom {
+        .business-bottom-top {
+          > div {
+            padding: 0 25px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* i-pad landscape & portrait view */
+@media screen and (max-width: 1024px){
+  .view-business-directory {
+    .views-row {
+      .business-bottom {
+        .business-bottom-top {
+          > div {
+            display: inline-block;
+            padding: 0 25px;
+            border-right: 2px solid $blue;
+            &:last-child {
+              border-right: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* i-pad portrait view only */
+@media screen and (max-width: 992px){
+  .view-business-directory {
+    .business-top {
+      .business-top-right {
+        .business-top-right-thrid {
+          .business-top-right-thrid-first {
+            width: 30%;
+          }
+          .business-top-right-thrid-second {
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* mobile landscape & portrait view */
+@media screen and (max-width: 767px){
+
+}
+
+/* mobile portrait view only */
+@media screen and (max-width: 480px){
+
+}
+
+
+
+/* Unpublish ads */
 #block-views-unpublish-ads-block {
   .views-row {
     padding: 15px;
@@ -733,5 +964,3 @@ body {
   }
 }
 /* end */
-
-
