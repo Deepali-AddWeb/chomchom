@@ -24,11 +24,13 @@
       <div class='name'><?php print $row['field_contact_name'];?></div>
     </div>
     <div class="phone">
-      <?php print $output = $row['field_contact_phone'];?>
-      <?php if(isset($row['field_alternative_phone']) && !empty($row['field_alternative_phone'])){
-      	print $outputche ='<span>or</span>'.$row['field_alternative_phone'];
-      	}?>
-    </div>
+     <div class="phone-first">
+       <?php print $output = $row['field_contact_phone'];?>
+     </div>
+     <?php if(isset($row['field_alternative_phone']) && !empty($row['field_alternative_phone']))
+         print $outputche ='<span class="or">or</span><div class="phone-second">'.$row['field_alternative_phone'];'</div>'
+         ?>
+   </div>
     <div class='full-address'>
       <div class='address'><?php print $row['address'];?></div>
       <a href='https://maps.google.com?q='.<?php print $row['latitude'];?>.'+'.<?php print $row['longitude'];?>>Map and Direction</a>
