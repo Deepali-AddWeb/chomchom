@@ -363,7 +363,15 @@ select.form-control {
 
 /* mobile landscape & portrait view */
 @media screen and (max-width: 767px){
-
+  .region-primary-first {
+    #quicktabs-container-search {
+      .views-exposed-form {
+        select {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
 /* mobile portrait view only */
@@ -569,7 +577,15 @@ select.form-control {
 
 /* mobile portrait view only */
 @media screen and (max-width: 480px){
-
+  #block-webform-client-block-17 {
+    #webform-client-form-17 {
+      .form-actions {
+        button {
+          margin-left: 0;
+        }
+      }
+    }
+  }
 }
 
 
