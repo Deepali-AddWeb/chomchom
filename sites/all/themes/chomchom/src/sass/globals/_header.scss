@@ -88,98 +88,48 @@ header {
     }
   }
   /* Dropdown menu */
-  .navbar-header {
-    margin: 12px 75px 0 0;
-    .logo {
-      margin-left: 40px;
-    }
-  }
-  .navbar-collapse {
+  .manage-header {
     margin-bottom: 20px;
     border-bottom: 3px solid #E1E1E1;
     text-transform: uppercase;
-  }
-  #block-superfish-1 {
-    float: left;
-    ul {
-      li {
-        margin: 0;
-        padding: 15px 10px;
+    .navbar-header {
+      margin: 17px 75px 0 0;
+      .logo {
+        margin-left: 40px;
       }
-      &.menu {
-        > li {
-          .sf-depth-1 {
-            border: 2px solid transparent;
-            color: $light-gray;
-            font-size: 17px;
-            font-family: $opensans-bold;
-          }
-          a {
-            padding: 10px;
-            color: $white;
-            text-decoration: none;
-          }
-          ul {
-            li {
-              &:hover {
-                a {
-                  background-color: $light-gray;
-                  color: $white;
-                }
-              }
-            }
-          }
-          .sf-sub-indicator {
-            display: inline-block;
-            height: 7px;
-            width: 10px;
-            margin: 3px 0 0;
-            padding-left: 3px;
-            background-image: url($down-arrow);
-            background-position: 0 0;
-            background-repeat: no-repeat;
-            background-size: 100% auto;
-          }
-          &:hover {
-            .sf-depth-1 {
-              border: 2px solid $black;
-              color: $light-gray;
-            }
-            ul {
-              margin: 28px 0 0 16px;
-              padding-left: 0 !important;
-              border: 2px solid $black;
-              background: transparent;
-              background-color: $dark-gray;
-              @include border-radius(0);
-            }
-          }
-          &.active-trail {
-            .sf-depth-1 {
-              border: 2px solid $black;
-            }
-          }
-        }
-        li {
-          &:hover {
-            ul {
-              li {
-                margin: 0;
-                padding: 0;
-              }
-            }
-          }
-        }
+    }
+    button {
+      &.navbar-toggle {
+        background-color: red;
       }
-      &.sf-menu {
+    }
+    .navbar-collapse {
+      float: left;
+      margin: 15px 0;
+      text-transform: uppercase;
+      nav {
         ul {
-          padding: 0 !important;
-          border: none;
-        }
-        li {
-          .active-trail {
+          li {
+            margin-right: 8px;
             a {
-              background-color: $black-dark;
+              padding: 10px;
+              border: 2px solid transparent;
+              color: $light-gray;
+              font-size: 17px;
+              font-family: $opensans-bold;
+              &:hover {
+                border: 2px solid $black;
+                background-color: transparent;
+              }
+              &:focus {
+                background-color: transparent;
+              }
+            }
+            &.active-trail {
+              a {
+                border: 2px solid $black;
+                background-color: transparent;
+              }
             }
           }
         }
@@ -189,7 +139,7 @@ header {
   #block-block-5 {
     float: right;
     width: 135px !important;
-    margin-top: 15px;
+    margin-top: 20px;
     background-color: $orange;
     strong {
       float: left;
@@ -218,7 +168,7 @@ header {
   }
   #block-block-6 {
     float: right;
-    margin: 15px 0 0 10px;
+    margin: 20px 15px 0 10px;
     background-color: $light-black;
     p {
       a {
@@ -263,8 +213,6 @@ header {
             }
             a {
               padding: 10px;
-              color: $white;
-              text-decoration: none;
             }
           }
         }
@@ -294,47 +242,56 @@ header {
 /* i-pad landscape & portrait view */
 @media screen and (max-width: 1024px) {
   header {
-    .navbar-header {
-      margin: 12px 35px 0 0;
-      .logo {
-        margin-bottom: 0;
+    .manage-header {
+      .navbar-header {
+        margin: 17px 15px 0 0;
       }
-    }
-    #block-superfish-1 {
-      ul {
-        li {
-          margin-right: 5px;
-          padding: 15px 0;
-        }
-        &.menu {
-          > li {
-            .sf-depth-1 {
-              font-size: 13px;
-            }
-            a {
-              padding: 10px;
-              color: $white;
-              text-decoration: none;
+      .navbar-collapse {
+        float: left;
+        margin: 15px 0;
+        padding-right: 0;
+        padding-left: 0;
+        text-transform: uppercase;
+        nav {
+          ul {
+            li {
+              margin-right: 8px;
+              a {
+                padding: 8px;
+                font-size: 14px;
+                &:focus {
+                  background-color: transparent;
+                }
+              }
+              &.active-trail {
+                a {
+                  border: 2px solid $black;
+                  background-color: transparent;
+                }
+              }
             }
           }
         }
       }
-    }
-    #block-block-5 {
-      width: 120px !important;
-      strong {
-        width: 100%;
-        font-size: 13px;
-      }
-      a {
-        padding-top: 02px;
-        font-size: 10px;
-      }
-    }
-    #block-block-6 {
-      p {
+      #block-block-5 {
+        width: 120px !important;
+        margin-top: 15px;
+        padding: 02px 0;
+        strong {
+          width: 100%;
+          font-size: 13px;
+        }
         a {
-          padding: 18px 24px;
+          padding-top: 02px;
+          font-size: 10px;
+        }
+      }
+      #block-block-6 {
+        margin-top: 15px;
+        p {
+          a {
+            padding: 20px 24px;
+          }
         }
       }
     }
