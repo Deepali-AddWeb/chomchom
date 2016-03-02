@@ -147,14 +147,18 @@ function chomchom_views_form_alter(&$form, $form_state, $form_id) {
         $node = node_load($_SESSION['nid']);
           if (isset($node->field_category[LANGUAGE_NONE]) && !empty($node->field_category[LANGUAGE_NONE])) {
             $node_tid = $node->field_category[LANGUAGE_NONE][0]['tid'];
+            //call function get parent
+            $result = get_parent($node_tid);
           }
           if (isset($node->locations[0]) && !empty($node->locations[0])) {
             $node_province = $node->locations[0]['province'];
           }
-        foreach ($news_items as $key => $value) {         
+        foreach ($news_items as $key => $value) { 
+
           if (isset($value->field_category[LANGUAGE_NONE]) && !empty($value->field_category[LANGUAGE_NONE]) && isset($value->locations[0]) && !empty($value->locations[0])) {
-            if (($value->field_category[LANGUAGE_NONE][0]['tid'] == $node_tid) && 
-              ($value->locations[0]['province'] == $node_province)) {
+              //call function get parent
+              $get_parent = get_parent($value->field_category[LANGUAGE_NONE][0]['tid']);    
+            if (($get_parent == $result) && ($value->locations[0]['province'] == $node_province)) {
               $count ++;
             } 
           }    
@@ -165,6 +169,22 @@ function chomchom_views_form_alter(&$form, $form_state, $form_id) {
       }
     }
   }
+}
+
+
+/*
+ * Implement custom function for get parent id
+ */
+function get_parent($tid){
+  $parenttid = taxonomy_get_parents($tid);
+
+  if (isset($parenttid) && !empty($parenttid)) {
+    $pare_tid = $parenttid[1]->tid;
+  }
+  else {
+    $pare_tid = $tid;
+  }
+  return $pare_tid;
 }
 
 
