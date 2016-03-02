@@ -352,5 +352,26 @@ header {
 
 /* mobile portrait view only */
 @media screen and (max-width: 480px){
-
+  header {
+    .top-nav {
+      #block-lang-dropdown-language {
+        margin-left: 18px;
+      }
+      #block-system-user-menu {
+        float: none;
+        margin-left: 13px;
+        ul.menu {
+          float: none;
+          margin-bottom: 05px;
+        }
+      }
+    }
+    .manage-header {
+      .navbar-header {
+        .logo {
+          margin-left: 18px;
+        }
+      }
+    }
+  }
 }

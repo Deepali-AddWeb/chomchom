@@ -376,7 +376,9 @@ select.form-control {
 
 /* mobile portrait view only */
 @media screen and (max-width: 480px){
-
+  .region-primary-first {
+    margin-bottom: 15px;
+  }
 }
 
 
@@ -686,7 +688,7 @@ select.form-control {
  */
 
 /* Post an add for anonymous user */
-#listing-node-form {
+.node-listing-form {
   .panel-collapse {
     select {
       width: 350px;
@@ -735,7 +737,7 @@ select.form-control {
     }
     > .form-group {
       float: left;
-      height: 130px;
+      height: auto;
       width: 33.33%;
       margin-top: 15px;
     }
@@ -844,6 +846,9 @@ select.form-control {
     }
     #edit-locations-0-province {
       width: 257px;
+      .form-group {
+        width: 200px;
+      }
     }
     .panel-collapse {
       select {
@@ -861,15 +866,32 @@ select.form-control {
 /* mobile landscape & portrait view */
 @media screen and (max-width: 767px){
   #listing-node-form {
-    #edit-locations-0-province {
-      width: 87%;
+    .form-item-locations-0-province {
+      .input-group {
+        width: 100%;
+        #edit-locations-0-province {
+          float: none;
+          display: inline-block;
+          width: calc(100% - 38px);
+        }
+      }
     }
     .location {
       .form-item {
         label {
+          float: none;
+          width: 100%;
+        }
+        input {
           display: inline-block;
           width: 100%;
         }
+      }
+    }
+    .panel-collapse {
+      select {
+        display: inline-block;
+        width: 100%;
       }
     }
   }
@@ -877,7 +899,23 @@ select.form-control {
 
 /* mobile portrait view only */
 @media screen and (max-width: 480px){
-
+  #listing-node-form {
+    .group-can-tho {
+      width: 100%;
+      h3 {
+        display: none;
+      }
+      > .form-group {
+        width: 100%;
+      }
+    }
+    .group-sang-tiem-nails {
+      > .form-group {
+        display: inline-block;
+        width: 100%;
+      }
+    }
+  }
 }
 
 
@@ -992,6 +1030,23 @@ select.form-control {
 }
 /* end */
 
+
+/**
+ * Responsive design
+ */
+
+/* mobile portrait view only */
+@media screen and (max-width: 480px){
+  #commerce-checkout-form-checkout {
+    .button-operator {
+      display: inline-block;
+      width: 100%;
+      margin: 1px 0;
+    }
+  }
+}
+
+
 /* review page */
 #commerce-checkout-form-review {
   #edit-checkout-review {
@@ -1049,13 +1104,17 @@ select.form-control {
   #edit-commerce-payment-payment-method {
     img {
       display: inline-block;
-      &.commerce-paypal-icon {
-        margin-top: -13px;
-      }
     }
     .commerce-paypal-icons {
       margin-top: 15px;
+      > span {
+        display: none;
       }
+      img {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    }
     .radio {
       margin-top: 25px;
     }
@@ -1093,3 +1152,53 @@ select.form-control {
     }
   }
 }
+
+
+/**
+ * Responsive design
+ */
+
+/* mobile landscape & portrait view */
+@media screen and (max-width: 767px){
+  #commerce-checkout-form-review {
+    #payment-details {
+      span {
+        &.commerce-month-year-divider {
+          margin: 0 6px;
+        }
+      }
+    }
+  }
+}
+
+/* mobile portrait view only */
+@media screen and (max-width: 480px){
+  #commerce-checkout-form-review {
+    #edit-buttons {
+      span {
+        &.button-operator {
+          display: inline-block;
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+    #payment-details {
+      label {
+        width: 85px;
+        font-size: 11px;
+      }
+      span {
+        &.commerce-month-year-divider {
+          margin: 0 6px;
+        }
+      }
+    }
+    #edit-commerce-payment-payment-method {
+      .radio {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
