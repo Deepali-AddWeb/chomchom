@@ -148,7 +148,7 @@ function chomchom_views_form_alter(&$form, $form_state, $form_id) {
           if (isset($node->field_category[LANGUAGE_NONE]) && !empty($node->field_category[LANGUAGE_NONE])) {
             $node_tid = $node->field_category[LANGUAGE_NONE][0]['tid'];
             //call function get parent
-            $result = get_parent($node_tid);
+            $result = chomchom_views_get_parent($node_tid);
           }
           if (isset($node->locations[0]) && !empty($node->locations[0])) {
             $node_province = $node->locations[0]['province'];
@@ -157,7 +157,7 @@ function chomchom_views_form_alter(&$form, $form_state, $form_id) {
 
           if (isset($value->field_category[LANGUAGE_NONE]) && !empty($value->field_category[LANGUAGE_NONE]) && isset($value->locations[0]) && !empty($value->locations[0])) {
               //call function get parent
-              $get_parent = get_parent($value->field_category[LANGUAGE_NONE][0]['tid']);    
+              $get_parent = chomchom_views_get_parent($value->field_category[LANGUAGE_NONE][0]['tid']);    
             if (($get_parent == $result) && ($value->locations[0]['province'] == $node_province)) {
               $count ++;
             } 
@@ -175,11 +175,12 @@ function chomchom_views_form_alter(&$form, $form_state, $form_id) {
 /*
  * Implement custom function for get parent id
  */
-function get_parent($tid){
+function chomchom_views_get_parent($tid){
   $parenttid = taxonomy_get_parents($tid);
-
   if (isset($parenttid) && !empty($parenttid)) {
-    $pare_tid = $parenttid[1]->tid;
+    foreach ($parenttid as $key => $value) {
+      $pare_tid = $value->tid;
+    }   
   }
   else {
     $pare_tid = $tid;
