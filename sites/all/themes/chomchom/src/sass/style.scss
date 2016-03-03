@@ -92,6 +92,7 @@ body {
       .main-sub-right-top-save {
         float: right;
         margin-bottom: 2px;
+        text-transform: uppercase;
         a {
           padding: 03px 10px;
           border: 1px solid $black;
@@ -229,6 +230,13 @@ body {
  */
 
 /* Address */
+.page-node-edit {
+  &.node-type-listing {
+    .region-content {
+      border: none;
+    }
+  }
+}
 .node-type-listing {
   .views-row {
     margin-top: 0;

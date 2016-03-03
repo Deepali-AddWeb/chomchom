@@ -255,7 +255,7 @@ select.form-control {
           padding: 20px 28px;
           border: none;
           background-color: $orange;
-          font-size: 12px;
+          font-size: 11px;
           line-height: 0;
           font-weight: bold;
           text-transform: uppercase;
@@ -267,7 +267,7 @@ select.form-control {
       }
       .views-reset-button {
         display: inline-block;
-        margin-top: 12px;
+        margin-top: 13px;
         padding: 0;
         button {
           width: auto;
@@ -308,6 +308,7 @@ select.form-control {
         #edit-city {
           height: 40px;
           border: none;
+          background-color: $gray-f6;
           color: $dark-gray;
           font-style: italic;
           @include border-radius(0);
