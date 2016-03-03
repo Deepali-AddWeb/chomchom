@@ -90,7 +90,7 @@ input[type='file'] {
   @include border-radius(0);
   &.panel-default {
     > .panel-heading {
-      background-color: $light-gray;
+      background-color: $light-black;
       color: $white;
       font-weight: bold;
       text-transform: capitalize;
@@ -267,13 +267,14 @@ select.form-control {
       }
       .views-reset-button {
         display: inline-block;
-        margin-top: 8px;
+        margin-top: 12px;
         padding: 0;
         button {
           width: auto;
           border: none;
           background-color: transparent;
           color: $light-gray;
+          font-size: 12px;
           line-height: 0;
           font-family: $opensans-regular;
           &:hover {
@@ -390,9 +391,21 @@ select.form-control {
   }
   .views-exposed-widget {
     padding: 0 15px 0 0;
+    .form-item-province {
+      select {
+        color: $black;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
   }
   select {
     width: 250px;
+    background-color: $gray-f6;
+    font-size: 12px;
+  }
+  input {
+    font-size: 12px;
   }
   .btn {
     height: 40px;
@@ -439,17 +452,18 @@ select.form-control {
       float: left;
       width: 32%;
       margin-right: 15px;
-      font-size: 13px;
+      font-size: 11px;
     }
     #edit-submitted-email {
       float: left;
       height: 40px;
       width: 32%;
       margin-right: 0;
-      font-size: 13px;
+      font-size: 11px;
     }
     input {
       color: $dark-gray;
+      font-size: 11px;
       font-style: italic;
       @include border-radius(0);
     }
@@ -459,7 +473,7 @@ select.form-control {
       width: 66%;
       margin-top: 13px;
       padding-top: 10px;
-      font-size: 13px;
+      font-size: 11px;
       font-style: italic;
       @include border-radius(0);
     }
@@ -476,9 +490,10 @@ select.form-control {
         border: none;
         background-color: $orange;
         color: $white;
-        font-size: 12px;
+        font-size: 11px;
         line-height: 0;
         font-weight: bold;
+        letter-spacing: 1px;
         text-transform: uppercase;
         @include border-radius(0);
         &:hover {
@@ -494,6 +509,7 @@ select.form-control {
       margin: 0;
       margin-left: 0;
       color: $dark-gray;
+      font-size: 12px;
       font-family: verdana;
       label {
         padding-left: 0;
@@ -703,11 +719,15 @@ select.form-control {
     select {
       width: 250px;
       margin-right: 15px;
+      padding-left: 8px;
       background-color: transparent;
       &:nth-of-type(2) {
         > option:first-child {
           display: none;
         }
+      }
+      option {
+        padding-left: 8px;
       }
     }
     label {
@@ -752,6 +772,10 @@ select.form-control {
       width: auto;
       padding: 9px;
       white-space: normal;
+    }
+    .dropdown {
+      width: calc(100% - 462px);
+      margin-left: 140px;
     }
   }
   #edit-field-featured-date,
@@ -801,12 +825,19 @@ select.form-control {
 
 /* small desktop monitor view */
 @media screen and (max-width: 1200px){
-
+  .node-listing-form {
+    .form-item-locations-0-province {
+      .dropdown {
+        width: calc(100% - 315px);
+        margin-left: 140px;
+      }
+    }
+  }
 }
 
 /* i-pad landscape & portrait view */
 @media screen and (max-width: 1024px){
-  #listing-node-form {
+  .node-listing-form {
     #edit-field-hours {
       select {
         width: 70px;
@@ -825,12 +856,17 @@ select.form-control {
     #edit-actions {
       margin-top: 12px;
     }
+    .form-item-locations-0-province {
+      .dropdown {
+        width: calc(100% - 315px);
+      }
+    }
   }
 }
 
 /* i-pad portrait view only */
 @media screen and (max-width: 992px){
-  #listing-node-form {
+  .node-listing-form {
     #edit-field-category {
       select {
         width: 100%;
@@ -846,9 +882,6 @@ select.form-control {
     }
     #edit-locations-0-province {
       width: 257px;
-      .form-group {
-        width: 200px;
-      }
     }
     .panel-collapse {
       select {
@@ -860,12 +893,18 @@ select.form-control {
       width: 100%;
       margin: 30px 0 15px;
     }
+    .form-item-locations-0-province {
+      .dropdown {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
   }
 }
 
 /* mobile landscape & portrait view */
 @media screen and (max-width: 767px){
-  #listing-node-form {
+  .node-listing-form {
     .form-item-locations-0-province {
       .input-group {
         width: 100%;
@@ -874,6 +913,10 @@ select.form-control {
           display: inline-block;
           width: calc(100% - 38px);
         }
+      }
+      .dropdown {
+        width: 100%;
+        margin-left: 0;
       }
     }
     .location {
@@ -899,7 +942,7 @@ select.form-control {
 
 /* mobile portrait view only */
 @media screen and (max-width: 480px){
-  #listing-node-form {
+  .node-listing-form {
     .group-can-tho {
       width: 100%;
       h3 {
