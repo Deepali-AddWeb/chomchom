@@ -193,7 +193,7 @@ header {
 
 /* small desktop monitor view */
 @media screen and (max-width: 1200px) {
-  
+
 }
 
 /* i-pad landscape & portrait view */
@@ -257,48 +257,7 @@ header {
 
 /* i-pad portrait view only */
 @media screen and (max-width: 992px){
-  header {
-    .manage-header {
-      .navbar-header {
-        float: none;
-        .navbar-toggle {
-          display: block;
-        }
-      }
-      .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-        &.collapse {
-          display: none;
-        }
-        nav {
-          ul {
-            li {
-              a {
-                &:focus {
-                }
-              }
-              &.active-trail {
-                a {
-                }
-              }
-            }
-            &.navbar-nav {
-              float: none!important;
-              margin: 7.5px -15px;
-              > li {
-                float: none;
-                > a {
-                  padding-top: 10px;
-                  padding-bottom: 10px;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+
 }
 
 /* mobile landscape & portrait view */

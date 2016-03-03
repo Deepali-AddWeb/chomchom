@@ -305,6 +305,39 @@ body {
           margin-left: 12px;
         }
       }
+      .full-address {
+        float: left;
+        display: inline-block;
+        margin-top: 15px;
+        padding-left: 35px;
+        background-image: url($location1);
+        background-position: 0 08px;
+        background-repeat: no-repeat;
+        background-size: 17px 30px;
+        color: $black;
+        font-size: 16px;
+        text-align: left;
+        text-transform: capitalize;
+        .address {
+          font-family: $opensans-semibold;
+          .street-address {
+            display: inline-block;
+          }
+          .country-name {
+            display: inline-block;
+          }
+        }
+        a {
+          float: left;
+          color: $blue;
+          font-size: 40 px;
+          font-family: $opensans-bold;
+          text-decoration: none;
+          &:hover {
+            color: $dark-gray;
+          }
+        }
+      }
       .phone {
         .phone-first {
           display: inline-block;
@@ -338,39 +371,6 @@ body {
           color: $black;
           font-size: 16px;
           font-family: $opensans-bold;
-        }
-        .full-address {
-          float: left;
-          display: inline-block;
-          margin-top: 15px;
-          padding-left: 35px;
-          background-image: url($location1);
-          background-position: 0 08px;
-          background-repeat: no-repeat;
-          background-size: 17px 30px;
-          color: $black;
-          font-size: 16px;
-          text-align: left;
-          text-transform: capitalize;
-          .address {
-            font-family: $opensans-semibold;
-            .street-address {
-              display: inline-block;
-            }
-            .country-name {
-              display: inline-block;
-            }
-          }
-          a {
-            float: left;
-            color: $blue;
-            font-size: 17px;
-            font-family: $opensans-bold;
-            text-decoration: none;
-            &:hover {
-              color: $dark-gray;
-            }
-          }
         }
       }
     }
