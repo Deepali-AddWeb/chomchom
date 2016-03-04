@@ -145,13 +145,11 @@ body {
     }
   }
   .main-sub-bottom {
-    p {
-      padding: 5px 8px;
-      border-top: 1px solid $gray;
-      background-color: $skyblue;
-      font-size: 12px;
-      font-family: $opensans-italic;
-    }
+    padding: 5px 8px;
+    border-top: 1px solid $gray;
+    background-color: $skyblue;
+    font-size: 12px;
+    font-family: $opensans-italic;
   }
 }
 /* end */
