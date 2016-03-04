@@ -29,4 +29,4 @@ if (isset($row->field_field_image_1) && !empty($row->field_field_image_1)) {
   $count ++;
   }
 }
- print $count.'Images Available'; ?>
+ print $count.' Images Available'; ?>
