@@ -78,7 +78,7 @@ body {
         font-family: $opensans-bold;
       }
       a {
-        color: $black;
+        color: $gray-34;
         font-size: 19px;
         font-family: $opensans-bold;
         text-decoration: none;
@@ -94,9 +94,10 @@ body {
         margin-bottom: 2px;
         text-transform: uppercase;
         a {
-          padding: 03px 10px;
-          border: 1px solid $black;
+          padding: 2px 7px;
+          border: 1px solid $gray-85;
           color: $blue;
+          font-size: 13px;
           font-family: $opensans-bold;
           text-decoration: none;
           &:hover {
@@ -534,11 +535,14 @@ body {
 }
 
 
-
-
-
 /* Business directory page */
 .taxonomy-8 {
+  .image-label {
+    padding: 0 28px;
+    color: $orange;
+    font-size: 24px;
+    font-family: $opensans-bold;
+  }
   .view-business-directory-specified-field {
     &.view-display-id-block_1 {
       padding: 28px;
@@ -589,9 +593,9 @@ body {
           width: 100%;
           margin-bottom: 25px;
           padding-left: 34px;
-          background-image: url($phone1);
+          background-image: url($dark-phone);
           background-repeat: no-repeat;
-          background-size: 20px auto;
+          background-size: 24px auto;
           font-size: 19px;
           font-family: $opensans-bold;
         }
@@ -699,7 +703,7 @@ body {
     }
   }
   .bxslider-ths-field_image-processed {
-    margin: 27px;
+    margin: -10px 27px 27px;
     border: none;
     .bx-viewport {
       border: none;
@@ -908,7 +912,7 @@ body {
           a {
             display: inline-block;
             margin-bottom: 10px;
-            color: $black;
+            color: $gray-34;
             font-size: 22px;
             font-family: $opensans-bold;
             text-decoration: none;
@@ -941,17 +945,18 @@ body {
             background-image: url($red-phone);
             background-position: -10px -6px;
             background-repeat: no-repeat;
-            color: $black;
+            color: $gray-34;
             font-size: 18px;
             font-family: $opensans-bold;
           }
           .business-top-right-thrid-second {
             float: right;
             display: inline-block;
+            min-height: 30px;
             width: 50%;
-            padding-left: 50px;
+            padding-left: 45px;
             background-image: url($red-watch);
-            background-position: -8px -4px;
+            background-position: 0 -4px;
             background-repeat: no-repeat;
             color: $black;
             font-family: $opensans-semibold;
@@ -1072,6 +1077,7 @@ body {
               width: 100%;
               margin-top: 13px;
               padding-left: 33px;
+              background-position: -8px -4px;
               font-size: 12px;
             }
           }
