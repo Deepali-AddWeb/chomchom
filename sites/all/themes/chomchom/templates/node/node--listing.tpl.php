@@ -100,6 +100,11 @@
     hide($content['comments']);
     hide($content['links']);
     hide($content['field_tags']);
+    if($node->field_category[LANGUAGE_NONE][0]['tid'] == '8'){?>
+    <div class="image-label">
+     <?php print 'Image Gallery'; ?>
+    </div>                
+   <?php } 
     print render($content);
   ?>
   <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
