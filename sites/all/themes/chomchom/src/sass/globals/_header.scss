@@ -34,18 +34,18 @@ header {
         width: auto !important;
         padding: 5px 10px;
         border: 0 none;
-        @include border-radius(0);
         background-color: transparent;
         color: $white;
         font-size: 12px;
         font-style: normal;
         font-family: $opensans-bold;
         cursor: pointer;
+        @include border-radius(0);
         @include box-shadow(none);
         @include appearance(none);
         option {
           padding-left: 10px;
-          background-color: transparent;
+          background-color: #000;
         }
       }
       .form-control {

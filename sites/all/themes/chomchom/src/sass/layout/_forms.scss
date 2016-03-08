@@ -179,6 +179,9 @@ select.form-control {
     @include appearance(none);
     @include box-shadow(none);
   }
+  option {
+    padding-left: 12px;
+  }
 }
 /* end */
 
@@ -487,6 +490,7 @@ select.form-control {
       button {
         height: 42px;
         width: auto;
+        margin-top: -16px;
         padding: 20px 28px;
         border: none;
         background-color: $orange;

@@ -27,7 +27,8 @@
     line-height: 28px;
     text-align: center;
     p {
-      color: $black-dark;
+      color: $white;
+      opacity: .31;
     }
   }
   #block-block-7 {
@@ -43,13 +44,14 @@
         a {
           padding: 0 10px;
           border-right: 2px solid $dark-gray;
-          color: $silver;
+          color: $white;
           font-size: 10px;
           line-height: 14px;
           text-transform: capitalize;
+          opacity: .64;
           &:hover {
             background-color: transparent;
-            color: $green;
+            opacity: 1;
           }
         }
         &:last-child {
@@ -64,15 +66,17 @@
     color: $silver;
     line-height: 28px;
     text-align: center;
-    a {
-      color: $light;
-      text-decoration: none;
-      &:hover {
-        color: $green;
-      }
-    }
+    opacity: .64;
     p {
       font-size: 16px;
+    }
+    a {
+      color: $silver;
+      text-decoration: none;
+      &:hover {
+        color: $white;
+        opacity: 1;
+      }
     }
   }
   #block-block-2 {
