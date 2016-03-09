@@ -38,7 +38,7 @@ body {
 }
 .featured-listing {
   h2 {
-    margin-top: 0;
+    margin: 0 0 10px;
     padding: 10px 0 10px 20px;
     background-color: $light-black;
     color: $white;
@@ -49,7 +49,6 @@ body {
 }
 .view-header {
   .page-title-all-listing {
-    margin-top: 16px;
     padding: 9px 0 9px 20px;
     background-color: $light-black;
     color: $white;
@@ -62,7 +61,9 @@ body {
   display: none;
 }
 .views-row {
-  margin-top: 10px 0;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
   border: 1px solid $light;
   box-shadow: 0 2px 0 $light;
   .main-sub-top {
@@ -78,15 +79,15 @@ body {
         font-family: $opensans-bold;
       }
       a {
-        color: $gray-34;
-        font-size: 19px;
+        color: $black;
+        font-size: 17px;
         font-family: $opensans-bold;
         text-decoration: none;
       }
     }
     .main-sub-right-top {
       display: inline-block;
-      width: calc(100% - 170px);
+      width: calc(100% - 160px);
       padding-bottom: 6px;
       border-bottom: 1px solid $gray;
       .main-sub-right-top-save {
@@ -94,6 +95,7 @@ body {
         margin-bottom: 2px;
         text-transform: uppercase;
         a {
+          float: right;
           padding: 2px 7px;
           border: 1px solid $gray-85;
           color: $blue;
@@ -151,6 +153,7 @@ body {
     background-color: $skyblue;
     font-size: 12px;
     font-family: $opensans-italic;
+    word-wrap: break-word;
   }
 }
 /* end */
@@ -238,14 +241,14 @@ body {
 }
 .node-type-listing {
   .views-row {
-    margin-top: 0;
+    margin-bottom: 0;
     border: none;
     box-shadow: none;
   }
   .region-content {
     padding-bottom: 50px;
-    border: 1px solid $gray;
-    border-bottom: 3px solid $gray;
+    border: 1px solid #EBEBEB;
+    border-bottom: 3px solid #D3D3D3;
   }
   &.region {
     margin-top: 10px;
@@ -547,7 +550,7 @@ body {
     &.view-display-id-block_1 {
       padding: 28px;
       .views-field-title {
-        color: $black;
+        color: $gray-34;
         font-size: 20px;
         font-family: $opensans-bold;
         text-transform: capitalize;
@@ -591,11 +594,13 @@ body {
         .field-content {
           display: inline-block;
           width: 100%;
+          margin-top: 17px;
           margin-bottom: 25px;
           padding-left: 34px;
           background-image: url($dark-phone);
           background-repeat: no-repeat;
           background-size: 24px auto;
+          color: $gray-34;
           font-size: 19px;
           font-family: $opensans-bold;
         }
@@ -717,6 +722,7 @@ body {
       }
     }
     .bx-wrapper {
+      width: 100%;
       .bx-viewport {
         margin-top: 15px;
       }
@@ -887,7 +893,8 @@ body {
     margin-bottom: 0;
   }
 }
-.view-business-directory {
+.view-business-directory,
+.view-search {
   .view-header {
     margin-top: 25px;
   }
@@ -960,6 +967,11 @@ body {
             background-repeat: no-repeat;
             color: $black;
             font-family: $opensans-semibold;
+            .oh-display {
+              .oh-display-label {
+                width: auto;
+              }
+            }
           }
         }
       }
@@ -971,7 +983,6 @@ body {
         a {
           float: left;
           color: $blue-cd;
-          font-weight: bold;
           font-family: $opensans-bold;
           text-decoration: none;
           &:hover {
@@ -1178,3 +1189,49 @@ body {
   }
 }
 /* end */
+
+/* FAQ accordion css */
+.ui-accordion {
+  .ui-accordion-header {
+    background: $dark-gray;
+    @include border-radius(0);
+    a {
+      color: $white;
+      font-size: 16px;
+      font-family: $opensans-bold;
+    }
+    span {
+      background: url('../images/downarrow-white.png');
+      background-position: 4px 6px;
+      background-repeat: no-repeat;
+      content: '';
+    }
+    &.ui-accordion-header-active {
+      background: $light-black;
+    }
+  }
+  .ui-accordion-content {
+    width: calc(100% - 1px);
+    border: 1px solid #C5C5C5;
+    font-family: $opensans-regular;
+    @include border-radius(0);
+
+  }
+}
+/* end */
+#webform-client-form-2 {
+  input {
+    height: 34px;
+    width: 50%;
+    @include border-radius(0);
+  }
+  button {
+    border-color: transparent;
+    background-color: $orange;
+    &:hover,
+    &:focus {
+      background-color: $light-black;
+    }
+
+  }
+}
