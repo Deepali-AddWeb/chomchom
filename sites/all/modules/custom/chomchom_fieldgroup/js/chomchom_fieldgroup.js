@@ -8,10 +8,11 @@
   Drupal.behaviors.chomchomfieldgroup = {
     attach: function (context, settings) {
       jQuery("label[for='edit-locations-0-province']").append( "<span title='This field is required.' class='form-required'>*</span>" );
-      setTimeout(function(){
+
+      setTimeout(function(){  
         //call user define function fieldgrouplevel on load pass value
-        fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']").val());
-      }, 1000);
+        fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
+      }, 500);
 
        //call user define function fieldgrouplevel on change pass value
       jQuery("select[id*='edit-field-category-und-0-tid-select']").on('change',function () {
@@ -32,6 +33,7 @@
       function fieldgrouplevel(tid) {
         if(typeof(tid) != "undefined" && tid !== null) {
           switch (tid) {
+             case '0':
             case '1':
                 jQuery(".group-can-tho").show();
                 jQuery("#edit-field-kinh-nghiem").show();

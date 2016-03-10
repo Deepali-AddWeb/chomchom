@@ -8,10 +8,6 @@
  */
 ?>
 <?php $rows = $view->style_plugin->rendered_fields; 
-  /*print('$rows::<pre style="color:red;">');
-   print_r($rows);
-   print('</pre>');
-   exit;*/
 ?>
 <?php if (!empty($title)): ?>
   <h3><?php print $title; ?></h3>
@@ -50,7 +46,7 @@
         <a href="<?php print $row['field_website'];?>">Website</a>
       </div>
       <div class="field-coupon">
-        <a href="#">Coupon</a>
+        <a href="#">Coupons</a>
       </div>
       <div class="field-direction">
         <?php print $row['nothing'];?>
