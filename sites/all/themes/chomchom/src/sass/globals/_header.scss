@@ -145,15 +145,17 @@ header {
       float: left;
       width: 135px;
       color: $white;
-      font-size: 15px;
-      font-family: $opensans-extrabold;
+      font-size: 14px;
+      font-family: $opensans-bold;
       text-align: center;
     }
     p {
       color: $white;
-      font-size: 13px;
       font-family: $opensans-semibold;
       text-align: center;
+      a {
+        font-size: 12px;
+      }
     }
     a {
       border-top: 1px solid $white;

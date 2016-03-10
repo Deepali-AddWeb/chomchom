@@ -20,8 +20,8 @@
   input[type='checkbox'] + .input-rc-span {
     float: left;
     display: inline-block;
-    height: 18px;
-    width: 18px;
+    height: 20px;
+    width: 20px;
     margin: 0 10px -2px 0;
     background-image: url($uncheck);
     background-repeat: no-repeat;
@@ -197,6 +197,18 @@ select.form-control {
 .region-primary-first {
   padding: 10px 20px;
   background-color: $full-gray;
+  #quicktabs-search,
+  #quicktabs-second_filter {
+    ul.quicktabs-tabs {
+      display: inline-block;
+      width: 100%;
+      li {
+        float: left;
+        display: inline-block;
+        margin-right: 2px;
+      }
+    }
+  }
   #block-block-8 {
     margin-bottom: 15px;
     padding-bottom: 8px;
@@ -214,7 +226,8 @@ select.form-control {
       font-family: $opensans-bold;
     }
   }
-  #quicktabs-search {
+  #quicktabs-search,
+  #quicktabs-second_filter {
     ul {
       margin: 0;
       padding: 0;
@@ -247,7 +260,8 @@ select.form-control {
       }
     }
   }
-  #quicktabs-container-search {
+  #quicktabs-container-search,
+  .quicktabs-tabpage {
     margin-top: 16px;
     .views-exposed-form {
       .views-submit-button {
@@ -681,6 +695,13 @@ select.form-control {
         @include appearance(none);
       }
     }
+  }
+}
+#user-login {
+  input {
+    height: 34px;
+    max-width: 465px;
+    width: 100%;
   }
 }
 #edit-actions {
