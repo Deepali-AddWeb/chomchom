@@ -841,6 +841,9 @@ select.form-control {
   #edit-actions {
     margin-top: 12px;
   }
+  .select-or-other-other {
+    width: 50%;
+  }
 }
 /* end */
 
@@ -1266,6 +1269,44 @@ select.form-control {
     #edit-commerce-payment-payment-method {
       .radio {
         margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+/* User Page Edit */
+.page-user-edit {
+  #edit-account {
+    input {
+      height: 34px;
+      max-width: 350px;
+      @include border-radius(0);
+    }
+  }
+}
+/* User order page */
+.entity-commerce-order {
+  table.commerce-price-formatted-components {
+    .component-type-commerce-price-formatted-amount {
+      background-color: $light-gray;
+      color: $white;
+    }
+  }
+  .field-name-commerce-customer-billing {
+    .field-label {
+      padding: 8px;
+      background-color: $light-gray;
+      color: $white;
+    }
+  }
+}
+.view-commerce-user-orders {
+  table {
+    thead {
+      tr {
+        th {
+          background-color: $light-gray;
+        }
       }
     }
   }
