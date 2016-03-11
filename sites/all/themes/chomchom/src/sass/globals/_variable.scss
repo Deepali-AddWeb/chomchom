@@ -8,7 +8,7 @@
 /* color variable */
 $white:           #FFF;
 $black:           #000;
-$blue:            #0A7CD9;
+$blue:            #0064DD;
 $red:             #F00;
 $gray:            #E1E1E1;
 $gray-f6:         #F6F6F6;
@@ -113,3 +113,11 @@ $radio-uncheck:      '../images/radio.png';
   -webkit-user-select: $value;
      -moz-user-select: $value;
 }
+@mixin background($value, $value2, $value3, $value4) {
+ background: $value;
+ background: -moz-linear-gradient(top, $value 0%, $value2 50%, $value3 51%, $value4 100%);
+ background: -webkit-linear-gradient(top, $value 0%, $value2 50%, $value3 51%, $value4 100%);
+ background: linear-gradient(to bottom, $value 0%, $value2 50%, $value3 51%, $value4 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$value', endColorstr='$value4',GradientType=0);
+}
+

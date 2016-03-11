@@ -29,6 +29,7 @@
     p {
       color: $white;
       font-size: 11px;
+      text-transform: capitalize;
       opacity: .31;
     }
   }
@@ -69,6 +70,7 @@
     text-align: center;
     p {
       span {
+        margin-right: 5px;
         color: $white;
         font-size: 15px;
         opacity: .64;

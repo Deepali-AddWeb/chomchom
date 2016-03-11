@@ -18,6 +18,18 @@
 /* common css */
 body {
   font-family: $opensans-regular;
+  outline: none;
+}
+a {
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+.btn {
+  &:focus {
+    outline: none;
+  }
 }
 .view-empty {
   margin: 15px 0;
@@ -30,6 +42,7 @@ body {
  */
 
 .container {
+  min-height: 300px;
   .jumbotron {
     margin: 0;
     padding: 0;
@@ -42,7 +55,7 @@ body {
     padding: 10px 0 10px 20px;
     background-color: $light-black;
     color: $white;
-    font-size: 16px;
+    font-size: 15px;
     font-family: $opensans-bold;
     text-transform: capitalize;
   }
@@ -52,7 +65,7 @@ body {
     padding: 9px 0 9px 20px;
     background-color: $light-black;
     color: $white;
-    font-size: 16px;
+    font-size: 15px;
     font-family: $opensans-bold;
     text-transform: capitalize;
   }
@@ -76,6 +89,7 @@ body {
       label[for=title] {
         color: $light-black;
         font-size: 15px;
+        font-weight: normal;
         font-family: $opensans-bold;
       }
       a {
@@ -88,15 +102,15 @@ body {
     .main-sub-right-top {
       display: inline-block;
       width: calc(100% - 160px);
-      padding-bottom: 6px;
+      padding-bottom: 4px;
       border-bottom: 1px solid $gray;
       .main-sub-right-top-save {
         float: right;
-        margin-bottom: 2px;
+        margin-bottom: 1px;
         text-transform: uppercase;
         a {
           float: right;
-          padding: 2px 7px;
+          padding: 2px 10px;
           border: 1px solid $gray-85;
           color: $blue;
           font-size: 13px;
@@ -110,7 +124,7 @@ body {
     }
     img {
       float: left;
-      margin: 0 15px 0 0;
+      margin: 5px 15px 0 0;
     }
     .main-sub-top {
       padding: 10px;
@@ -118,30 +132,34 @@ body {
     .main-sub-right-bottom-left {
       display: inline-block;
       margin-top: 4px;
-      font-size: 12px;
+      font-size: 10px;
       font-family: $opensans-semibold;
+      > div,
       label {
+        margin-bottom: 0;
         font-weight: normal;
       }
       .category {
         color: $black;
-        font-size: 13px;
+        font-size: 11px;
         font-family: $opensans-extrabold;
         text-decoration: none;
       }
     }
     .main-sub-right-bottom-right {
       float: right;
-      margin: 4px 30px 0 0;
+      margin: 4px 60px 0 0;
       color: $light-gray;
-      font-size: 12px;
+      font-size: 10px;
       font-family: $opensans-semibold;
       label[for=contact_name] {
         color: $black;
-        font-size: 13px;
+        font-size: 11px;
         font-family: $opensans-extrabold;
       }
+      > div,
       label {
+        margin-bottom: 0;
         color: #333;
         font-weight: normal;
       }
@@ -151,12 +169,25 @@ body {
     padding: 5px 8px;
     border-top: 1px solid $gray;
     background-color: $skyblue;
-    font-size: 12px;
+    font-size: 11px;
     font-family: $opensans-italic;
     word-wrap: break-word;
   }
 }
 /* end */
+
+/* Gradient for pages*/
+.view-sang-tiem-nails.view-display-id-page,
+.view-can-tho.view-display-id-page,
+.view-quang-cao-rao-vat.view-display-id-page {
+  .views-row {
+    background: #FFF;
+    background: -moz-linear-gradient(top, #FFF 0%, #FAFAFA 100%);
+    background: -webkit-linear-gradient(top, #FFF 0%, #FAFAFA 100%);
+    background: linear-gradient(to bottom, #FFF 0%, #FAFAFA 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= '#FFF', endColorstr='#FAFAFA',GradientType=0);
+  }
+}
 
 /**
  *  Responsive designing
@@ -238,6 +269,11 @@ body {
       border: none;
     }
   }
+  #edit-field-category {
+    select {
+      background-color: #E1E1E1;
+    }
+  }
 }
 .node-type-listing {
   .views-row {
@@ -266,6 +302,7 @@ body {
     text-transform: capitalize;
     .views-field-title {
       float: left;
+      width: calc(100% - 220px);
       a {
         color: $white;
         font-size: 16px;
@@ -423,36 +460,39 @@ body {
     .bx-wrapper {
       ul {
         li {
+          margin-right: 4px;
           img {
-            padding-right: 5px;
             opacity: 1;
           }
         }
       }
-    }
-  }
-  .bx-wrapper {
-    .bx-controls-direction {
-      .bx-prev {
-        height: 34px;
-        width: 34px;
-        background-image: url($slider-prev-arrow);
-        background-position: 0;
-        background-repeat: no-repeat;
-        content: '';
+      .bx-controls-direction {
+        .bx-prev {
+          height: 34px;
+          width: 34px;
+          background-image: url($slider-prev-arrow);
+          background-position: 0;
+          background-repeat: no-repeat;
+          content: '';
+        }
+        a {
+          height: 34px;
+          width: 34px;
+          opacity: .7;
+        }
+        .bx-next {
+          height: 34px;
+          width: 34px;
+          background-image: url($slider-next-arrow1);
+          background-position: 0;
+          background-repeat: no-repeat;
+          content: '';
+        }
       }
-      a {
-        height: 34px;
-        width: 34px;
-        opacity: .7;
-      }
-      .bx-next {
-        height: 34px;
-        width: 34px;
-        background-image: url($slider-next-arrow1);
-        background-position: 0;
-        background-repeat: no-repeat;
-        content: '';
+      &:nth-child(2) {
+        .bx-viewport {
+          width: 414px !important;
+        }
       }
     }
   }
@@ -611,7 +651,7 @@ body {
         width: 50%;
         margin-bottom: 15px;
         padding: 15px;
-        border: 1px solid $light-gray;
+        border: 1px solid #CBCBCB;
         border-right: none;
         border-left: none;
         background-color: $light-silver;
@@ -624,7 +664,7 @@ body {
         }
         .oh-current-closed,
         .oh-current-open {
-          padding-left: 41px;
+          padding-left: 53px;
           color: $green;
           line-height: 25px;
           font-family: $opensans-bold;
@@ -635,26 +675,42 @@ body {
         height: 75px;
         width: 50%;
         padding: 24px 15px 15px;
-        border: 1px solid $light-gray;
+        border: 1px solid #CBCBCB;
         border-right: none;
         border-left: none;
         background-color: $silver;
         .views-label-field-website {
           float: left;
+          margin-top: -3px;
           margin-right: 15px;
           color: $orange;
-          font-size: 21px;
+          font-size: 24px;
           font-family: $opensans-bold;
         }
         .field-content {
           a {
-            margin-top: 5px;
             color: $light-gray;
-            font-size: 18px;
+            font-size: 20px;
             font-family: $opensans-bold;
             text-decoration: none;
             &:hover {
               color: $green;
+            }
+          }
+        }
+      }
+      .views-row {
+        .views-field-nid {
+          .field-content {
+            a {
+              position: absolute;
+              top: 0;
+              right: 0;
+              height: 59px;
+              width: 59px;
+              margin: 18px 28px 0 0;
+              background-image: url($edit);
+              text-indent: -9999px;
             }
           }
         }
@@ -680,9 +736,10 @@ body {
         }
         .views-label {
           float: left;
-          max-width: 200px;
+          max-width: 155px;
           width: 100%;
           color: $light-gray;
+          font-size: 13px;
           font-family: $opensans-bold;
           text-transform: capitalize;
         }
@@ -704,6 +761,12 @@ body {
           font-family: $opensans-bold;
           text-transform: capitalize;
         }
+      }
+    }
+    .views-field-field-hours {
+      .oh-display-label {
+        width: auto !important;
+        margin-right: 14px;
       }
     }
   }
@@ -967,10 +1030,8 @@ body {
             background-repeat: no-repeat;
             color: $black;
             font-family: $opensans-semibold;
-            .oh-display {
-              .oh-display-label {
-                width: auto;
-              }
+            .oh-display-label {
+              width: auto !important;
             }
           }
         }
@@ -1155,9 +1216,6 @@ body {
 #block-views-unpublish-ads-block {
   .views-row {
     padding: 15px;
-    .views-field-title {
-      display: inline-block;
-    }
     .views-field-field-category {
       display: inline-block;
     }
@@ -1233,5 +1291,31 @@ body {
       background-color: $light-black;
     }
 
+  }
+}
+
+/* Pagination */
+.pagination {
+  li {
+    a {
+      color: #464646;
+      text-transform: capitalize;
+      &:hover,
+      &:focus {
+        color: #464646;
+      }
+    }
+    &.active {
+      span {
+        border-color: #464646;
+        background-color: #464646;
+        color: $white;
+        &:hover,
+        &:focus {
+          border-color: $dark-gray;
+          background-color: $dark-gray;
+        }
+      }
+    }
   }
 }
