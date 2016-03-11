@@ -197,8 +197,7 @@ select.form-control {
 .region-primary-first {
   padding: 10px 20px;
   background-color: $full-gray;
-  #quicktabs-search,
-  #quicktabs-second_filter {
+  #quicktabs-search {
     ul.quicktabs-tabs {
       display: inline-block;
       width: 100%;
@@ -209,7 +208,23 @@ select.form-control {
       }
     }
   }
+  #quicktabs-second_filter {
+    ul {
+      display: none;
+    }
+    .quicktabs-tabpage {
+      margin-top: 0;
+      .views-exposed-form {
+        margin-top: 0;
+      }
+      select {
+        margin-top: 5px;
+        margin-bottom: 5px !important;
+      }
+    }
+  }
   #block-block-8 {
+    width: calc(100% - 18px);
     margin-bottom: 15px;
     padding-bottom: 8px;
     border-bottom: 2px solid $dark-gray;
@@ -281,6 +296,9 @@ select.form-control {
             background-color: $light-black;
           }
         }
+        &:active {
+          background-color: red;
+        }
       }
       .views-reset-button {
         display: inline-block;
@@ -296,6 +314,10 @@ select.form-control {
           font-family: $opensans-regular;
           &:hover {
             color: $green;
+          }
+          &:active,
+          &.active {
+            box-shadow: none;
           }
           &:focus {
             border: none;
@@ -320,8 +342,6 @@ select.form-control {
         }
       }
       #edit-city-wrapper {
-        padding-bottom: 15px;
-        border-bottom: 2px solid $dark-gray;
         #edit-city {
           height: 40px;
           border: none;
@@ -332,6 +352,11 @@ select.form-control {
           @include box-shadow(none);
           @include appearance(none);
         }
+      }
+      .for-border {
+        width: calc(100% - 18px);
+        padding-bottom: 15px;
+        border-bottom: 2px solid $dark-gray;
       }
     }
   }
@@ -747,10 +772,16 @@ select.form-control {
       margin-right: 15px;
       padding-left: 8px;
       background-color: transparent;
+      text-indent: 1px;
+      outline: none;
       &:nth-of-type(2) {
         > option:first-child {
           display: none;
         }
+      }
+      &:focus,
+      &:active {
+        outline: 0;
       }
       option {
         padding-left: 8px;
@@ -1283,6 +1314,9 @@ select.form-control {
       @include border-radius(0);
     }
   }
+  #edit-timezone {
+    display: none;
+  }
 }
 /* User order page */
 .entity-commerce-order {
@@ -1305,8 +1339,20 @@ select.form-control {
     thead {
       tr {
         th {
-          background-color: $light-gray;
+          background-color: $dark-gray;
+          a {
+            color: $white;
+            text-decoration: none;
+            img {
+              display: inline-block;
+              margin-left: 10px;
+            }
+          }
+          &.active {
+            background-color: $light-black;
+          }
         }
+
       }
     }
   }

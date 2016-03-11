@@ -18,6 +18,18 @@
 /* common css */
 body {
   font-family: $opensans-regular;
+  outline: none;
+}
+a {
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+.btn {
+  &:focus {
+    outline: none;
+  }
 }
 .view-empty {
   margin: 15px 0;
@@ -30,6 +42,7 @@ body {
  */
 
 .container {
+  min-height: 300px;
   .jumbotron {
     margin: 0;
     padding: 0;
@@ -121,7 +134,9 @@ body {
       margin-top: 4px;
       font-size: 10px;
       font-family: $opensans-semibold;
+      > div,
       label {
+        margin-bottom: 0;
         font-weight: normal;
       }
       .category {
@@ -142,6 +157,7 @@ body {
         font-size: 11px;
         font-family: $opensans-extrabold;
       }
+      > div,
       label {
         margin-bottom: 0;
         color: #333;
@@ -153,12 +169,25 @@ body {
     padding: 5px 8px;
     border-top: 1px solid $gray;
     background-color: $skyblue;
-    font-size: 12px;
+    font-size: 11px;
     font-family: $opensans-italic;
     word-wrap: break-word;
   }
 }
 /* end */
+
+/* Gradient for pages*/
+.view-sang-tiem-nails.view-display-id-page,
+.view-can-tho.view-display-id-page,
+.view-quang-cao-rao-vat.view-display-id-page {
+  .views-row {
+    background: #FFF;
+    background: -moz-linear-gradient(top, #FFF 0%, #FAFAFA 100%);
+    background: -webkit-linear-gradient(top, #FFF 0%, #FAFAFA 100%);
+    background: linear-gradient(to bottom, #FFF 0%, #FAFAFA 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr= '#FFF', endColorstr='#FAFAFA',GradientType=0);
+  }
+}
 
 /**
  *  Responsive designing
@@ -273,6 +302,7 @@ body {
     text-transform: capitalize;
     .views-field-title {
       float: left;
+      width: calc(100% - 220px);
       a {
         color: $white;
         font-size: 16px;
@@ -665,6 +695,22 @@ body {
             text-decoration: none;
             &:hover {
               color: $green;
+            }
+          }
+        }
+      }
+      .views-row {
+        .views-field-nid {
+          .field-content {
+            a {
+              position: absolute;
+              top: 0;
+              right: 0;
+              height: 59px;
+              width: 59px;
+              margin: 18px 28px 0 0;
+              background-image: url($edit);
+              text-indent: -9999px;
             }
           }
         }
@@ -1170,9 +1216,6 @@ body {
 #block-views-unpublish-ads-block {
   .views-row {
     padding: 15px;
-    .views-field-title {
-      display: inline-block;
-    }
     .views-field-field-category {
       display: inline-block;
     }
@@ -1248,5 +1291,31 @@ body {
       background-color: $light-black;
     }
 
+  }
+}
+
+/* Pagination */
+.pagination {
+  li {
+    a {
+      color: #464646;
+      text-transform: capitalize;
+      &:hover,
+      &:focus {
+        color: #464646;
+      }
+    }
+    &.active {
+      span {
+        border-color: #464646;
+        background-color: #464646;
+        color: $white;
+        &:hover,
+        &:focus {
+          border-color: $dark-gray;
+          background-color: $dark-gray;
+        }
+      }
+    }
   }
 }
