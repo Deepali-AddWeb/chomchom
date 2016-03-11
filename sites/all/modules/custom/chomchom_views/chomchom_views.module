@@ -163,7 +163,7 @@ function chomchom_views_form_alter(&$form, $form_state, $form_id) {
             } 
           }    
         }
-        if ($count > 5) {
+        if ($count >= 5) {
           unset($form['attributes']['field_featured']);
         }
       }

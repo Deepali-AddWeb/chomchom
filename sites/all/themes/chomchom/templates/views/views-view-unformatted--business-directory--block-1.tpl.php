@@ -55,9 +55,11 @@
         <a href="node/<?php print $row['nid'];?>">More Info.</a> 
       </div>
     </div>
-    <div class="business-bottom-bottom">
+    <?php if(isset($row['field_general_info']) && !empty($row['field_general_info'])) { ?>
+      <div class="business-bottom-bottom">
       <?php print $row['field_general_info'];?>
     </div>
+    <?php } ?>
   </div>
 </div>
 	

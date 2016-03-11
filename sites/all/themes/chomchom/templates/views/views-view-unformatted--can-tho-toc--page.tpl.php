@@ -94,9 +94,11 @@
 				</div>
 			</div>
 		</div>
-		<div class='main-sub-bottom'>
-		<?php print $row['body'];?>
-		</div>
+		<?php if(isset($row['body']) && !empty($row['body'])) { ?>
+			<div class='main-sub-bottom'>
+			<?php print $row['body'];?>
+			</div>
+		<?php } ?>
 	</div>
 
   </div>
