@@ -11,13 +11,13 @@
 
       //when second quicktab search then load second load 
       var pathArray = window.location.pathname.split( '/' );
-      console.log(pathArray[2]);
+      console.log(pathArray[1]);
       if(pathArray[2] == 'sang-tiem-search'){
         jQuery("#quicktabs-search ul.quicktabs-tabs li").removeClass("active");
         jQuery("#quicktabs-search ul.quicktabs-tabs li:nth-child(2)").addClass("active");
         jQuery("#quicktabs-tabpage-search-1").removeClass("quicktabs-hide");
         jQuery("#quicktabs-tabpage-search-0").addClass("quicktabs-hide");
-      }else if (pathArray[2] == 'sang-tiem') {
+      }else if (pathArray[1] == 'sang-tiem') {
         jQuery("#quicktabs-search ul.quicktabs-tabs li").removeClass("active");
         jQuery("#quicktabs-search ul.quicktabs-tabs li:nth-child(2)").addClass("active");
         jQuery("#quicktabs-tabpage-search-1").removeClass("quicktabs-hide");
