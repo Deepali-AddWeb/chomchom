@@ -491,7 +491,7 @@ a {
       }
       &:nth-child(2) {
         .bx-viewport {
-          width: 414px !important;
+          
         }
       }
     }
@@ -661,6 +661,11 @@ a {
         .oh-display-times {
           color: $black;
           font-family: $opensans-semibold;
+          &::before {
+            display: inline-block;
+            margin-right: 5px;
+            content: 'Today';
+          }
         }
         .oh-current-closed,
         .oh-current-open {
@@ -668,6 +673,12 @@ a {
           color: $green;
           line-height: 25px;
           font-family: $opensans-bold;
+        }
+        .oh-current-open ~ .oh-current-closed {
+          display: none;
+        }
+        .oh-current-closed {
+          color: red;
         }
       }
       .views-field-field-website {
@@ -710,7 +721,16 @@ a {
               width: 59px;
               margin: 18px 28px 0 0;
               background-image: url($edit);
-              text-indent: -9999px;
+              font-size: 0;
+              &::after {
+                display: inline-block;
+                margin-top: 47px;
+                margin-left: 8px;
+                color: #222222;
+                font-size: 13px;
+                font-weight: bold;
+                content: 'Edit';
+              }
             }
           }
         }
