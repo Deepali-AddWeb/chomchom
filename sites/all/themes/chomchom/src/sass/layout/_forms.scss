@@ -1317,6 +1317,10 @@ select.form-control {
   #edit-timezone {
     display: none;
   }
+  .help-block {
+    max-width: 350px;
+    width: 100%;
+  }
 }
 /* User order page */
 .entity-commerce-order {
@@ -1331,6 +1335,11 @@ select.form-control {
       padding: 8px;
       background-color: $light-gray;
       color: $white;
+    }
+    .field-name-commerce-customer-address {
+      .field-items {
+        margin-left: 7px;
+      }
     }
   }
 }
