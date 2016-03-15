@@ -28,12 +28,18 @@
         jQuery("#edit-field-category select").attr("disabled", true);   
       }
 
-      //Append div after city field in filter 
-      jQuery( "<div class='for-border'></div>" ).insertAfter( "#edit-city-wrapper" );
+      //Append div after city field in filter
+        jQuery( "<div class='for-border'></div>" ).insertAfter( "#edit-city-wrapper" );
+        jQuery( "<div class='for-border'></div>" ).insertAfter( "#edit-city-sang-tiem-wrapper" );
 
-      //Business directory page append div after city field in filter  
-      jQuery( "<div class='for-border'></div>" ).insertAfter( "#edit-field-categories-tid-wrapper" );
+      //Business directory page append div after city field in filter 
+        jQuery( "<div class='for-border'></div>" ).insertAfter( "#edit-field-categories-tid-wrapper" );
 
+      if(jQuery(".views-field-field-hours .field-content div").hasClass('oh-current-closed')){
+        jQuery(".views-field-field-hours .field-content .oh-display").hide();
+        jQuery(".views-field-field-hours .field-content .oh-current-closed").css("padding-top", "10px"); 
+      }
+      
     }
   };
 }(jQuery));
