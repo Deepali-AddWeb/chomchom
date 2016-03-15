@@ -489,11 +489,6 @@ a {
           content: '';
         }
       }
-      &:nth-child(2) {
-        .bx-viewport {
-          
-        }
-      }
     }
   }
 }
@@ -669,7 +664,7 @@ a {
         }
         .oh-current-closed,
         .oh-current-open {
-          padding-left: 53px;
+          padding-left: 57px;
           color: $green;
           line-height: 25px;
           font-family: $opensans-bold;
@@ -726,7 +721,7 @@ a {
                 display: inline-block;
                 margin-top: 47px;
                 margin-left: 8px;
-                color: #222222;
+                color: #222;
                 font-size: 13px;
                 font-weight: bold;
                 content: 'Edit';
@@ -1051,6 +1046,7 @@ a {
             color: $black;
             font-family: $opensans-semibold;
             .oh-display-label {
+              min-width: 90px;
               width: auto !important;
             }
           }
