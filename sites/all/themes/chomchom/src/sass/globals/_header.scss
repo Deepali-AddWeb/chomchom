@@ -98,11 +98,6 @@ header {
         margin-left: 40px;
       }
     }
-    button {
-      &.navbar-toggle {
-        background-color: red;
-      }
-    }
     .navbar-collapse {
       float: left;
       margin: 15px 0;
@@ -264,7 +259,73 @@ header {
 
 /* mobile landscape & portrait view */
 @media screen and (max-width: 767px){
-
+  /* Header */
+  .container {
+    min-height: 100%;
+  }
+  header {
+    .top-nav {
+      #block-lang-dropdown-language {
+        margin-left: 16px;
+      }
+    }
+    .manage-header {
+      .navbar-nav {
+        margin: 0;
+      }
+      .navbar-header {
+        margin-right: 0;
+        .logo {
+          margin-left: 15px;
+        }
+      }
+      .region-navigation {
+        position: absolute;
+        top: 0;
+        right: 51px;
+        margin-top: 50px;
+        #block-block-5,
+        #block-block-6 {
+          height: 43px;
+          margin-top: 0;
+        }
+      }
+      button {
+        height: 43px;
+        margin-top: 0;
+        background-color: $light-black;
+        @include border-radius(0);
+        > span {
+          background-color: $white;
+        }
+      }
+      .navbar-collapse {
+        width: 100%;
+        nav {
+          ul {
+            li {
+              margin-right: 0;
+              border-top: 1px solid $dark-gray;
+              &.last {
+                border-bottom: 1px solid $dark-gray;
+              }
+              &.active-trail {
+                a {
+                  border: none;
+                }
+              }
+              a {
+                border: none;
+                &:hover {
+                  border: none;
+              }
+            }
+          }
+        }
+        }
+      }
+    }
+  }
 }
 
 /* mobile portrait view only */
@@ -286,8 +347,28 @@ header {
     .manage-header {
       .navbar-header {
         .logo {
+          display: inline-block;
+          width: 100%;
           margin-left: 18px;
         }
+      }
+      .region-navigation {
+        margin-top: 95px;
+      }
+      button {
+        margin-top: 2px;
+      }
+    }
+  }
+}
+
+/* small mobile portrait view only */
+@media screen and (max-width: 360px){
+
+  header {
+    .manage-header {
+     .region-navigation {
+        margin-top: 125px;
       }
     }
   }
