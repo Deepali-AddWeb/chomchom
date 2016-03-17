@@ -348,6 +348,8 @@ select.form-control {
           background-color: $gray-f6;
           color: $dark-gray;
           font-style: italic;
+          -moz-user-select: none;
+          -webkit-user-select: none;
           @include border-radius(0);
           @include box-shadow(none);
           @include appearance(none);
@@ -748,6 +750,12 @@ select.form-control {
 #edit-mail {
   @include border-radius(0);
 }
+#user-pass {
+  input {
+    max-width: 462px;
+    width: 100%;
+  }
+}
 
 
 /**
@@ -978,6 +986,9 @@ select.form-control {
         width: 100%;
         margin-left: 0;
       }
+      .input-group-addon {
+        margin-top: -2px;
+      }
     }
     .location {
       .form-item {
@@ -1016,6 +1027,17 @@ select.form-control {
       > .form-group {
         display: inline-block;
         width: 100%;
+      }
+    }
+  }
+  .tabs--primary {
+    li {
+      display: inline-block;
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 8px;
+      > li {
+        float: none;
       }
     }
   }
@@ -1311,6 +1333,7 @@ select.form-control {
     input {
       height: 34px;
       max-width: 350px;
+      width: 100%;
       @include border-radius(0);
     }
   }
@@ -1320,6 +1343,19 @@ select.form-control {
   .help-block {
     max-width: 350px;
     width: 100%;
+  }
+}
+#user-register-form {
+  #edit-account {
+    input,
+    select {
+      max-width: 462px;
+      width: 100%;
+    }
+    select {
+      padding: 6px 17px 6px 12px;
+      background-position: calc(100% - 7px) center;
+    }
   }
 }
 /* User order page */
