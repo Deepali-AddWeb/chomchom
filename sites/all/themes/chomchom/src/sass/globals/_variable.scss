@@ -110,8 +110,6 @@ $radio-uncheck:      '../images/radio.png';
      -moz-appearance: $value;
       -ms-appearance: $value;
           appearance: $value;
-  -webkit-user-select: $value;
-     -moz-user-select: $value;
 }
 @mixin background($value, $value2, $value3, $value4) {
  background: $value;

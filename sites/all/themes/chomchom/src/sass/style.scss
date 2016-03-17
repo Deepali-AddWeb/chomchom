@@ -15,6 +15,12 @@
 @import 'layout/forms';
 
 
+#edit-field-image-und--2,
+edit-field-image-und--2 {
+  display: table-cell;
+  width: 100%;
+}
+
 /* common css */
 body {
   font-family: $opensans-regular;
@@ -212,7 +218,7 @@ a {
 @media screen and (max-width: 992px){
   /* ipad */
   .container {
-    min-height: 360px;
+    min-height: 470px;
   }
   /* end */
   .views-row {
@@ -570,9 +576,13 @@ a {
         font-size: 13px;
       }
       .views-field-title {
+        width: 100%;
         a {
           font-size: 14px;
         }
+      }
+      .views-field-created {
+        float: left;
       }
     }
   }

@@ -348,8 +348,6 @@ select.form-control {
           background-color: $gray-f6;
           color: $dark-gray;
           font-style: italic;
-          -moz-user-select: none;
-          -webkit-user-select: none;
           @include border-radius(0);
           @include box-shadow(none);
           @include appearance(none);
@@ -1027,6 +1025,11 @@ select.form-control {
       > .form-group {
         display: inline-block;
         width: 100%;
+      }
+    }
+    .form-item-locations-0-province {
+      .input-group-addon {
+        margin-top: -2px;
       }
     }
   }
