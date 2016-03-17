@@ -254,7 +254,23 @@ header {
 
 /* i-pad portrait view only */
 @media screen and (max-width: 992px){
-
+  header {
+    .manage-header {
+      .region-navigation {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 38px;
+        #block-block-6 {
+          height: 43px;
+        }
+      }
+      .navbar-collapse {
+        width: 100%;
+        margin-left: 25px;
+      }
+    }
+  }
 }
 
 /* mobile landscape & portrait view */
@@ -363,11 +379,10 @@ header {
 }
 
 /* small mobile portrait view only */
-@media screen and (max-width: 360px){
-
+@media screen and (max-width: 360px) {
   header {
     .manage-header {
-     .region-navigation {
+      .region-navigation {
         margin-top: 125px;
       }
     }
