@@ -9,11 +9,15 @@
     attach: function (context, settings) {
       jQuery("label[for='edit-locations-0-province']").append( "<span title='This field is required.' class='form-required'>*</span>" );
 
-      setTimeout(function(){  
+      
+      /*setTimeout(function(){  
+        alert('test');
         //call user define function fieldgrouplevel on load pass value
         fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
-      }, 500);
-
+      }, 5000);*/
+      jQuery( window ).load(function() {
+      fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
+      });
        //call user define function fieldgrouplevel on change pass value
       jQuery("select[id*='edit-field-category-und-0-tid-select']").on('change',function () {
         fieldgrouplevel(jQuery(this).val());
