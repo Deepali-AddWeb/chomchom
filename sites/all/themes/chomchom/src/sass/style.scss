@@ -9,7 +9,6 @@
 /* Import of variables created for site */
 @import 'globals/variable';
 @import 'globals/header';
-@import 'globals/sidebar';
 @import 'globals/footer';
 @import 'components/fonts';
 @import 'layout/forms';
@@ -48,7 +47,7 @@ a {
  */
 
 .container {
-  min-height: 300px;
+  /*min-height: 300px;*/
   .jumbotron {
     margin: 0;
     padding: 0;
@@ -217,9 +216,9 @@ a {
 /* i-pad portrait view only */
 @media screen and (max-width: 992px){
   /* ipad */
-  .container {
-    min-height: 470px;
-  }
+  /*.container {
+    min-height: 500px;
+  }*/
   /* end */
   .views-row {
     .main-sub-top {
@@ -268,6 +267,7 @@ a {
     }
   }
 }
+
 
 /**
  *  Inner page

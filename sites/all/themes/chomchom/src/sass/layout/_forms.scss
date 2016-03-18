@@ -942,16 +942,18 @@ select.form-control {
     .location {
       .form-item {
         input {
-          width: 67%;
+         /* width: 100%;
+          max-width: 280px;*/
         }
       }
     }
     #edit-locations-0-province {
-      width: 257px;
+     /* width: 100%;
+      max-width: 280px;*/
     }
     .panel-collapse {
       select {
-        width: 67%;
+       /* width: 100%; */
       }
     }
     #edit-actions {

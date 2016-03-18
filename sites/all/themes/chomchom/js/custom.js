@@ -9,6 +9,19 @@
       jQuery('input[type="radio"]').wrap('<div class="radio-rc"></div>');
       jQuery('.radio-rc').append('<span class="radio-rc-span"></span>');
 
+      var height = jQuery(window).height();
+      var headerHeight = jQuery('header').outerHeight();
+      var footerHeight = jQuery('.footer').outerHeight();
+      var finalHeight = height - headerHeight - footerHeight - 55;
+      jQuery('.main-container.container').css('min-height', finalHeight);
+      jQuery(window).resize(function(){
+        var height = jQuery(window).height();
+      var headerHeight = jQuery('header').outerHeight();
+      var footerHeight = jQuery('.footer').outerHeight();
+      var finalHeight = height - headerHeight - footerHeight - 55;
+      jQuery('.main-container.container').css('min-height', finalHeight);
+    });
+
       //when second quicktab search then load second load 
       var pathArray = window.location.pathname.split( '/' );
       console.log(pathArray[1]);
@@ -42,4 +55,7 @@
       
     }
   };
+
 }(jQuery));
+ 
+
