@@ -353,7 +353,7 @@ header {
       }
       #block-system-user-menu {
         float: none;
-        margin-left: 13px;
+        padding-left: 13px;
         ul.menu {
           float: none;
           margin-bottom: 05px;
@@ -375,6 +375,10 @@ header {
       button {
         margin-top: 3px;
       }
+      /*.logo {
+        margin-left: 0;
+        padding-left: 18px;
+      }*/
     }
   }
 }
@@ -387,7 +391,7 @@ header {
         margin-top: 125px;
       }
       button {
-        margin-top: 5px;
+        margin-top: 4px;
       }
     }
   }
