@@ -365,14 +365,15 @@ header {
         .logo {
           display: inline-block;
           width: 100%;
-          margin-left: 18px;
+          margin-left: 0;
+          padding-left: 18px;
         }
       }
       .region-navigation {
         margin-top: 95px;
       }
       button {
-        margin-top: 5px;
+        margin-top: 3px;
       }
     }
   }
@@ -384,6 +385,9 @@ header {
     .manage-header {
       .region-navigation {
         margin-top: 125px;
+      }
+      button {
+        margin-top: 5px;
       }
     }
   }

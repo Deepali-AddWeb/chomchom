@@ -9,6 +9,10 @@
       jQuery('input[type="radio"]').wrap('<div class="radio-rc"></div>');
       jQuery('.radio-rc').append('<span class="radio-rc-span"></span>');
 
+      /* Wrap class for feildset */
+      jQuery('#edit-field-image fieldset').wrap('<div class="custom_fieldset_wrap"></div>');
+     /* End */
+
       var height = jQuery(window).height();
       var headerHeight = jQuery('header').outerHeight();
       var footerHeight = jQuery('.footer').outerHeight();
