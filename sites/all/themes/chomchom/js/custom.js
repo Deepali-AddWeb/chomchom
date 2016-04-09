@@ -84,20 +84,20 @@ jQuery( window ).load(function() {
     jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").css({"display": "none"});
   });
 
-  jQuery(".page-business-directory .field-coupon .field-collection-view ").css("display", "none");
+  jQuery(".page-business-directory .field-coupon .coupons-detail ").css("display", "none");
 
   jQuery(".field-coupon a").click(function () {
     jQuery( ".close-button-second" ).remove();
     //jQuery(".field-coupon").css({ "background": "rgba(0,0,0,0.7)", "position": "fixed","top": "0","left":"0","width":"100%","height":"100%"});
    // jQuery(".coupons-detail").css({"display":"block","background": "rgba(0,0,0,0.1)","position": "fixed","left":"0","top":"0","width":"100%","height":"100%","z-index":"2"});
-    jQuery(".coupons-detail .field-collection-view").css({"display":"block","color":"#fff","background":"red"})
+    jQuery(this).next(".coupons-detail").css({"display":"block","color":"#fff","background":"red"})
     ;
     jQuery(this).next( ".coupons-detail" ).children( ".field-collection-view" ).append( "<div class='close-button-second'>X</div>" );
   });
 
 
   jQuery(".field-collection-view").on("click",".close-button-second",function () {
-   jQuery(".field-collection-view").css({"display": "none"});
+   jQuery(".coupons-detail").css({"display": "none"});
   });
 
    

@@ -136,6 +136,7 @@ a {
     }
     .main-sub-right-bottom-left {
       display: inline-block;
+      width: calc(100% - 500px);
       margin-top: 4px;
       font-size: 10px;
       font-family: $opensans-semibold;
@@ -441,6 +442,24 @@ a {
       }
     }
   }
+  .close-button {
+    right: 50%;
+    left: auto !important;
+    height: 32px !important;
+    margin-right: -260px;
+    padding: 6px !important;
+    border-color: #F84545 !important;
+    background-color: #F84545 !important;
+    cursor: pointer;
+   /* background-image: url($cross);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    height: 27px;
+    width: 23px;
+    content: '';*/
+  }
   /* end */
 
   /* Specific Items Listing */
@@ -584,6 +603,11 @@ a {
       .views-field-created {
         float: left;
       }
+    }
+    #gmap-auto1map-gmap0 {
+      left: 0 !important;
+      width: 100% !important;
+      margin: 0 !important;
     }
   }
 }
@@ -1100,6 +1124,81 @@ a {
         color: $light-gray;
         font-size: 13px;
         font-family: $opensans-italic;
+      }
+      .coupons-detail {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, .7) !important;
+        .field-collection-view {
+          position: absolute;
+          top: 30%;
+          left: 50%;
+          z-index: 1;
+          height: 200px;
+          max-width: 500px;
+          width: 100%;
+          margin: 0 0 0 -250px;
+          overflow: visible;
+          background-color: #E5E5E5;
+          .field-collection-item-field-coupons {
+            .content {
+              display: inline-block;
+              width: 100%;
+              .field {
+                display: inline-block;
+                color: $gray-34;
+                font-size: 20px;
+                font-weight: bold;
+              }
+              .field-name-field-coupons-message {
+                float: right;
+              }
+            }
+          }
+        }
+        .field-collection-view {
+          padding: 20px;
+          ul {
+            margin-top: 20px;
+            padding-left: 0;
+            li {
+              display: inline-block;
+              list-style: none;
+              a {
+                margin-right: 10px;
+                padding: 5px 15px;
+                background-color: $orange;
+                color: #FFF;
+                text-decoration: none;
+                &:hover,
+                &:focus {
+                  background-color: $light-gray;
+                }
+              }
+            }
+          }
+        }
+        .close-button-second {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: -11px -8px 0;
+          padding: 5px;
+          border-radius: 50%;
+          background-color: #F84545;
+          cursor: pointer;
+        }
+        @media (max-width: 767px) {
+          .field-collection-view {
+            left: 0;
+            width: 80%;
+            margin-left: 10%;
+          }
+        }
       }
     }
     &.fea-listing {
