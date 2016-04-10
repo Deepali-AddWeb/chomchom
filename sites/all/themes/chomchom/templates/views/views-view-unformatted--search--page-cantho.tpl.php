@@ -12,9 +12,10 @@
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
 <?php foreach ($rows as $id => $row): ?>
+
   <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
     <?php //print $row; ?>
-    
+     
     <div class='main'>
 		<div class='main-sub-top'>
 			<div class='main-sub-left'>
@@ -45,18 +46,7 @@
 						<div class='tho-lam'>
 							<?php print $row['field_tho_lam'];?>
 						</div>
-						<?php if(isset($row['field_kinh_nghiem']) && !empty($row['field_kinh_nghiem'])) { ?>
-							<div class='Kinh-Nghiem'>
-							<label for="Kinh-Nghiem">Kinh-Nghiem:</label>
-							<?php print $row['field_kinh_nghiem'];?>
-							</div>
-						<?php } ?>
-						<?php if(isset($row['field_kinh_nghiem_toc']) && !empty($row['field_kinh_nghiem_toc'])) { ?>
-							<div class='kinh-nghiem-toc'>
-							<label for="Kinh-Nghiem">Kinh-Nghiem:</label>
-							<?php print $row['field_kinh_nghiem_toc'];?>
-							</div>
-						<?php } ?>
+						
 						<?php if(isset($row['field_can_license']) && !empty($row['field_can_license'])) { ?>
 							<div class='Can-License'>
 								<label for="Can-License">Can License:</label>
@@ -73,6 +63,18 @@
 							<div class='Tien-Luong'>
 								<label for="Tien-Luong">Tien-Luong:</label>
 								<?php print $row['field_tien_luong'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_kinh_nghiem']) && !empty($row['field_kinh_nghiem'])) { ?>
+							<div class='Kinh-Nghiem'>
+							<label for="Kinh-Nghiem">Kinh-Nghiem:</label>
+							<?php print $row['field_kinh_nghiem'];?>
+							</div>
+						<?php } ?>
+						<?php if(isset($row['field_kinh_nghiem_toc']) && !empty($row['field_kinh_nghiem_toc'])) { ?>
+							<div class='kinh-nghiem-toc'>
+							<label for="Kinh-Nghiem">Kinh-Nghiem:</label>
+							<?php print $row['field_kinh_nghiem_toc'];?>
 							</div>
 						<?php } ?>
 					</div>
@@ -106,6 +108,8 @@
 			</div>
 		<?php } ?>
 	</div>
+	 
 
   </div>
+
 <?php endforeach; ?>

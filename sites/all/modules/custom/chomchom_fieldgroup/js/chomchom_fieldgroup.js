@@ -8,6 +8,7 @@
   Drupal.behaviors.chomchomfieldgroup = {
     attach: function (context, settings) {
       jQuery("label[for='edit-locations-0-province']").append( "<span title='This field is required.' class='form-required'>*</span>" );
+      jQuery("label[for='edit-field-contact-name-und-0-value']").append( "<span title='This field is required.' class='form-required'>*</span>" );
 
       
       /*setTimeout(function(){  
@@ -90,8 +91,11 @@
                 jQuery(".group-can-tho").hide();
                 jQuery(".group-sang-tiem-nails").hide();
                 jQuery(".group-business-for-sale").hide();
+                jQuery("#edit-body").hide();
+                jQuery("#edit-field-contact-name").hide();
+                jQuery("label[for='edit-title']").text('Business Name');
                 jQuery(".group-business-directory").show();
-                console.log('field not avaliable');
+                //console.log('field not avaliable');
                 break;
             default:
                 break;

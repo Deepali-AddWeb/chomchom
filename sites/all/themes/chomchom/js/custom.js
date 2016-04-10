@@ -57,9 +57,50 @@
         jQuery(".views-field-field-hours .field-content .oh-current-closed").css("padding-top", "10px"); 
       }
       
+      jQuery(".view-search .view-content .views-row .main-sub-right-top-save .flag-add-to-favorites a").click(function(event){
+          event.stopPropagation(); 
+      });
+
+      jQuery(".view-search .view-content .views-row").click(function () {
+        window.location.href = jQuery(this).find( ".main-sub-right-top-title a" ).attr('href');
+      });
+
     }
   };
 
 }(jQuery));
+
+jQuery( window ).load(function() {
+  jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").css("display", "none"); 
+   jQuery(".full-address   a").click(function () {
+    //jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").css({"display": "block"});
+    jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").css({"display": "block", "background": "rgba(0,0,0,0.7)", "position": "fixed","top": "0","left":"0","width":"100%","height":"100%"});
+    jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292 #gmap-auto1map-gmap0").css({"margin": "0 0 0 -250px","position": "absolute","left":"50%","top":"30%" });
+    jQuery( "#block-views-9202d1da1b4ebb88a4dc9b242ac93292" ).append( "<div class='close-button'>X</div>" );
+    jQuery(".close-button").css({ "position": "absolute","background-color": "red","top":"28%","left":"68.6%","z-index":"1000","padding":"5px" ,"color":"#fff","border-radius":"50%","border":"1px solid #000"});
+
+  });
+  jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").on("click",".close-button",function () {
+    jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").css({"display": "none"});
+  });
+
+  jQuery(".page-business-directory .field-coupon .field-collection-view ").css("display", "none");
+
+  jQuery(".field-coupon a").click(function () {
+    jQuery( ".close-button-second" ).remove();
+    //jQuery(".field-coupon").css({ "background": "rgba(0,0,0,0.7)", "position": "fixed","top": "0","left":"0","width":"100%","height":"100%"});
+   // jQuery(".coupons-detail").css({"display":"block","background": "rgba(0,0,0,0.1)","position": "fixed","left":"0","top":"0","width":"100%","height":"100%","z-index":"2"});
+    jQuery(".coupons-detail .field-collection-view").css({"display":"block","color":"#fff","background":"red"})
+    ;
+    jQuery(this).next( ".coupons-detail" ).children( ".field-collection-view" ).append( "<div class='close-button-second'>X</div>" );
+  });
+
+
+  jQuery(".field-collection-view").on("click",".close-button-second",function () {
+   jQuery(".field-collection-view").css({"display": "none"});
+  });
+
+   
+});
  
 

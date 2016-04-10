@@ -18,7 +18,7 @@ function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, 
   $content_type = 'listing';
   //get all field form listing content type
   $fields = field_info_instances("node", $content_type);
-  $common_fields = array('body', 'field_contact_name', 'field_contact_phone', 'field_alternative_phone', 'field_featured_date', 'field_expire_date', 'field_category', 'field_image');
+  $common_fields = array('body', 'field_contact_name', 'field_contact_phone', 'field_alternative_phone', 'field_featured_date', 'field_expire_date', 'field_category', 'field_image','field_website');
   //loop for field
   foreach ($fields as $key => $value) {
     //Remove common field
@@ -66,7 +66,16 @@ function chomchom_fieldgroup_listing_form_validate($form, &$form_state) {
         form_set_error('field_hours',  'Hours field is required.');
       }
     }
-  }  
+  } 
+
+  //Contact Name validation
+  if ($form_state['values']['field_category'][LANGUAGE_NONE][0]['tid'] != 8) {
+    if (isset($form_state['values']['field_contact_name'][LANGUAGE_NONE]) && !empty($form_state['values']['field_contact_name'][LANGUAGE_NONE])) {
+      form_set_error('field_category',  'Content name field is required.');
+    }
+  }
+
+
 
   if (isset($form_state['values']['field_category'][LANGUAGE_NONE]) && !empty($form_state['values']['field_category'][LANGUAGE_NONE])) {
     $select_tid = $form_state['values']['field_category'][LANGUAGE_NONE][0]['tid'];
@@ -95,8 +104,8 @@ function chomchom_fieldgroup_listing_form_validate($form, &$form_state) {
       case '7':
           break;
       case '8':
-        $exclude_field = array('field_hours');
-        validate_fields('group_business_directory', $form, $form_state);
+        $exclude_field = array('field_hours','field_website','field_message','field_tagline','field_other_link');
+        validate_fields('group_business_directory', $form, $form_state, $exclude_field);
           break;
       default:
           break;
@@ -115,6 +124,8 @@ function validate_fields($group, $form, $form_state, $exclude_field = array()) {
   foreach ($field_names as $fn => $fv) {
     //Check can tho group same field remove from required
     if (!in_array($fv, $exclude_field)) {
+
+     
       
       if (isset($form[$fv][LANGUAGE_NONE]['select'])) {
         //Select or other field
@@ -139,5 +150,5 @@ function validate_fields($group, $form, $form_state, $exclude_field = array()) {
         form_set_error($fv, t($title['0'] . ' field is required.'));
       }
     }
-  }
+  } 
 }

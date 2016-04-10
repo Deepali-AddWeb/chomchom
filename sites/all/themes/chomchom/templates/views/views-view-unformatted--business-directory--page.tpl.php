@@ -46,7 +46,11 @@
         <a href="<?php print $row['field_website'];?>">Website</a>
       </div>
       <div class="field-coupon">
-        <a href="#">Coupons</a>
+        <a>Coupons</a>
+        <div class='coupons-detail'>
+        <?php print $row['field_coupons']; ?>
+        <!--<div class='close-button-second123'>X</div>-->
+        </div>
       </div>
       <div class="field-direction">
         <?php print $row['nothing'];?>

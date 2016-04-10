@@ -33,7 +33,7 @@
    </div>
     <div class='full-address'>
       <div class='address'><?php print $row['address'];?></div>
-      <a href='https://maps.google.com?q='.<?php print $row['latitude'];?>.'+'.<?php print $row['longitude'];?>>Map and Direction</a>
+      <a >Map and Direction</a>
     </div>
   </div>
 </div>
