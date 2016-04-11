@@ -178,6 +178,9 @@ a {
     font-size: 11px;
     font-family: $opensans-italic;
     word-wrap: break-word;
+    p {
+      font-size: 11px;
+    }
   }
 }
 /* end */
@@ -604,10 +607,15 @@ a {
         float: left;
       }
     }
-    #gmap-auto1map-gmap0 {
+    /*#gmap-auto1map-gmap0 {
       left: 0 !important;
       width: 100% !important;
       margin: 0 !important;
+    }*/
+    .close-button {
+      right: 0 !important;
+      margin-top: -7px !important;
+      margin-right: calc(10% - 10px);
     }
   }
 }
@@ -1001,6 +1009,18 @@ a {
       }
     }
   }
+  #gmap-auto1map-gmap0 {
+    left: 0 !important;
+    width: 80% !important;
+    margin-left: 10% !important;
+  }
+  .close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: -11px -8px 0;
+    padding: 5px;
+  }
 }
 
 
@@ -1133,23 +1153,28 @@ a {
         height: 100%;
         width: 100%;
         background: rgba(0, 0, 0, .7) !important;
-        .field-collection-view {
-          position: absolute;
+        .all-field-collection {
+          position: relative;
           top: 30%;
           left: 50%;
           z-index: 1;
-          height: 200px;
+          max-height: 300px;
           max-width: 500px;
           width: 100%;
           margin: 0 0 0 -250px;
           overflow: visible;
-          background-color: #E5E5E5;
+          background-color: $white;
+          .main-popup {
+            height: 200px;
+            overflow-y: auto;
+          }
           .field-collection-item-field-coupons {
             .content {
               display: inline-block;
               width: 100%;
               .field {
                 display: inline-block;
+                width: 50%;
                 color: $gray-34;
                 font-size: 20px;
                 font-weight: bold;
@@ -1160,7 +1185,7 @@ a {
             }
           }
         }
-        .field-collection-view {
+        .all-field-collection {
           padding: 20px;
           ul {
             margin-top: 20px;
@@ -1193,7 +1218,7 @@ a {
           cursor: pointer;
         }
         @media (max-width: 767px) {
-          .field-collection-view {
+          .all-field-collection {
             left: 0;
             width: 80%;
             margin-left: 10%;
