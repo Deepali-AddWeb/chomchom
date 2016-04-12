@@ -70,8 +70,9 @@ function chomchom_fieldgroup_listing_form_validate($form, &$form_state) {
 
   //Contact Name validation
   if ($form_state['values']['field_category'][LANGUAGE_NONE][0]['tid'] != 8) {
-    if (isset($form_state['values']['field_contact_name'][LANGUAGE_NONE]) && !empty($form_state['values']['field_contact_name'][LANGUAGE_NONE])) {
-      form_set_error('field_category',  'Content name field is required.');
+
+    if (empty($form_state['values']['field_contact_name'][LANGUAGE_NONE][0]['value'])) {
+      form_set_error('field_contact_name',  'Content name field is required.');
     }
   }
 
