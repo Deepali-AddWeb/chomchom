@@ -9,8 +9,7 @@
     attach: function (context, settings) {
       jQuery("label[for='edit-locations-0-province']").append( "<span title='This field is required.' class='form-required'>*</span>" );
       jQuery("label[for='edit-field-contact-name-und-0-value']").append( "<span title='This field is required.' class='form-required'>*</span>" );
-
-      
+     
       /*setTimeout(function(){  
         alert('test');
         //call user define function fieldgrouplevel on load pass value
@@ -46,6 +45,8 @@
                 jQuery(".group-sang-tiem-nails").hide();
                 jQuery("#edit-field-kinh-nghiem-toc").hide();
                 jQuery(".group-business-directory").hide();
+                jQuery("label[for='edit-title']").text('Title');
+                jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
             case '2':
                 jQuery(".group-can-tho").show();
@@ -54,6 +55,8 @@
                 jQuery("#edit-field-kinh-nghiem-toc").hide();
                 jQuery("#edit-field-kinh-nghiem").show();
                 jQuery(".group-business-directory").hide();
+                jQuery("label[for='edit-title']").text('Title');
+                jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
             case '3':
                 jQuery(".group-can-tho").show();
@@ -62,26 +65,36 @@
                 jQuery("#edit-field-kinh-nghiem").hide();
                 jQuery("#edit-field-kinh-nghiem-toc").show();
                 jQuery(".group-business-directory").hide();
+                jQuery("label[for='edit-title']").text('Title');
+                jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
             case '4':
                jQuery(".group-sang-tiem-nails").show();
                jQuery(".group-can-tho").hide();
                jQuery(".group-business-for-sale").hide();
                jQuery(".group-business-directory").hide();
+               jQuery("label[for='edit-title']").text('Title');
+               jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
             case '5':
                 jQuery(".group-business-for-sale").hide();
                 jQuery(".group-can-tho").hide();
                 jQuery(".group-sang-tiem-nails").show();
                 jQuery(".group-business-directory").hide();
+                jQuery("label[for='edit-title']").text('Title');
+                jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
             case '6':
                 jQuery(".group-can-tho").hide();
                 jQuery(".group-sang-tiem-nails").hide();
                 jQuery(".group-business-for-sale").show();
                 jQuery(".group-business-directory").hide(); 
+                jQuery("label[for='edit-title']").text('Title');
+                jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
             case '7':
+                jQuery("label[for='edit-title']").text('Title');
+                jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 jQuery(".group-can-tho").hide();
                 jQuery(".group-sang-tiem-nails").hide();
                 jQuery(".group-business-for-sale").hide();
@@ -94,6 +107,7 @@
                 jQuery("#edit-body").hide();
                 jQuery("#edit-field-contact-name").hide();
                 jQuery("label[for='edit-title']").text('Business Name');
+                jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 jQuery(".group-business-directory").show();
                 //console.log('field not avaliable');
                 break;
