@@ -18,14 +18,14 @@
   <?php
    
   ?>  
- <div class="business-main">
+  <div class="business-main">
   <div class="business-top">
     <div class="business-top-left">
       <?php print $row['field_image'];?>
    </div>
    <div class="business-top-right">
     <div class="business-top-right-first">
-  		<?php print $row['title'];?>
+      <?php print $row['title'];?>
     </div>
     <div class="business-top-right-second">
       <?php print $row['address'];?>
@@ -46,7 +46,14 @@
         <a href="<?php print $row['field_website'];?>">Website</a>
       </div>
       <div class="field-coupon">
-        <a href="#">Coupons</a>
+        <a>Coupons</a>
+        <div class='coupons-detail'>
+          <div class="all-field-collection">
+            <div class="main-popup">
+              <?php print $row['field_coupons']; ?>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="field-direction">
         <?php print $row['nothing'];?>

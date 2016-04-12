@@ -49,7 +49,9 @@
         <a>Coupons</a>
         <div class='coupons-detail'>
           <div class="all-field-collection">
-          <?php print $row['field_coupons']; ?>
+            <div class="main-popup">
+              <?php print $row['field_coupons']; ?>
+            </div>
           </div>
         </div>
       </div>
