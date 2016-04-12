@@ -48,8 +48,9 @@
       <div class="field-coupon">
         <a>Coupons</a>
         <div class='coupons-detail'>
-        <?php print $row['field_coupons']; ?>
-        <!--<div class='close-button-second123'>X</div>-->
+          <div class="all-field-collection">
+          <?php print $row['field_coupons']; ?>
+          </div>
         </div>
       </div>
       <div class="field-direction">

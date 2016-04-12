@@ -92,11 +92,11 @@ jQuery( window ).load(function() {
    // jQuery(".coupons-detail").css({"display":"block","background": "rgba(0,0,0,0.1)","position": "fixed","left":"0","top":"0","width":"100%","height":"100%","z-index":"2"});
     jQuery(this).next(".coupons-detail").css({"display":"block","color":"#fff","background":"red"})
     ;
-    jQuery(this).next( ".coupons-detail" ).children( ".field-collection-view" ).append( "<div class='close-button-second'>X</div>" );
+    jQuery(this).next( ".coupons-detail" ).children( ".all-field-collection" ).append( "<div class='close-button-second'>X</div>" );
   });
 
 
-  jQuery(".field-collection-view").on("click",".close-button-second",function () {
+  jQuery(".all-field-collection").on("click",".close-button-second",function () {
    jQuery(".coupons-detail").css({"display": "none"});
   });
 
