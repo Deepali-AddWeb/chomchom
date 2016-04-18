@@ -134,7 +134,7 @@ header {
   #block-block-5 {
     float: right;
     width: 135px !important;
-    margin-top: 20px;
+    margin: 20px 15px 0 0;
     background-color: $orange;
     strong {
       float: left;
@@ -367,6 +367,7 @@ header {
           width: 100%;
           margin-left: 0;
           padding-left: 18px;
+          text-align: center;
         }
       }
       .region-navigation {
