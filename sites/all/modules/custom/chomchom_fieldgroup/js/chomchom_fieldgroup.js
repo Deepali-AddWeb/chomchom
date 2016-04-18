@@ -44,10 +44,11 @@
        */
       function fieldgrouplevel(tid) {
         if(typeof(tid) != "undefined" && tid !== null) {
-          console.log('tid='+tid)
-          //alert(tid);
+          console.log('tid='+tid);
+          tid = Number(tid);
           switch (tid) {
             case 0:
+                console.log('0 value');
                 jQuery(".group-can-tho").show();
                 jQuery("#edit-field-kinh-nghiem").show();
                 jQuery(".group-business-for-sale").hide();
