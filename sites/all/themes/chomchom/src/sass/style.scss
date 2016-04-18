@@ -472,8 +472,8 @@ a {
     .views-row {
       .field-content {
         display: inline-block;
-        width:calc(100% - 120px);
-        width: calc(100% - 120px);
+        width: -webkit-calc(100% - 120px);
+        width: -moz-calc(100% - 120px);
         width: calc(100% - 120px);
         color: $light-black;
         font-size: 14px;
@@ -482,8 +482,8 @@ a {
       .views-label {
         display: inline-block;
         /*width: 18%;*/
-        width: 100%;
         max-width: 100px;
+        width: 100%;
         margin-right: 12px;
         font-size: 14px;
         line-height: 25px;
@@ -1499,6 +1499,8 @@ a {
           .quang-top-left {
             float: left;
             display: inline-block;
+            max-width: 130px;
+            width: 100%;
             margin-right: 25px;
             .left-image {
               position: relative;
@@ -1525,6 +1527,10 @@ a {
           }
           .quang-top-right {
             position: relative;
+            display: inline-block;
+            width: -webkit-calc(100% - 155px);
+            width: -moz-calc(100% - 155px);
+            width: calc(100% - 155px);
             .top-right-top-title {
               .right-title {
                 display: inline-block;
