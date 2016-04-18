@@ -15,55 +15,79 @@
   <div<?php if ($classes_array[$id]) { print ' class="' . $classes_array[$id] .'"';  } ?>>
     <?php //print $row; ?>
     
-    <div class='main'>
-		<div class='main-sub-top'>
-			<div class='main-sub-left'>
-				<?php print $row['field_image'];?>
+   <div class='main-quang'>
+		<div class='quang-top'>
+			<div class='quang-top-left'>
+				<div class='left-image'><div class='flag-image'><?php print $row['ops'];?></div><?php print $row['field_image'];?></div>
 			</div>
-			<div class='main-sub-right'>
-				<div class='main-sub-right-top'>
-					<?php if(isset($row['title']) && !empty($row['title'])) { ?>
-						<div class='main-sub-right-top-title'>
-							<label for="title">Posting Title :</label>
-							<?php print $row['title'];?>
-						</div>
-					<?php } ?>
-					<div class='main-sub-right-top-save'>
-						<?php print $row['ops'];?>
-					</div>
-				</div>
-				<div class='main-sub-right-bottom'>
-					<div class='main-sub-right-bottom-left'>
-						<label for="contact_name">Contact Information:</label>
-						<div class='contact-name'>
-							<?php print $row['field_contact_name'];?>
-						</div>
-						<div class='contact-phone'>
-							<?php print $row['field_contact_phone'];?>
-						</div>
-						<div class='province'>
-							<?php print $row['province'];?>
-						</div>
-						<?php if(isset($row['created']) && !empty($row['created'])) { ?>
-							<div class='main-sub-right-bottom-right-created'>
-								<label for="created">Posted:</label>
-								<?php print $row['created'];?>
-							</div>
-						<?php } ?>
-						<div class='count-image'>
-							<?php print $row['field_image_1'];?>
-						</div>
-					</div>
+			<div class='quang-top-right'>
+				<div class='top-right-top-title'>
+          <?php if(isset($row['title']) && !empty($row['title'])) { ?>
+            <div class='right-title'>
+              <label for="title">Posting Title :</label>
+              <?php print $row['title'];?>
+            </div>
+          <?php } ?>
+          <?php if(isset($row['field_quang_address']) && !empty($row['field_quang_address'])) { ?>
+            <div class='right-address'>
+              <?php print $row['field_quang_address'];?>
+            </div>
+          <?php } ?>
 
+				</div>
+				<div class='top-right-bottom-field'>
+					<div class='bottom-field-left'>
+            <?php if(isset($row['field_quang_khu_vuc']) && !empty($row['field_quang_khu_vuc'])) { ?>
+            <div class='right-khu-vuc'>
+              <label for="quang_khu_vuc">Khu vuc :</label>
+              <?php print $row['field_quang_khu_vuc'];?>
+            </div>
+            <?php } ?>
+            <?php if(isset($row['field_spa_chairs']) && !empty($row['field_spa_chairs'])) { ?>
+              <div class='spa-chairs'>
+                <label for="spa_chairs">Spa Chairs :</label>
+                <?php print $row['field_spa_chairs'];?>
+              </div>
+            <?php } ?>
+            <?php if(isset($row['field_income']) && !empty($row['field_income'])) { ?>
+              <div class='income'>
+                <label for="income">Income :</label>
+                <?php print $row['field_income'];?>
+              </div>
+            <?php } ?>
+            <?php if(isset($row['created_1']) && !empty($row['created_1'])) { ?>
+              <div class='post-date'>
+                <label for="created-1">Post Date :</label>
+                <?php print $row['created_1'];?>
+              </div>
+            <?php } ?>
+					</div>
+					<div class='bottom-field-right'>
+            <?php if(isset($row['field_quang_sale_price']) && !empty($row['field_quang_sale_price'])) { ?>
+              <div class='sale-price'>
+                <label for="sale_price">Sale Price :</label>
+                <?php print $row['field_quang_sale_price'];?>
+              </div>
+            <?php } ?>
+					</div>
 				</div>
 			</div>
 		</div>
-		<?php if(isset($row['body']) && !empty($row['body'])) { ?>
-			<div class='main-sub-bottom'>
-			<?php print $row['body'];?>
+		<div class='quang-bottom'>
+			<div class='quang-bottom-first'> 
 			</div>
-		<?php } ?>
+			<div class='quang-bottom-second'>
+				<label for="contact_name">Contact Information:</label>
+				<div class='second-name'><?php print $row['field_contact_name'];?></div>
+				<div class='second-phone'><?php print $row['field_contact_phone'];?></div>
+				<div class='second-address'><?php print $row['address'];?></div>
+			</div>
+			<div class='quang-bottom-thrid'>
+				<div class='thrid-info'><?php print $row['nid'];?></div>
+			</div>
+		</div>
 	</div>
+
 
   </div>
 <?php endforeach; ?>
