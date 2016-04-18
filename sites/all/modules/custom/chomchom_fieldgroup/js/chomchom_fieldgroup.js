@@ -7,7 +7,6 @@
 
   Drupal.behaviors.chomchomfieldgroup = {
     attach: function (context, settings) {
-      //alert('jkfh');
       jQuery("label[for='edit-locations-0-province']").append( "<span title='This field is required.' class='form-required'>*</span>" );
       jQuery("label[for='edit-field-contact-name-und-0-value']").append( "<span title='This field is required.' class='form-required'>*</span>" );
      
@@ -16,15 +15,16 @@
         //call user define function fieldgrouplevel on load pass value
         fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
       }, 5000);*/
-      jQuery( window ).load(function() 
-        fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
-        /*      test = jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child option[value='2']").val();
-       if (typeof test === 'undefined' || test === null) {
-        jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child option[value='2']").val();
-       }else{
-        fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
-      }*/
-     
+      jQuery( window ).load(function() {
+        test= jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val();
+        if (typeof test === 'undefined' || test === null) {
+          console.log('yes'+test);
+          fieldgrouplevel(2);
+        }else{
+          console.log('no'+test);
+          fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
+        }
+      //fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
       });
        //call user define function fieldgrouplevel on change pass value
       jQuery("select[id*='edit-field-category-und-0-tid-select']").on('change',function () {
@@ -44,11 +44,10 @@
        */
       function fieldgrouplevel(tid) {
         if(typeof(tid) != "undefined" && tid !== null) {
-          //alert('hi');
-          console.log(tid+'hello');
+          console.log('tid='+tid)
+          //alert(tid);
           switch (tid) {
-             case '0':
-            case '1':
+            case 0:
                 jQuery(".group-can-tho").show();
                 jQuery("#edit-field-kinh-nghiem").show();
                 jQuery(".group-business-for-sale").hide();
@@ -59,7 +58,18 @@
                 jQuery("label[for='edit-title']").text('Title');
                 jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
-            case '2':
+            case 1:
+                jQuery(".group-can-tho").show();
+                jQuery("#edit-field-kinh-nghiem").show();
+                jQuery(".group-business-for-sale").hide();
+                jQuery(".group-sang-tiem-nails").hide();
+                jQuery("#edit-field-kinh-nghiem-toc").hide();
+                jQuery(".group-business-directory").hide();
+                jQuery(".group-quang-cao-rao-vat").hide();
+                jQuery("label[for='edit-title']").text('Title');
+                jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
+                break;
+            case 2:
                 jQuery(".group-can-tho").show();
                 jQuery(".group-business-for-sale").hide();
                 jQuery(".group-sang-tiem-nails").hide();
@@ -70,7 +80,7 @@
                 jQuery("label[for='edit-title']").text('Title');
                 jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
-            case '3':
+            case 3:
                 jQuery(".group-can-tho").show();
                 jQuery(".group-business-for-sale").hide();
                 jQuery(".group-sang-tiem-nails").hide();
@@ -81,7 +91,7 @@
                 jQuery("label[for='edit-title']").text('Title');
                 jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
-            case '4':
+            case 4:
                jQuery(".group-sang-tiem-nails").show();
                jQuery(".group-can-tho").hide();
                jQuery(".group-business-for-sale").hide();
@@ -90,7 +100,7 @@
                jQuery("label[for='edit-title']").text('Title');
                jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
-            case '5':
+            case 5:
                 jQuery(".group-business-for-sale").hide();
                 jQuery(".group-can-tho").hide();
                 jQuery(".group-sang-tiem-nails").show();
@@ -99,7 +109,7 @@
                 jQuery("label[for='edit-title']").text('Title');
                 jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
-            case '6':
+            case 6:
                 jQuery(".group-can-tho").hide();
                 jQuery(".group-sang-tiem-nails").hide();
                 jQuery(".group-business-for-sale").show();
@@ -108,7 +118,7 @@
                 jQuery("label[for='edit-title']").text('Title');
                 jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 break;
-            case '7':
+            case 7:
                 jQuery("label[for='edit-title']").text('Title');
                 jQuery("label[for='edit-title']").append( "<span title='This field is required.' class='form-required'>*</span>" );
                 jQuery(".group-can-tho").hide();
@@ -118,7 +128,7 @@
                 jQuery(".group-quang-cao-rao-vat").show();
                 jQuery("#edit-field-khu-vuc").show();
                 break;
-            case '8':
+            case 8:
                 jQuery(".group-can-tho").hide();
                 jQuery(".group-sang-tiem-nails").hide();
                 jQuery(".group-business-for-sale").hide();
