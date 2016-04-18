@@ -136,7 +136,7 @@ a {
     }
     .main-sub-right-bottom-left {
       display: inline-block;
-      width: calc(100% - 500px);
+      width: calc(100% - 380px);
       margin-top: 4px;
       font-size: 10px;
       font-family: $opensans-semibold;
@@ -472,17 +472,23 @@ a {
     .views-row {
       .field-content {
         display: inline-block;
+        width:calc(100% - 120px);
+        width: calc(100% - 120px);
+        width: calc(100% - 120px);
         color: $light-black;
         font-size: 14px;
         font-family: $opensans-bold;
       }
       .views-label {
         display: inline-block;
-        width: 18%;
+        /*width: 18%;*/
+        width: 100%;
+        max-width: 100px;
         margin-right: 12px;
         font-size: 14px;
         line-height: 25px;
         text-align: right;
+        vertical-align: top;
       }
     }
   }

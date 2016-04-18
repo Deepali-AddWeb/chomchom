@@ -501,7 +501,7 @@ select.form-control {
     #edit-submitted-first-name,
     #edit-submitted-last-name {
       float: left;
-      width: 32%;
+      width: 30%;
       margin-right: 15px;
       font-size: 11px;
     }
@@ -782,7 +782,7 @@ select.form-control {
   }
   #edit-field-category {
     select {
-      width: 250px;
+      width: 215px;
       margin-right: 15px;
       padding-left: 8px;
       background-color: transparent;
@@ -888,6 +888,15 @@ select.form-control {
   }
   .select-or-other-other {
     width: 50%;
+  }
+}
+#edit-field-coupons {
+  button {
+    border-color: transparent;
+    background-color: $orange;
+    &:hover {
+      background-color: $light-gray;
+    }
   }
 }
 /* end */
