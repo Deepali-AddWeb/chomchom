@@ -8,10 +8,6 @@
 /**
  * Implements hook_form_alter.
  */
-print('<pre style="color:red;">');
-print_r($_SESSION);
-print('</pre>');
-exit;
 function chomchom_fieldgroup_form_listing_node_form_alter(&$form, &$form_state, $form_id) {
   //change category field weight
   $form['field_category']['#weight'] = -6 ;
