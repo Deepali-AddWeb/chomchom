@@ -368,6 +368,12 @@ select.form-control {
       }
     }
   }
+  .quicktabs-tabs .quicktabs-style-nostyle {
+    display: none;
+  }
+  .quicktabs-tabpage {
+    margin-top: 0;
+  }
 }
 /* end */
 
