@@ -1084,14 +1084,14 @@ a {
       .business-top-left {
         display: inline-block;
         width: 140px;
+        margin-right: 10px;
         img {
-          margin-right: 25px;
           @include border-radius(10px);
         }
       }
       .business-top-right {
         display: inline-block;
-        width: calc(100% - 150px);
+        width: calc(100% - 160px);
         margin-top: -7px;
         vertical-align: top;
         .business-top-right-first {
