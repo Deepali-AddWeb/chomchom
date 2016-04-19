@@ -1716,11 +1716,8 @@ a {
   #block-system-main {
     .view-search {
       .views-row {
-        /*background: -moz-linear-gradient(top, #FFF 0%, #FCF 52%, #F9F 100%);
-        background: -webkit-linear-gradient(top, #FFF 0%, #FCF 52%, #F9F 100%);
-        background: linear-gradient(to bottom, #FFF 0%, #FCF 52%, #F9F 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF', endColorstr='#F9F',GradientType=0);*/
         background-color: #FFF;
+        opacity: 1;
       }
     }
   }
