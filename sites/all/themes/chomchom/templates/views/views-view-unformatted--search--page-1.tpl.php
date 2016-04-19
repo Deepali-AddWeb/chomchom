@@ -7,7 +7,7 @@
  * @ingroup views_templates
  */
 ?>
-<?php $rows = $view->style_plugin->rendered_fields; ?>
+	<?php $rows = $view->style_plugin->rendered_fields; ?>
 <?php if (!empty($title)): ?>
   <h3><?php print $title; ?></h3>
 <?php endif; ?>

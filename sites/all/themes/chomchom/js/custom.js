@@ -1,6 +1,9 @@
 (function ($) {
   Drupal.behaviors.chomchom = {
     attach: function (context, settings) {
+
+
+
       //checkbox design
       jQuery('input[type="checkbox"]').wrap('<div class="input-rc"></div>');
       jQuery('.input-rc').append('<span class="input-rc-span"></span>');
@@ -71,6 +74,16 @@
 }(jQuery));
 
 jQuery( window ).load(function() {
+
+  /*jQuery( "#edit-submit-search" ).click(function() {
+        statename = jQuery(this).parent().parent().find( "#edit-province option[selected='selected']" ).text();
+        alert(jQuery( ".user-region" ).text());
+        alert(statename+'dfs');
+        jQuery( ".user-region" ).text(statename);
+      });*/
+  statename = jQuery('#edit-submit-search').parent().parent().find( "#edit-province option[selected='selected']" ).text();
+  jQuery( ".user-region" ).text(statename);
+
   jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").css("display", "none"); 
    jQuery(".full-address   a").click(function () {
     //jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").css({"display": "block"});
