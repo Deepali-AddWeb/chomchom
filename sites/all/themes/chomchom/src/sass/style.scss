@@ -48,7 +48,13 @@ a {
  */
 
 .container {
-  /*min-height: 300px;*/
+  @media (min-width: 1200px) {
+    max-width: 1280px;
+    width: 100%;
+  }
+  @media (min-width: 1440px) {
+    max-width: 1400px;
+  }
   .jumbotron {
     margin: 0;
     padding: 0;
@@ -90,12 +96,11 @@ a {
     width: 100%;
     padding: 10px;
     .main-sub-left {
-      display: inline-block;
       width: 140px;
     }
     .main-sub-right {
       display: inline-block;
-      width: calc(100% - 150px);
+      width: calc(100% - 165px);
     }
     .main-sub-right-top-title {
       display: inline-block;
@@ -1121,7 +1126,7 @@ a {
           margin: 10px 0 25px;
           .business-top-right-thrid-first {
             display: inline-block;
-            width: 50%;
+            width: 45%;
             padding-left: 35px;
             background-image: url($red-phone);
             background-position: -10px -6px;
@@ -1134,10 +1139,10 @@ a {
             float: right;
             display: inline-block;
             min-height: 30px;
-            width: 50%;
+            width: 55%;
             padding-left: 45px;
             background-image: url($red-watch);
-            background-position: 0 -4px;
+            background-position: -9px -4px;
             background-repeat: no-repeat;
             color: $black;
             font-family: $opensans-semibold;
@@ -1164,7 +1169,7 @@ a {
         }
         > div {
           display: inline-block;
-          padding: 0 44px;
+          padding: 0 25px;
           border-right: 2px solid $blue;
           &:last-child {
             border-right: none;
@@ -1706,6 +1711,27 @@ a {
 }
 /* End */
 
+/* QUANG CAO & RAO VAT srach page design */
+.page-quang-cao-rao-vat-search {
+  #block-system-main {
+    .view-search {
+      .views-row {
+        background: -moz-linear-gradient(top, #FFF 0%, #FCF 52%, #F9F 100%);
+        background: -webkit-linear-gradient(top, #FFF 0%, #FCF 52%, #F9F 100%);
+        background: linear-gradient(to bottom, #FFF 0%, #FCF 52%, #F9F 100%);
+        background-color: #FFF;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF', endColorstr='#F9F',GradientType=0);
+      }
+    }
+  }
+}
+.group-quang-cao-rao-vat {
+  h3 {
+    display: none;
+  }
+}
+/* End */
+
 /* Responsive QUANG CAO & RAO VAT  page design */
 @media screen and (max-width: 1024px){
   .page-quang-cao-rao-vat,
@@ -1736,7 +1762,7 @@ a {
     }
   }
 }
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 480px) {
   .page-quang-cao-rao-vat,
   .page-quang-cao-rao-vat-search {
     .view-quang-cao-rao-vat,
@@ -1756,9 +1782,65 @@ a {
 }
 /* End */
 
-/* Top Advertisement */
+/* Advertisement */
 #block-block-12 {
   margin-bottom: 20px;
   text-align: center;
+}
+/* End */
+
+/* Right sidebar*/
+.region-sidebar-second {
+  #block-block-11,
+  #block-multiblock-1 {
+    p {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+.region-header {
+  /*display: inline-block;*/
+  overflow-x: auto;
+}
+@media screen and (max-width: 767px) {
+  .region-header {
+    display: inline-block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  .region-primary-first {
+    #block-block-10 {
+      text-align: center;
+    }
+  }
+  .region-sidebar-second {
+    display: inline-block;
+    #block-multiblock-1,
+    #block-block-11 {
+      /*display: inline-block;*/
+      text-align: center;
+      p {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .page-user-login {
+    .col-sm-12 {
+      display: inline-block;
+    }
+  }
+}
+/* End */
+
+/* Can tho search */
+#views-exposed-form-search-block-1,
+#views-exposed-form-search-block-2,
+#views-exposed-form-search-block-3,
+#views-exposed-form-search-block-4 {
+  display: none;
 }
 /* End */
