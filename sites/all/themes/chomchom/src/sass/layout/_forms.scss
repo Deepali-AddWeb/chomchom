@@ -6,6 +6,7 @@
  */
 
 
+
 /**
  * Common css
  */
@@ -376,6 +377,12 @@ select.form-control {
   }
 }
 /* end */
+
+/* filter quang-cao-rao-vat page */
+.quicktabs-style-nostyle ul.quicktabs-tabs.quicktabs-style-nostyle {
+  display: none;
+}
+/* End */
 
 
 /**
