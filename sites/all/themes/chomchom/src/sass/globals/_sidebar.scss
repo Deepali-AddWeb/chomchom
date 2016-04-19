@@ -5,6 +5,35 @@
  * Sidebar SCSS.
  */
 
+/* Right sidebar*/
+.region-sidebar-second {
+  #block-block-11,
+  #block-multiblock-1 {
+    p {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+/* End */
 
-
-
+@media screen and (max-width: 992px){
+  /*.left-sidebar {
+    width: 35%;
+  }
+  .content-area {
+    width: 65%;
+  }
+  .right-sidebar {
+    width: 100%;
+  }*/
+}
+@media screen and (max-width: 480px){
+  .region-sidebar-second {
+    #block-block-11,
+    #block-multiblock-1 {
+      display: inline-block;
+    }
+  }
+}

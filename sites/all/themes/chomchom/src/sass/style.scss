@@ -10,6 +10,7 @@
 @import 'globals/variable';
 @import 'globals/header';
 @import 'globals/footer';
+@import 'globals/sidebar';
 @import 'components/fonts';
 @import 'layout/forms';
 
@@ -88,6 +89,14 @@ a {
     display: inline-block;
     width: 100%;
     padding: 10px;
+    .main-sub-left {
+      display: inline-block;
+      width: 140px;
+    }
+    .main-sub-right {
+      display: inline-block;
+      width: calc(100% - 150px);
+    }
     .main-sub-right-top-title {
       display: inline-block;
       line-height: 0;
@@ -106,7 +115,7 @@ a {
     }
     .main-sub-right-top {
       display: inline-block;
-      width: calc(100% - 160px);
+      width: 100%;
       padding-bottom: 4px;
       border-bottom: 1px solid $gray;
       .main-sub-right-top-save {
@@ -135,9 +144,13 @@ a {
     .main-sub-top {
       padding: 10px;
     }
+    .main-sub-right-bottom {
+      display: inline-block;
+      width: 100%;
+    }
     .main-sub-right-bottom-left {
       display: inline-block;
-      width: calc(100% - 380px);
+      width: 65%;
       margin-top: 4px;
       font-size: 10px;
       font-family: $opensans-semibold;
@@ -155,7 +168,8 @@ a {
     }
     .main-sub-right-bottom-right {
       float: right;
-      margin: 4px 60px 0 0;
+      width: 35%;
+      margin: 4px 0 0;
       color: $light-gray;
       font-size: 10px;
       font-family: $opensans-semibold;
@@ -207,12 +221,8 @@ a {
 @media screen and (max-width: 1024px){
   .views-row {
     .main-sub-top {
-      .main-sub-right-bottom-left {
-        width: 30%;
-      }
       .main-sub-right-bottom-right {
         float: right;
-        width: 30%;
       }
     }
   }
@@ -246,16 +256,27 @@ a {
     }
   }
 }
+@media screen and (max-width: 767px){
+  .views-row {
+    .main-sub-top {
+      .main-sub-right-bottom-right {
+        width: 100%;
+      }
+    }
+  }
+}
 @media screen and (max-width: 480px){
   .views-row {
     .main-sub-top {
       .main-sub-left {
+        width: 100%;
         img {
           width: 100%;
           margin-bottom: 20px;
         }
       }
       .main-sub-right {
+        width: 100%;
         .main-sub-right-top {
           width: 100%;
         }
@@ -1732,5 +1753,12 @@ a {
       }
     }
   }
+}
+/* End */
+
+/* Top Advertisement */
+#block-block-12 {
+  margin-bottom: 20px;
+  text-align: center;
 }
 /* End */
