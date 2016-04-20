@@ -1024,6 +1024,12 @@ a {
         }
         .views-field-field-website {
           padding: 13px 15px 15px;
+          .views-label-field-website {
+            margin-top: 11px;
+          }
+          .field-content {
+            margin-top: 14px;
+          }
         }
       }
       &.view-display-id-block {
@@ -1037,7 +1043,7 @@ a {
             }
           }
           .field-content {
-            width: 100%;
+            /*width: 100%;*/
           }
         }
         .views-label {
@@ -1559,7 +1565,7 @@ a {
                   a {
                     display: inline-block;
                     height: 31px;
-                    width: 43px;
+                    width: 42px;
                     background-image: url($star-unflag);
                     background-repeat: no-repeat;
                     text-indent: -9999px;
@@ -1637,6 +1643,19 @@ a {
                   margin-bottom: 10px;
                   font-weight: normal;
                   font-family: $opensans-extrabold;
+                }
+              }
+              .quans-body {
+                margin-top: 10px;
+                padding: 20px 10px 10px 0;
+                background-color: $white;
+                font-size: 18px;
+                font-weight: bold;
+                &.all-page {
+                  border-top: 2px solid #E8F3FE;
+                  border-right: 4px solid #E8F3FE;
+                  border-bottom: 2px solid #E8F3FE;
+                  border-left: 4px solid #E8F3FE;
                 }
               }
             }
@@ -1729,6 +1748,40 @@ a {
 }
 /* End */
 
+/* Advertisement */
+#block-block-12 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* End */
+
+/* Right sidebar*/
+.region-sidebar-second {
+  #block-block-11,
+  #block-multiblock-1 {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    p {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+.region-header {
+  /*display: inline-block;*/
+  overflow-x: auto;
+}
+/*.page-can-tho-search,
+.admin-menu,
+.page-can-tho,
+.page-sang-tiem {
+  .col-sm-12 {
+    display: inline-block;
+  }
+}*/
+
 /* Responsive QUANG CAO & RAO VAT  page design */
 @media screen and (max-width: 1024px){
   .page-quang-cao-rao-vat,
@@ -1759,48 +1812,9 @@ a {
     }
   }
 }
-@media screen and (max-width: 480px) {
-  .page-quang-cao-rao-vat,
-  .page-quang-cao-rao-vat-search {
-    .view-quang-cao-rao-vat,
-    .view-search {
-      .views-row {
-        .main-quang {
-          .quang-top {
-            .quang-top-right {
-              width: 100%;
-              margin-top: 10px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
 /* End */
 
-/* Advertisement */
-#block-block-12 {
-  margin-bottom: 20px;
-  text-align: center;
-}
-/* End */
 
-/* Right sidebar*/
-.region-sidebar-second {
-  #block-block-11,
-  #block-multiblock-1 {
-    p {
-      img {
-        width: 100%;
-      }
-    }
-  }
-}
-.region-header {
-  /*display: inline-block;*/
-  overflow-x: auto;
-}
 @media screen and (max-width: 767px) {
   .region-header {
     display: inline-block;
@@ -1813,7 +1827,7 @@ a {
     }
   }
   .region-sidebar-second {
-    display: inline-block;
+    /*display: inline-block;*/
     #block-multiblock-1,
     #block-block-11 {
       /*display: inline-block;*/
@@ -1841,3 +1855,31 @@ a {
   display: none;
 }
 /* End */
+@media screen and (max-width: 480px) {
+  .page-quang-cao-rao-vat,
+  .page-quang-cao-rao-vat-search {
+    .view-quang-cao-rao-vat,
+    .view-search {
+      .views-row {
+        .main-quang {
+          .quang-top {
+            .quang-top-right {
+              width: 100%;
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .region-sidebar-second {
+    #block-block-11,
+    #block-multiblock-1 {
+      p {
+        img {
+          width: auto;
+        }
+      }
+    }
+  }
+}

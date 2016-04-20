@@ -231,6 +231,11 @@ select.form-control {
         margin-bottom: 5px !important;
       }
     }
+    .views-exposed-form {
+      #edit-field-categories-tid {
+        display: inline-block;
+      }
+    }
   }
   #block-block-8 {
     width: calc(100% - 18px);
