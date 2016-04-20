@@ -53,7 +53,10 @@
         jQuery( "<div class='for-border'></div>" ).insertAfter( "#edit-city-sang-tiem-wrapper" );
 
       //Business directory page append div after city field in filter 
-        jQuery( "<div class='for-border'></div>" ).insertAfter( "#edit-field-categories-tid-wrapper" );
+        jQuery( "<div class='for-border'></div>" ).insertAfter( ".page-business-directory #edit-province-wrapper" );
+
+      //quang page append div after city field in filter 
+        jQuery( "<div class='for-border'></div>" ).insertAfter( ".page-quang-cao-rao-vat #edit-province-wrapper" );
 
       if(jQuery(".views-field-field-hours .field-content div").hasClass('oh-current-closed')){
         jQuery(".views-field-field-hours .field-content .oh-display").hide();
@@ -81,8 +84,12 @@ jQuery( window ).load(function() {
         alert(statename+'dfs');
         jQuery( ".user-region" ).text(statename);
       });*/
+
+  // For state name change.	
   statename = jQuery('#edit-submit-search').parent().parent().find( "#edit-province option[selected='selected']" ).text();
-  jQuery( ".user-region" ).text(statename);
+  if (statename != '') {
+    jQuery( ".user-region" ).text(statename);
+  }
 
   jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").css("display", "none"); 
    jQuery(".full-address   a").click(function () {

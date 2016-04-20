@@ -26,7 +26,6 @@
         <div class='top-right-top-title'>
           <?php if(isset($row['title']) && !empty($row['title'])) { ?>
             <div class='right-title'>
-              <label for="title">Posting Title :</label>
               <?php print $row['title'];?>
             </div>
           <?php } ?>
