@@ -39,7 +39,7 @@
         <div class='top-right-bottom-field'>
           
             <?php if(isset($row['body']) && !empty($row['body'])) { ?>
-            <div class='quans-body'>
+            <div class='quans-body all-page'>
               <?php print $row['body'];?>
             </div>
             <?php } ?>
