@@ -16,16 +16,50 @@
         fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
       }, 5000);*/
       jQuery( window ).load(function() {
+        setTimeout(function(){  
         test= jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val();
+        check = jQuery("#edit-field-category-und-0-tid-select-1").val();
+        check2 = jQuery("#edit-field-category-und-0-tid-select-2").val();
+        //alert('check'+check);
+        //alert('check2'+check2);
         if (typeof test === 'undefined' || test === null) {
           console.log('yes'+test);
-          fieldgrouplevel(2);
+          if(typeof check2 === 'undefined' || check2 === null) { 
+            fieldgrouplevel(check);
+          }else{
+            fieldgrouplevel(check2);
+          }
+            fieldgrouplevel(2);
+          
         }else{
           console.log('no'+test);
           fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
         }
+        //call user define function fieldgrouplevel on load pass value
+        //jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val();
+      }, 500);
+
+       /* test= jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val();
+        check = jQuery("#edit-field-category-und-0-tid-select-1").val();
+        check2 = jQuery("#edit-field-category-und-0-tid-select-1").val();
+        if (typeof test === 'undefined' || test === null) {
+          console.log('yes'+test);
+          if(check == '8'){
+            fieldgrouplevel(8);
+          }elseif(check == '7'){
+            fieldgrouplevel(7);
+          }elseif(check == '7'){
+            fieldgrouplevel(7);
+          }
+          fieldgrouplevel(2);
+        }else{
+          console.log('no'+test);
+          fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
+        }*/
       //fieldgrouplevel(jQuery("select[id*='edit-field-category-und-0-tid-select']:last-child").val());
       });
+
+
        //call user define function fieldgrouplevel on change pass value
       jQuery("select[id*='edit-field-category-und-0-tid-select']").on('change',function () {
         fieldgrouplevel(jQuery(this).val());

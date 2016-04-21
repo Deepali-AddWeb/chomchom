@@ -88,7 +88,10 @@ jQuery( window ).load(function() {
   // For state name change.	
   statename = jQuery('#edit-submit-search').parent().parent().find( "#edit-province option[selected='selected']" ).text();
   if (statename != '') {
+    if(statename != '- Any -'){
+      
     jQuery( ".user-region" ).text(statename);
+    }
   }
 
   jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").css("display", "none"); 

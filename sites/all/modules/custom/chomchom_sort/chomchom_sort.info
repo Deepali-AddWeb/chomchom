@@ -1,0 +1,4 @@
+name = "chomchom_sort"
+core = "7.x"
+description = "module used for create custom functionality."
+package = "custom"

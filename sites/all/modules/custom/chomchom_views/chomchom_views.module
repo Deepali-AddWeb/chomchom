@@ -85,11 +85,20 @@ function chomchom_views_views_query_alter(&$view, &$query){
   (($view->name == 'quang_cao_rao_vat') && ($view->current_display == 'page')) ||
   (($view->name == 'sang_tiem_nails') && ($view->current_display == 'page'))||
   (($view->name == 'business_directory') && ($view->current_display == 'page'))||
+  (($view->name == 'search') && ($view->current_display == 'page_cantho'))||
+  (($view->name == 'search') && ($view->current_display == 'page_quang_cao'))||
+  (($view->name == 'search') && ($view->current_display == 'page_business_directory'))||
+  (($view->name == 'search') && ($view->current_display == 'page_1'))||
   (($view->name == 'business_for_sale') && ($view->current_display == 'page')))
    {
+
     if (isset($_REQUEST['sort_order']) && !empty($_REQUEST['sort_order'])) {
+
       if ($_REQUEST['sort_order'] == 'RAND') {
-        $query->orderby[0]['field'] = 'rand_';
+
+          $query->orderby[0]['field'] = 'random';
+        //$query->orderby[0]['field'] = 'rand_';
+         // $query->orderby[0]['direction']='DESC';
         $query->orderby[0]['direction']='ASC';
       }
     }
@@ -193,14 +202,124 @@ function chomchom_views_get_parent($tid){
  * Implement hookform_views_exposed_form_alter. 
  */
 function chomchom_views_form_views_exposed_form_alter(&$form, &$form_state){
+
   if(($form['#id'] == 'views-exposed-form-can-tho-page') ||
     ($form['#id'] == 'views-exposed-form-can-tho-toc-page') ||
     ($form['#id'] == 'views-exposed-form-sang-tiem-nails-page') ||
     ($form['#id'] == 'views-exposed-form-business-for-sale-page') ||
     ($form['#id'] == 'views-exposed-form-business-directory-page') ||
+    ($form['#id'] == 'views-exposed-form-search-page-cantho') ||
+    ($form['#id'] == 'views-exposed-form-search-page-quang-cao') ||
+    ($form['#id'] == 'views-exposed-form-sang-tiem-nails-page') ||
+    ($form['#id'] == 'views-exposed-form-business-directory-page') ||
     ($form['#id'] == 'views-exposed-form-quang-cao-rao-vat-page')){
-    $form['sort_order']['#options']['ASC'] = 'Oldest to Newest';
+
+    $form['sort_order']['#options'] = array(
+                                        'DESC' => "Newest to Oldest", 
+                                        'ASC' => "Oldest to Newest", 
+                                        'RAND' => "Random", 
+                                      );
+    
+    $form['sort_order']['#default_value'] = 'post_date_desc';
+   /* $form['sort_order']['#options']['ASC'] = 'Oldest to Newest';
     $form['sort_order']['#options']['DESC'] = 'Newest to Oldest';
-    $form['sort_order']['#options']['RAND'] = 'Random';
+    $form['sort_order']['#options']['RAND'] = 'Random';*/
   }
 }
+
+
+/**
+ * Implements hook_block_info().
+ */
+/*
+function chomchom_views_block_info() {
+  $blocks = array();
+  $blocks['custom_filter'] = array(
+    'info' => t('Custom Filter'),
+  );
+  return $blocks;
+}
+
+
+/**
+ * Implements hook_block_view().
+ */
+/*
+function chomchom_views_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'custom_filter':
+      $block['subject'] = t('');
+      $block['content'] = custom_block_filter_form();
+    break;
+    
+  }
+  return $block;
+}
+
+
+function custom_block_filter_form(){
+  $form = drupal_get_form('chomchom_views_forms_data');
+  $output = render($form);
+
+  return $output;
+}
+
+function chomchom_views_forms_data($form, &$form_state) {
+
+  global $base_url;
+  $form = array();
+
+  $form['select'] = array(
+      '#type' => 'select',
+      //'#title' => t('Phone Number'),
+      //'#default_value' => array('prefix' => '44', 'number' => '123456'),
+      '#options' => array('DESC' => 'Newest to Oldest','ASC' => 'Oldest to Newest', 'RAND' => 'Random'),
+      //'#required' => TRUE,
+    );
+
+  $form['submit_form'] = array(
+    '#type' => 'submit',
+    '#value' => t('Apply'),
+    '#submit' => array('chomchom_views_form_submit'),
+  );
+
+  return $form;
+}
+
+
+function chomchom_views_form_submit($form, &$form_state) {
+  $path = current_path();
+  $operation = $form_state['values']['select'];
+  $form_state['redirect'] = array(
+    $path,
+    array(
+      'query' => array(
+        'sort_by' => 'created',
+        'sort_order' => $operation
+      ),
+    ),
+  );
+  if($path == 'can-tho-search' || $path == 'sang-tiem-search' || $path == 'quang-cao-rao-vat-search' || $path == 'business-directory-search'){
+    $str = request_uri();
+    $string_value = explode("?",$str);
+    $arg = explode("&",$string_value[1]);
+    foreach ($arg as $key => $value) {
+      $data = explode("=", $value);
+      $keyvalueurl[$data[0]] = $data[1]; 
+    }
+
+    $sortarr = array("sort_by" => "created", "sort_order" => $operation);
+    $arr_mar = array_merge($keyvalueurl, $sortarr);
+
+    $form_state['redirect'] = array(
+    $path,
+    array(
+      'query' => $arr_mar,
+    ),
+  );
+
+  }
+}*/
+ 

@@ -1,0 +1,77 @@
+<?php
+/*
+ * all custom code write here.
+ */
+
+/*
+ * Implements hook_views_query_alter.
+ */
+function chomchom_sort_views_query_alter(&$view, &$query){
+  //Alter query for all category page 
+ 
+
+  if ($view->name == 'can_tho' && $view->current_display == 'page') {
+    if (isset($_REQUEST['sort_order']) && !empty($_REQUEST['sort_order'])) {
+      $sortBy= $_REQUEST['sort_order'];
+
+      print('orderby::<pre style="color:red;">');
+      print_r($query->orderby);
+      print('</pre>');
+
+
+      switch ($sortBy) {
+        case "post_date_asc":
+          $query->orderby[0]['field'] = 'node_created';
+          $query->orderby[0]['direction']='ASC';
+          unset($query->orderby[1]);
+          break;
+        case "post_date_desc":
+          $query->orderby[0]['field'] = 'node_created';
+          $query->orderby[0]['direction']='DESC';
+          unset($query->orderby[1]);
+          break;
+        case "rand":
+          $query->orderby[0]['field'] = 'random';
+          $query->orderby[0]['direction']='ASC';
+          unset($query->orderby[1]);
+          break;
+      }
+
+      print('orderby::<pre style="color:red;">');
+      print_r($query->orderby);
+      print('</pre>');
+
+    }
+  }
+}
+  /*
+ * Implement hookform_views_exposed_form_alter. 
+ */
+function chomchom_sort_form_views_exposed_form_alter(&$form, &$form_state){
+
+  if(($form['#id'] == 'views-exposed-form-can-tho-page') ||
+    ($form['#id'] == 'views-exposed-form-can-tho-toc-page') ||
+    ($form['#id'] == 'views-exposed-form-sang-tiem-nails-page') ||
+    ($form['#id'] == 'views-exposed-form-business-for-sale-page') ||
+    ($form['#id'] == 'views-exposed-form-business-directory-page') ||
+    ($form['#id'] == 'views-exposed-form-search-page-cantho') ||
+    ($form['#id'] == 'views-exposed-form-search-page-quang-cao') ||
+    ($form['#id'] == 'views-exposed-form-sang-tiem-nails-page') ||
+    ($form['#id'] == 'views-exposed-form-business-directory-page') ||
+    ($form['#id'] == 'views-exposed-form-quang-cao-rao-vat-page')){
+
+    /*print('<pre style="color:red;">');
+    print_r($form);
+    print('</pre>');
+    exit;*/
+
+    $form['sort_order']['#options'] = array(
+                                        'post_date_desc' => "Newest to Oldest", 
+                                        'post_date_asc' => "Oldest to Newest", 
+                                        'rand' => "Random", 
+                                      );
+    
+    $form['sort_order']['#default_value'] = 'post_date_desc';
+  }
+}
+
