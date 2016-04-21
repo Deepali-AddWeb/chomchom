@@ -387,6 +387,32 @@ select.form-control {
 .quicktabs-style-nostyle ul.quicktabs-tabs.quicktabs-style-nostyle {
   display: none;
 }
+#block-chomchom-views-custom-filter {
+  #chomchom-views-forms-data {
+    .form-item {
+      float: left;
+      select {
+        display: inline-block;
+        width: 250px;
+        margin-right: 15px;
+      }
+    }
+    button {
+      &.btn {
+        float: left;
+        display: inline-block;
+        height: 40px;
+        border-color: transparent;
+        background-color: $orange;
+        &:hover,
+        &:focus {
+          background-color: $light-gray;
+        }
+      }
+    }
+  }
+}
+
 /* End */
 
 

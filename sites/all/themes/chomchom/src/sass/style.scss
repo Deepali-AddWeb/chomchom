@@ -1494,7 +1494,6 @@ a {
     &:focus {
       background-color: $light-black;
     }
-
   }
 }
 
@@ -1770,17 +1769,17 @@ a {
   }
 }
 .region-header {
-  /*display: inline-block;*/
+  display: inline-block;
   overflow-x: auto;
 }
-/*.page-can-tho-search,
+.page-can-tho-search,
 .admin-menu,
 .page-can-tho,
 .page-sang-tiem {
   .col-sm-12 {
     display: inline-block;
   }
-}*/
+}
 
 /* Responsive QUANG CAO & RAO VAT  page design */
 @media screen and (max-width: 1024px){
