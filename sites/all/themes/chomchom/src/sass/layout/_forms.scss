@@ -402,6 +402,7 @@ select.form-control {
         float: left;
         display: inline-block;
         height: 40px;
+        width: 100px;
         border-color: transparent;
         background-color: $orange;
         &:hover,
@@ -468,12 +469,24 @@ select.form-control {
       }
     }
   }
+  #block-chomchom-views-custom-filter {
+    margin-top: 10px;
+  }
 }
 
 /* mobile portrait view only */
 @media screen and (max-width: 480px){
   .region-primary-first {
     margin-bottom: 15px;
+  }
+  #block-chomchom-views-custom-filter {
+    #chomchom-views-forms-data {
+      button {
+        &.btn {
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
 }
 
