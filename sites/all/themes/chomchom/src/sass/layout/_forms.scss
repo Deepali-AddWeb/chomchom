@@ -387,6 +387,33 @@ select.form-control {
 .quicktabs-style-nostyle ul.quicktabs-tabs.quicktabs-style-nostyle {
   display: none;
 }
+#block-chomchom-views-custom-filter {
+  #chomchom-views-forms-data {
+    .form-item {
+      float: left;
+      select {
+        display: inline-block;
+        width: 250px;
+        margin-right: 15px;
+      }
+    }
+    button {
+      &.btn {
+        float: left;
+        display: inline-block;
+        height: 40px;
+        width: 100px;
+        border-color: transparent;
+        background-color: $orange;
+        &:hover,
+        &:focus {
+          background-color: $light-gray;
+        }
+      }
+    }
+  }
+}
+
 /* End */
 
 
@@ -442,12 +469,24 @@ select.form-control {
       }
     }
   }
+  #block-chomchom-views-custom-filter {
+    margin-top: 10px;
+  }
 }
 
 /* mobile portrait view only */
 @media screen and (max-width: 480px){
   .region-primary-first {
     margin-bottom: 15px;
+  }
+  #block-chomchom-views-custom-filter {
+    #chomchom-views-forms-data {
+      button {
+        &.btn {
+          margin-bottom: 10px;
+        }
+      }
+    }
   }
 }
 
@@ -1158,8 +1197,10 @@ select.form-control {
   }
   button {
     float: none;
+    height: 40px;
+    min-width: 165px;
     width: auto;
-    padding: 20px 28px;
+    padding: 10px 28px;
     border: none;
     background-color: $orange;
     color: $white;
@@ -1196,7 +1237,17 @@ select.form-control {
   .messages {
     margin-bottom: 15px;
     padding: 15px 10px;
+  }
+  #edit-commerce-coupon {
+    button {
+      height: 40px;
+      padding: 0 28px;
     }
+  }
+  /*#commerce-checkout-coupon-ajax-wrapper {
+    height: 40px;
+    padding: 0 28px;
+  }*/
 }
 /* end */
 
