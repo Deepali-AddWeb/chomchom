@@ -2,7 +2,14 @@
   Drupal.behaviors.chomchom = {
     attach: function (context, settings) {
 
-
+      // For state name change. 
+    statename = jQuery('#edit-submit-search').parent().parent().find( "#edit-province option[selected='selected']" ).text();
+    if (statename != '') {
+      if(statename != '- Any -'){
+        
+      jQuery( ".user-region" ).text(statename);
+      }
+    }
 
       //checkbox design
       jQuery('input[type="checkbox"]').wrap('<div class="input-rc"></div>');
@@ -51,6 +58,8 @@
       //Append div after city field in filter
         jQuery( "<div class='for-border'></div>" ).insertAfter( "#edit-citycantho" );
         jQuery( "<div class='for-border'></div>" ).insertAfter( "#edit-city-sang-tiem-wrapper" );
+        jQuery( "#edit-citycantho" ).attr("placeholder", "City");
+        jQuery( "#edit-city-sang-tiem" ).attr("placeholder", "City");
 
       //Business directory page append div after city field in filter 
         jQuery( "<div class='for-border'></div>" ).insertAfter( ".page-business-directory #edit-province-wrapper" );
@@ -71,6 +80,12 @@
         window.location.href = jQuery(this).find( ".main-sub-right-top-title a" ).attr('href');
       });
 
+      // for #115 code
+      /*jQuery(".view-content .views-row .flag-add-to-favorites a.unflag-action").click(function(event){
+        event.preventDefault();
+          window.location.href = jQuery(this).parent().parent().parent().find( ".main-sub-right-top-title a" ).attr('href');
+      });
+      */
     }
   };
 
@@ -86,14 +101,14 @@ jQuery( window ).load(function() {
       });*/
 
   // For state name change.	
-  statename = jQuery('#edit-submit-search').parent().parent().find( "#edit-province option[selected='selected']" ).text();
+ /* statename = jQuery('#edit-submit-search').parent().parent().find( "#edit-province option[selected='selected']" ).text();
   if (statename != '') {
     if(statename != '- Any -'){
       
     jQuery( ".user-region" ).text(statename);
     }
   }
-
+*/
   jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").css("display", "none"); 
    jQuery(".full-address   a").click(function () {
     //jQuery("#block-views-9202d1da1b4ebb88a4dc9b242ac93292").css({"display": "block"});
@@ -111,13 +126,10 @@ jQuery( window ).load(function() {
 
   jQuery(".field-coupon a").click(function () {
     jQuery( ".close-button-second" ).remove();
-    //jQuery(".field-coupon").css({ "background": "rgba(0,0,0,0.7)", "position": "fixed","top": "0","left":"0","width":"100%","height":"100%"});
-   // jQuery(".coupons-detail").css({"display":"block","background": "rgba(0,0,0,0.1)","position": "fixed","left":"0","top":"0","width":"100%","height":"100%","z-index":"2"});
     jQuery(this).next(".coupons-detail").css({"display":"block","color":"#fff","background":"red"})
     ;
     jQuery(this).next( ".coupons-detail" ).children( ".all-field-collection" ).append( "<div class='close-button-second'>X</div>" );
   });
-
 
   jQuery(".all-field-collection").on("click",".close-button-second",function () {
    jQuery(".coupons-detail").css({"display": "none"});
