@@ -356,8 +356,8 @@ select.form-control {
           border: none;
         }
       }
-      #edit-city-wrapper {
-        #edit-city {
+      #edit-citycantho-wrapper {
+        #edit-citycantho {
           height: 40px;
           border: none;
           background-color: $gray-f6;
@@ -414,6 +414,15 @@ select.form-control {
     }
   }
 }
+#views-exposed-form-search-page-quang-cao {
+  .views-exposed-form {
+    margin-top: 0;
+    select.edit-field-quang-categories-tid {
+      margin-top: 5px;
+    }
+  }
+}
+
 
 /* End */
 
@@ -494,7 +503,7 @@ select.form-control {
 
 /* All Listing exposed filter section */
 .views-exposed-form {
-  margin: 15px 0 10px;
+  margin: 0 0 10px;
   .form-item-sort-by {
     display: none;
   }

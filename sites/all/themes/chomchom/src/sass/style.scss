@@ -1766,6 +1766,9 @@ a {
 /* Left sidebar */
 .region-primary-first {
   #block-block-10 {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #D0D0D0;
     img {
       width: 100%;
     }
@@ -1780,6 +1783,9 @@ a {
   #block-multiblock-1 {
     display: inline-block;
     width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #D0D0D0;
     text-align: center;
     p {
       img {
@@ -1878,7 +1884,7 @@ a {
 }
 /* End */
 
-/* Can tho search */
+/* Hide Filter */
 #views-exposed-form-search-block-1,
 #views-exposed-form-search-block-2,
 #views-exposed-form-search-block-3,
