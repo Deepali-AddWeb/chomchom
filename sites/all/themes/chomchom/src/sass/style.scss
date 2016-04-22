@@ -295,6 +295,13 @@ a {
         width: 100%;
         .main-sub-right-top {
           width: 100%;
+          .main-sub-right-top-title {
+            .main-sub-right-top-title {
+              label {
+                display: none;
+              }
+            }
+          }
         }
         .main-sub-right-bottom {
           .main-sub-right-bottom-left {
@@ -1656,17 +1663,7 @@ a {
                 }
               }
               .quans-body {
-                margin-top: 10px;
-                padding: 20px 10px 10px 0;
-                background-color: $white;
-                font-size: 18px;
-                font-weight: bold;
-                &.all-page {
-                  border-top: 2px solid #E8F3FE;
-                  border-right: 4px solid #E8F3FE;
-                  border-bottom: 2px solid #E8F3FE;
-                  border-left: 4px solid #E8F3FE;
-                }
+                padding: 10px 0;
               }
             }
           }

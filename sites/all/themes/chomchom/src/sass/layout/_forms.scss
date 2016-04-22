@@ -931,9 +931,11 @@ select.form-control {
   /* Business directory category */
   #edit-field-hours {
     select {
-      height: 30px;
+      min-height: 30px;
+      height: auto;
       width: 85px;
       margin: 0 10px 0 05px;
+      padding: 3px 12px;
     }
     a {
       padding: 5px 15px;
