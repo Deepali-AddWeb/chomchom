@@ -325,6 +325,7 @@ select.form-control {
           color: $light-gray;
           font-size: 12px;
           line-height: 0;
+          font-weight: bold;
           font-family: $opensans-regular;
           &:hover {
             color: $green;
@@ -520,7 +521,7 @@ select.form-control {
     width: 100px;
     border: none;
     background-color: $orange;
-    font-weight: bold;
+    font-weight: normal;
     @include border-radius(0);
     &:hover {
       background-color: $light-gray;
