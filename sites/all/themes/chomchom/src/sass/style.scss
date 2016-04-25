@@ -1811,13 +1811,28 @@ a {
 /* Filter top section all bookmark */
 #block-block-13 {
   display: inline-block;
-  padding: 10px 0;
-  background-color: $white;
-  &::after {
+  width: 100%;
+  margin: 10px 0 15px;
+  .count-bookmark {
     display: inline-block;
-    color: red;
-    font-size: 18px;
-    content: 'Saved Listing';
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #373737;
+    background-image: url($heart);
+    background-position: left 37px center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    color: $white;
+    font-size: 15px;
+    font-family: $opensans-bold;
+    &::after {
+      display: inline-block;
+      margin-left: 40px;
+      color: $white;
+      font-size: 15px;
+      font-family: $opensans-bold;
+      content: 'Saved Listing';
+    }
   }
 }
 /* End */
