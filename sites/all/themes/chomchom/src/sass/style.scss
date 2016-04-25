@@ -1806,7 +1806,20 @@ a {
     display: inline-block;
   }
 }
+/* End */
 
+/* Filter top section all bookmark */
+#block-block-13 {
+  display: inline-block;
+  padding: 10px 0;
+  background-color: $white;
+  &::after {
+    display: inline-block;
+    color: red;
+    font-size: 18px;
+    content: 'Saved Listing';
+  }
+}
 /* End */
 
 /* Responsive QUANG CAO & RAO VAT  page design */
