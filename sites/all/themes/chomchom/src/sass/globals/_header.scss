@@ -188,10 +188,22 @@ header {
  *  Responsive designing
  */
 
-/* small desktop monitor view */
-@media screen and (max-width: 1200px) {
-
+/* desktop monitor view */
+@media screen and (min-width: 1800px) {
+  header {
+    .region-top-nav {
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .header-manage-moniter {
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
 }
+/* End */
 
 /* i-pad landscape & portrait view */
 @media screen and (max-width: 1024px) {

@@ -1818,20 +1818,28 @@ a {
     width: 100%;
     padding: 5px 10px;
     background-color: #373737;
-    background-image: url($heart);
-    background-position: left 37px center;
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-    color: $white;
-    font-size: 15px;
-    font-family: $opensans-bold;
-    &::after {
+    .count {
       display: inline-block;
-      margin-left: 40px;
+      min-width: 40px;
       color: $white;
       font-size: 15px;
       font-family: $opensans-bold;
-      content: 'Saved Listing';
+    }
+    .hart {
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      margin: 0 15px -5px 0;
+      background-image: url($heart);
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      content: '';
+    }
+    .save_listing {
+      display: inline-block;
+      color: $white;
+      font-size: 15px;
+      font-family: $opensans-bold;
     }
   }
 }
