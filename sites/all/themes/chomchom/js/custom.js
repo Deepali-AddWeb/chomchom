@@ -80,12 +80,11 @@
         window.location.href = jQuery(this).find( ".main-sub-right-top-title a" ).attr('href');
       });
 
-      // for #115 code
-      /*jQuery(".view-content .views-row .flag-add-to-favorites a.unflag-action").click(function(event){
+      jQuery(".view-content .views-row .flag-add-to-favorites a.unflag-action").click(function(event){
         event.preventDefault();
           window.location.href = jQuery(this).parent().parent().parent().find( ".main-sub-right-top-title a" ).attr('href');
       });
-      */
+      
     }
   };
 
