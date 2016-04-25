@@ -80,6 +80,7 @@
       <?php endif; ?>
     </div>
     <div class="manage-header clearfix">
+      <div class="header-manage-moniter">
 	    <div class="navbar-header">
 	      <?php if ($logo): ?>
 	        <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -117,6 +118,7 @@
 	    <?php if (!empty($page['navigation'])): ?>
 	            <?php print render($page['navigation']); ?>
 	     <?php endif; ?>
+      </div> 
 	</div>
 
 </header>
