@@ -1874,6 +1874,26 @@ a {
       }
     }
   }
+  /* Book mark count */
+  #block-block-13 {
+  display: inline-block;
+  width: 100%;
+  margin: 10px 0 15px;
+  .count-bookmark {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #373737;
+    .count {
+      min-width: 35px;
+      font-size: 14px;
+    }
+    .save_listing {
+      font-size: 14px;
+    }
+  }
+}
+  /* End */
 }
 /* End */
 @media screen and (max-width: 992px){
