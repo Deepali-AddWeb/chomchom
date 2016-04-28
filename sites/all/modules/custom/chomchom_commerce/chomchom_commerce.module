@@ -83,6 +83,41 @@ function chomchom_commerce_commerce_checkout_complete($order) {
     }
     $node->field_expire_date[LANGUAGE_NONE][0]['value'] = $month_date;
     node_save($node);
+
+    global $base_url;
+    $alias = drupal_get_path_alias('node/'.$nodevalue->nid);
+    $url = $base_url .$alias;
+    $user = user_load($node->uid);
+    $category_name = taxonomy_term_load($node->field_category[LANGUAGE_NONE][0]['tid']);
+      $to = $user->mail; // to e-mail address
+      $from = variable_get('site_mail'); // from e-mail address
+
+      $subject = $node->title;
+      $data = 'Thank you for placing an ad with us. Your ad is now live at'.$url.'</br>';
+      $data .= 'Your ad '.$node->title.' will run for '.$node->field_expire_date[LANGUAGE_NONE][0]['value'].' . We will send you notifications before your ad expires'.'</br>';
+      $data .= 'Your Ad Summary'.'</br>';
+      $data .= 'Ad Type:'.$category_name.'</br>';
+      $data .= $node->field_expire_date[LANGUAGE_NONE][0]['value'].'</br>';
+      $data .= 'Your ad runs for'.$node->field_expire_date[LANGUAGE_NONE][0]['value'].' . Well send you an email reminders ten, five, & one days before your ad expires.'.'</br>';
+      $data .= 'You may edit or remove all your listings here:'.$url.'</br>';
+      $data .= $url.': When you click edit you will be able to:'.'</br>';
+      $data .= 'Edit your description'.'</br>';
+      $data .= 'Edit other ad details'.'</br>';
+      $data .= 'Edit your contact info'.'</br>';
+
+      $data .= 'If you have any questions, please call us Monday-Friday 10 a.m.-8 p.m. EST at 404-884-1888 FREE or email raovat@chomchom.net.'.'</br>';
+      $data .= 'We wish you the best of luck, and thanks again for using ChomChom.net.'.'</br>';
+      $data .= 'Warm Regards,'.'</br>';
+      $data .= 'chomchom.net'.'</br>';
+      $data .= 'http://www.chomchom.net'.'</br>';
+
+  //params is the array passed to hook_mail function 
+      $params = array(
+        'subject' => $subject,
+        'body' => mail_body_text($nodevalue,$value),
+      );
+  drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);
+
   }
 }
 

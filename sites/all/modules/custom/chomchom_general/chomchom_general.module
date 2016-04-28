@@ -21,14 +21,43 @@ function twilio_configration() {
  * Implements custom function for body text
  */
 function body_text($nodevalue,$value='') {
+  global $base_url;
+  $alias = drupal_get_path_alias('node/'.$nodevalue->nid);
+  $url = $base_url .$alias;
   if(isset($value) && !empty($value)){
-    $data = 'Your ads will expire in '.$value.' days.';
+    $data = 'Thank you for posting your ad with chomchom.net';
+    $data .= $url;
+    $data .= 'Your ad will expires in '.$value.' days.';
+    $data .= 'We will send you notifications before your ad expires.';
   }else{
     $data = 'Your ads will expire';
   }
   return $data;
 }
 
+
+/*
+ * Implements custom function for body text mail
+ */
+function mail_body_text($nodevalue,$value='') {
+  global $base_url;
+  $alias = drupal_get_path_alias('node/'.$nodevalue->nid);
+  $url = $base_url .$alias;
+  if(isset($value) && !empty($value)){
+    $data = 'Thank you for posting your ad with chomchom.net'.'</br>';
+    $data .= $url.'</br>';
+    $data .= 'Your ad will expires in '.$value.' days.'.'</br>';
+    $data .= 'We will send you notifications before your ad expires.'.'</br>';
+    $data .= 'If you have any questions, please call us Monday-Friday 10 a.m.-8 p.m. EST at 404-884-1888 FREE or email raovat@chomchom.net.'.'</br>';
+    $data .= 'We wish you the best of luck, and thanks again for using ChomChom.net.'.'</br>';
+    $data .= 'Warm Regards,'.'</br>';
+    $data .= 'chomchom.net'.'</br>';
+    $data .= 'http://www.chomchom.net'.'</br>';
+  }else{
+    $data = 'Your ads will expire';
+  }
+  return $data;
+}
 
 /*
  * Implements custom function for sms
@@ -63,11 +92,11 @@ function message_send($nodevalue,$value=''){
   $to = $user->mail; // to e-mail address
   $from = variable_get('site_mail'); // from e-mail address
 
-  $subject = "To inform you about your Ads"; // subject of e-mail
+  $subject = "We will send you notifications before your ad expires."; // subject of e-mail
   //params is the array passed to hook_mail function 
   $params = array(
     'subject' => $subject,
-    'body' => body_text($nodevalue,$value),
+    'body' => mail_body_text($nodevalue,$value),
   );
   drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);  
 }
@@ -100,7 +129,8 @@ function chomchom_general_cron() {
       $days = array("10", "5", "1");
       foreach ($days as $key => $value) {
         $expiredate = date('Y-m-d', strtotime($edate[0]."-".$value." days"));
-        if ($expiredate == $todate) {        
+
+        if ($expiredate == $todate) {     
           message_send($nodevalue,$value);
           sms_send($nodevalue,$value);
         }
