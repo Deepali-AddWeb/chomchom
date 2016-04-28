@@ -140,7 +140,10 @@ function chomchom_views_form_alter(&$form, $form_state, $form_id) {
       // check form id and if true then
     $newstring = $form_id;
     $pos = strpos($newstring, 'commerce_cart_add_to_cart_form_');
+    $form['#attached']['js'] = array($data = drupal_get_path('module', 'chomchom_views') . '/js/chomchom_views.js',
+  );
     if ($pos !== false) {
+      
       $query = new EntityFieldQuery();
 
       $query->entityCondition('entity_type', 'node')
@@ -173,7 +176,13 @@ function chomchom_views_form_alter(&$form, $form_state, $form_id) {
           }    
         }
         if ($count >= 5) {
-          unset($form['attributes']['field_featured']);
+          //echo $count;
+          $form['attributes']['field_featured']['#attributes']['class'][] = $count;
+          /*print('<pre style="color:red;">');
+          print_r($form);
+          print('</pre>');
+          exit;*/
+          //unset($form['attributes']['field_featured']);
         }
       }
     }
