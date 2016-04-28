@@ -85,10 +85,11 @@ function chomchom_commerce_commerce_checkout_complete($order) {
     node_save($node);
 
     global $base_url;
-    $alias = drupal_get_path_alias('node/'.$nodevalue->nid);
+    $alias = drupal_get_path_alias('node/'.$node->nid);
     $url = $base_url .$alias;
     $user = user_load($node->uid);
-    $category_name = taxonomy_term_load($node->field_category[LANGUAGE_NONE][0]['tid']);
+    $tid = $node->field_category[LANGUAGE_NONE][0]['tid'];
+    $category_name = taxonomy_term_load($tid);
       $to = $user->mail; // to e-mail address
       $from = variable_get('site_mail'); // from e-mail address
 
@@ -96,7 +97,7 @@ function chomchom_commerce_commerce_checkout_complete($order) {
       $data = 'Thank you for placing an ad with us. Your ad is now live at'.$url.'</br>';
       $data .= 'Your ad '.$node->title.' will run for '.$node->field_expire_date[LANGUAGE_NONE][0]['value'].' . We will send you notifications before your ad expires'.'</br>';
       $data .= 'Your Ad Summary'.'</br>';
-      $data .= 'Ad Type:'.$category_name.'</br>';
+      $data .= 'Ad Type:'.$category_name->name.'</br>';
       $data .= $node->field_expire_date[LANGUAGE_NONE][0]['value'].'</br>';
       $data .= 'Your ad runs for'.$node->field_expire_date[LANGUAGE_NONE][0]['value'].' . Well send you an email reminders ten, five, & one days before your ad expires.'.'</br>';
       $data .= 'You may edit or remove all your listings here:'.$url.'</br>';
@@ -110,11 +111,10 @@ function chomchom_commerce_commerce_checkout_complete($order) {
       $data .= 'Warm Regards,'.'</br>';
       $data .= 'chomchom.net'.'</br>';
       $data .= 'http://www.chomchom.net'.'</br>';
-
   //params is the array passed to hook_mail function 
       $params = array(
         'subject' => $subject,
-        'body' => mail_body_text($nodevalue,$value),
+        'body' => $data,
       );
   drupal_mail('chomchom_general', 'information', $to, language_default(), $params, $from);
 
