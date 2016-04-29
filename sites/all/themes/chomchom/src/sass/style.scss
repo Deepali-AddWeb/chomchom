@@ -522,9 +522,9 @@ a {
     .views-row {
       .field-content {
         display: inline-block;
-        width: -webkit-calc(100% - 120px);
-        width: -moz-calc(100% - 120px);
-        width: calc(100% - 120px);
+        width: -webkit-calc(100% - 250px);
+        width: -moz-calc(100% - 250px);
+        width: calc(100% - 250px);
         color: $light-black;
         font-size: 14px;
         font-family: $opensans-bold;
@@ -532,7 +532,7 @@ a {
       .views-label {
         display: inline-block;
         /*width: 18%;*/
-        max-width: 100px;
+        max-width: 230px;
         width: 100%;
         margin-right: 12px;
         font-size: 14px;
