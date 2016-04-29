@@ -1317,15 +1317,48 @@ a {
   }
 }
 
+@media screen and (max-width: 1270px){
+  .view-business-directory {
+    .views-row {
+      .business-top {
+        .business-top-right {
+          .business-top-right-thrid {
+            .business-top-right-thrid-second {
+              width: 100%;
+              margin-top: 25px;
+            }
+          }
+        }
+      }
+      .business-bottom {
+        .business-bottom-top {
+          > div {
+            padding: 0 6px;
+          }
+        }
+      }
+    }
+  }
+}
 /* i-pad landscape & portrait view */
 @media screen and (max-width: 1024px){
   .view-business-directory {
     .views-row {
+      .business-top {
+        .business-top-right {
+          .business-top-right-thrid {
+            .business-top-right-thrid-second {
+              width: 100%;
+              margin-top: 25px;
+            }
+          }
+        }
+      }
       .business-bottom {
         .business-bottom-top {
           > div {
             display: inline-block;
-            padding: 0 25px;
+            padding: 0 6px;
             border-right: 2px solid $blue;
             &:last-child {
               border-right: none;
@@ -1789,15 +1822,24 @@ a {
     text-align: center;
     p {
       img {
-        width: 100%;
+        width: auto;
       }
     }
   }
 }
 .region-sidebar-first {
+  &.well {
+    padding: 10px;
+    background-color: $white;
+    @include border-radius(0);
+  }
+  margin-top: 10px;
   #block-block-10 {
-    img {
-      width: 100%;
+    p {
+      text-align: center;
+      img {
+        /*width: auto;*/
+      }
     }
   }
 }
@@ -1923,6 +1965,17 @@ a {
     }
   }
   /* End */
+  .region-sidebar-first {
+    margin-top: 10px;
+    #block-block-10 {
+      p {
+        text-align: center;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 /* End */
 @media screen and (max-width: 992px){
@@ -1940,6 +1993,17 @@ a {
     #block-block-10 {
       text-align: center;
       p {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .region-sidebar-first {
+    margin-top: 10px;
+    #block-block-10 {
+      p {
+        text-align: center;
         img {
           width: 100%;
         }
