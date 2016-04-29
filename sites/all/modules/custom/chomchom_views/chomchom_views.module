@@ -281,12 +281,27 @@ function custom_block_filter_form(){
 function chomchom_views_forms_data($form, &$form_state) {
 
   global $base_url;
+  $path = request_uri();
   $form = array();
+  $path1 = explode("?", $path);
+  if(isset($path1[1]) && !empty($path1[1])){
+    $pathsecond = explode("&", $path1[1]);
+    foreach ($pathsecond as $key => $value) {
+      $sort = explode("=", $value);
+      if($sort[0] == 'sort_order'){
+        $defult = $sort[1];
+      }
+    }
+  }
+
+  if(empty($defult)){
+    $defult = 'DESC';
+  }
 
   $form['select'] = array(
       '#type' => 'select',
       //'#title' => t('Phone Number'),
-      //'#default_value' => array('prefix' => '44', 'number' => '123456'),
+      '#default_value' => $defult,
       '#options' => array('DESC' => 'Newest to Oldest','ASC' => 'Oldest to Newest', 'RAND' => 'Random'),
       //'#required' => TRUE,
     );
