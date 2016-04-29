@@ -8,14 +8,7 @@
   Drupal.behaviors.chomchomfieldgroup = {
     attach: function (context, settings) {
 
-      jQuery(".form-item-attributes-field-featured select.5").parent().hide();
-      //on ajax call on change value pass user define function
-      jQuery( document ).ajaxComplete(function() {
-        if(jQuery(".form-item-attributes-field-featured select").hasClass("5"))
-        {
-          jQuery(".form-item-attributes-field-featured select").parent().hide();
-        }
-     }); 
+      
 
       jQuery("label[for='edit-locations-0-province']").append( "<span title='This field is required.' class='form-required'>*</span>" );
       jQuery("label[for='edit-field-contact-name-und-0-value']").append( "<span title='This field is required.' class='form-required'>*</span>" );

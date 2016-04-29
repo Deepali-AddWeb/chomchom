@@ -2,6 +2,15 @@
   Drupal.behaviors.chomchom = {
     attach: function (context, settings) {
 
+      jQuery(".form-item-attributes-field-featured select.5").parent().hide();
+      //on ajax call on change value pass user define function
+      jQuery( document ).ajaxComplete(function() {
+        if(jQuery(".form-item-attributes-field-featured select").hasClass("5"))
+        {
+          jQuery(".form-item-attributes-field-featured select").parent().hide();
+        }
+     }); 
+
       // For state name change. 
     statename = jQuery('#edit-submit-search').parent().parent().find( "#edit-province option[selected='selected']" ).text();
     if (statename != '') {
@@ -125,6 +134,7 @@ jQuery( window ).load(function() {
 
   jQuery(".field-coupon a").click(function () {
     jQuery( ".close-button-second" ).remove();
+
     jQuery(this).next(".coupons-detail").css({"display":"block","color":"#fff","background":"red"})
     ;
     jQuery(this).next( ".coupons-detail" ).children( ".all-field-collection" ).append( "<div class='close-button-second'>X</div>" );
@@ -132,6 +142,10 @@ jQuery( window ).load(function() {
 
   jQuery(".all-field-collection").on("click",".close-button-second",function () {
    jQuery(".coupons-detail").css({"display": "none"});
+  });
+  jQuery(".print-this-page").css("color","#000")
+  jQuery(".print-this-page").click(function () {
+     window.print();
   });
 
    
