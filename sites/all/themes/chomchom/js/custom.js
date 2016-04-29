@@ -97,9 +97,9 @@
         event.preventDefault();
         path = jQuery(location).attr('pathname');
         res = path.split("/"); 
-         if(res[2] == 'quang-cao-rao-vat' ){
+         if(res[1] == 'quang-cao-rao-vat' ){
           window.location.href = jQuery(this).parent().parent().parent().parent().next().children().find( ".right-title a" ).attr('href');
-         }else if(res[2] == 'quang-cao-rao-vat-search'){
+         }else if(res[1] == 'quang-cao-rao-vat-search'){
           window.location.href = jQuery(this).parent().parent().parent().parent().next().children().find( ".right-title a" ).attr('href');
          }
          else{
