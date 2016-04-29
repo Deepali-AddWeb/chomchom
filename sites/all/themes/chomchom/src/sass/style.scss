@@ -784,7 +784,7 @@ a {
         float: left;
         height: 75px;
         width: 50%;
-        padding: 24px 15px 15px;
+        padding: 7px 15px 15px;
         border: 1px solid #CBCBCB;
         border-right: none;
         border-left: none;
@@ -1794,6 +1794,13 @@ a {
     }
   }
 }
+.region-sidebar-first {
+  #block-block-10 {
+    img {
+      width: 100%;
+    }
+  }
+}
 .region-header {
   /*display: inline-block;*/
   overflow-x: auto;
@@ -1801,7 +1808,8 @@ a {
 .page-can-tho-search,
 .admin-menu,
 .page-can-tho,
-.page-sang-tiem {
+.page-sang-tiem,
+.page-user-register {
   .col-sm-12 {
     display: inline-block;
   }
@@ -1845,6 +1853,27 @@ a {
 }
 /* End */
 
+/* Hide Filter */
+#views-exposed-form-search-block-1,
+#views-exposed-form-search-block-2,
+#views-exposed-form-search-block-3,
+#views-exposed-form-search-block-4,
+#views-exposed-form-can-tho-page,
+#views-exposed-form-quang-cao-rao-vat-page,
+#views-exposed-form-business-directory-page,
+#views-exposed-form-sang-tiem-nails-page {
+  display: none;
+}
+#views-exposed-form-search-page-cantho,
+#views-exposed-form-search-page-1,
+#views-exposed-form-search-page-quang-cao,
+#views-exposed-form-search-page-business-directory {
+  .views-exposed-widget.views-widget-sort-order {
+    display: none;
+  }
+}
+/* End */
+
 /* Responsive QUANG CAO & RAO VAT  page design */
 @media screen and (max-width: 1024px){
   .page-quang-cao-rao-vat,
@@ -1876,23 +1905,23 @@ a {
   }
   /* Book mark count */
   #block-block-16 {
-  display: inline-block;
-  width: 100%;
-  margin: 10px 0 15px;
-  .count-bookmark {
     display: inline-block;
     width: 100%;
-    padding: 5px 10px;
-    background-color: #373737;
-    .count {
-      min-width: 35px;
-      font-size: 14px;
-    }
-    .save_listing {
-      font-size: 14px;
+    margin: 10px 0 15px;
+    .count-bookmark {
+      display: inline-block;
+      width: 100%;
+      padding: 5px 10px;
+      background-color: #373737;
+      .count {
+        min-width: 35px;
+        font-size: 14px;
+      }
+      .save_listing {
+        font-size: 14px;
+      }
     }
   }
-}
   /* End */
 }
 /* End */
@@ -1907,6 +1936,16 @@ a {
       }
     }
   }
+  .region-primary-first {
+    #block-block-10 {
+      text-align: center;
+      p {
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 @media screen and (max-width: 767px) {
   .region-header {
@@ -1914,9 +1953,8 @@ a {
     width: 100%;
     overflow-x: auto;
   }
-  .region-primary-first {
+  .region-sidebar-first {
     #block-block-10 {
-      text-align: center;
       img {
         width: auto;
       }
@@ -1940,26 +1978,6 @@ a {
 }
 /* End */
 
-/* Hide Filter */
-#views-exposed-form-search-block-1,
-#views-exposed-form-search-block-2,
-#views-exposed-form-search-block-3,
-#views-exposed-form-search-block-4,
-#views-exposed-form-can-tho-page,
-#views-exposed-form-quang-cao-rao-vat-page,
-#views-exposed-form-business-directory-page,
-#views-exposed-form-sang-tiem-nails-page {
-  display: none;
-}
-#views-exposed-form-search-page-cantho,
-#views-exposed-form-search-page-1,
-#views-exposed-form-search-page-quang-cao,
-#views-exposed-form-search-page-business-directory {
-  .views-exposed-widget.views-widget-sort-order {
-    display: none;
-  }
-}
-/* End */
 @media screen and (max-width: 480px) {
   .page-quang-cao-rao-vat,
   .page-quang-cao-rao-vat-search {
@@ -1997,6 +2015,13 @@ a {
         img {
           width: auto;
         }
+      }
+    }
+  }
+  .region-sidebar-first {
+    #block-block-10 {
+      img {
+        width: auto;
       }
     }
   }

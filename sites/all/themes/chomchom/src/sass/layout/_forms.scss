@@ -973,6 +973,15 @@ select.form-control {
     }
   }
 }
+#edit-field-collection-hours {
+  button {
+    border-color: transparent;
+    background-color: $orange;
+    &:hover {
+      background-color: $light-gray;
+    }
+  }
+}
 /* end */
 
 
