@@ -85,14 +85,29 @@
           event.stopPropagation(); 
       });
 
+       jQuery(".view-search .view-content .views-row .flag-add-to-favorites a").click(function(event){
+          event.stopPropagation(); 
+      });
+
       jQuery(".view-search .view-content .views-row").click(function () {
         window.location.href = jQuery(this).find( ".main-sub-right-top-title a" ).attr('href');
       });
 
       jQuery(".view-content .views-row .flag-add-to-favorites a.unflag-action").click(function(event){
         event.preventDefault();
+        path = jQuery(location).attr('pathname');
+        res = path.split("/"); 
+         if(res[2] == 'quang-cao-rao-vat' ){
+          window.location.href = jQuery(this).parent().parent().parent().parent().next().children().find( ".right-title a" ).attr('href');
+         }else if(res[2] == 'quang-cao-rao-vat-search'){
+          window.location.href = jQuery(this).parent().parent().parent().parent().next().children().find( ".right-title a" ).attr('href');
+         }
+         else{
           window.location.href = jQuery(this).parent().parent().parent().find( ".main-sub-right-top-title a" ).attr('href');
+         } 
       });
+
+
       
     }
   };
