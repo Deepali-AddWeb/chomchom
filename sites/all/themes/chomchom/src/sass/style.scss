@@ -115,6 +115,7 @@ a {
       a {
         color: $black;
         font-size: 17px;
+        line-height: 20px;
         font-family: $opensans-bold;
         text-decoration: none;
       }
@@ -241,6 +242,11 @@ a {
           }
         }
       }
+      .main-sub-right-top-title {
+        a {
+          line-height: 20px;
+        }
+      }
     }
   }
 }
@@ -260,7 +266,7 @@ a {
         }
         a {
           font-size: 16px;
-          line-height: 15px;
+          line-height: 20px;
         }
       }
       .main-sub-right-bottom-left {
@@ -615,7 +621,10 @@ a {
     #block-views-common-field-listing-block-1 {
       .views-row {
         .views-label {
-          width: 24%;
+          width: 45%;
+        }
+        .field-content {
+          width: 45%;
         }
       }
     }
@@ -1838,7 +1847,7 @@ a {
     p {
       text-align: center;
       img {
-        /*width: auto;*/
+        width: auto;
       }
     }
   }
@@ -1917,6 +1926,29 @@ a {
 /* End */
 
 /* Responsive QUANG CAO & RAO VAT  page design */
+@media screen and (max-width: 1200px){
+  .region-sidebar-first {
+    margin-top: 10px;
+    #block-block-10 {
+      p {
+        text-align: center;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  #block-block-16 {
+    .count-bookmark {
+      .count {
+        min-width: 30px;
+      }
+      .hart {
+        margin: 0 10px -5px 0;
+      }
+    }
+  }
+}
 @media screen and (max-width: 1024px){
   .page-quang-cao-rao-vat,
   .page-quang-cao-rao-vat-search {
@@ -1989,10 +2021,11 @@ a {
       }
     }
   }
-  .region-primary-first {
+  .region-sidebar-first {
+    margin-top: 10px;
     #block-block-10 {
-      text-align: center;
       p {
+        text-align: center;
         img {
           width: 100%;
         }
@@ -2012,15 +2045,40 @@ a {
   }
 }
 @media screen and (max-width: 767px) {
+  .page-quang-cao-rao-vat,
+  .page-quang-cao-rao-vat-search {
+    .view-quang-cao-rao-vat,
+    .view-search {
+      .views-row {
+        .main-quang {
+          .quang-top {
+            .quang-top-right {
+              .top-right-top-title {
+                .right-title {
+                  a {
+                    line-height: 20px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   .region-header {
     display: inline-block;
     width: 100%;
     overflow-x: auto;
   }
   .region-sidebar-first {
+    margin-top: 10px;
     #block-block-10 {
-      img {
-        width: auto;
+      p {
+        text-align: center;
+        img {
+          width: auto;
+        }
       }
     }
   }
@@ -2083,9 +2141,13 @@ a {
     }
   }
   .region-sidebar-first {
+    margin-top: 10px;
     #block-block-10 {
-      img {
-        width: auto;
+      p {
+        text-align: center;
+        img {
+          width: auto;
+        }
       }
     }
   }
