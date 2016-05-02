@@ -25,7 +25,7 @@
 					<div class='main-sub-right-top-title'>
 						<?php if(isset($row['title']) && !empty($row['title'])) { ?>
 							<div class='main-sub-right-top-title'>
-								<label for="title">Posting Title :</label>
+								<!--<label for="title">Posting Title :</label>-->
 								<?php print $row['title'];?>
 							</div>
 						<?php } ?>
