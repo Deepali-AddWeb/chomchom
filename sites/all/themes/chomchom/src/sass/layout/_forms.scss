@@ -306,12 +306,10 @@ select.form-control {
           font-weight: bold;
           text-transform: uppercase;
           @include border-radius(0);
-          &:hover {
+          &:hover,
+          &:focus {
             background-color: $light-black;
           }
-        }
-        &:active {
-          background-color: red;
         }
       }
       .views-reset-button {
@@ -327,7 +325,8 @@ select.form-control {
           line-height: 0;
           font-weight: bold;
           font-family: $opensans-regular;
-          &:hover {
+          &:hover,
+          &:focus {
             color: $green;
           }
           &:active,
@@ -481,6 +480,11 @@ select.form-control {
   }
   #block-chomchom-views-custom-filter {
     margin-top: 10px;
+  }
+  .page-node-add-listing {
+    .region-primary-first {
+      display: none;
+    }
   }
 }
 
