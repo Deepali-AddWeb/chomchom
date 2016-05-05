@@ -384,22 +384,10 @@ header {
       }
       .region-navigation {
         margin-top: 95px;
+       /* margin-top: 125px; */
       }
       button {
         margin-top: 3px;
-      }
-      /*.logo {
-        margin-left: 0;
-        padding-left: 18px;
-      }*/
-    }
-  }
-}
-@media screen and (min-device-width: 361px) and (max-device-width: 412px) {
-  header {
-    .manage-header {
-      .region-navigation {
-        margin-top: 125px;
       }
     }
   }
@@ -416,4 +404,13 @@ header {
       }
     }
   }
-}
+  /*header {
+    .manage-header {
+      .region-navigation {
+        top: 30px;
+        margin-top: 125px;
+      }
+    }
+  }*/
+}/* 360 */
+
