@@ -80,6 +80,8 @@ function chomchom_views_views_query_alter(&$view, &$query){
       }
     }
   }
+
+
   if ((($view->name == 'can_tho') && ($view->current_display == 'page')) ||
   (($view->name == 'can_tho_toc') && ($view->current_display == 'page')) ||
   (($view->name == 'quang_cao_rao_vat') && ($view->current_display == 'page')) ||
@@ -89,7 +91,14 @@ function chomchom_views_views_query_alter(&$view, &$query){
   (($view->name == 'search') && ($view->current_display == 'page_quang_cao'))||
   (($view->name == 'search') && ($view->current_display == 'page_business_directory'))||
   (($view->name == 'search') && ($view->current_display == 'page_1'))||
-  (($view->name == 'business_for_sale') && ($view->current_display == 'page')))
+  (($view->name == 'can_tho') && ($view->current_display == 'block_1'))||
+  (($view->name == 'sang_tiem_nails') && ($view->current_display == 'block_1'))||
+  (($view->name == 'quang_cao_rao_vat') && ($view->current_display == 'block_1'))||
+  (($view->name == 'business_directory') && ($view->current_display == 'block_1'))||
+  (($view->name == 'search') && ($view->current_display == 'block_1'))||
+  (($view->name == 'search') && ($view->current_display == 'block_2'))||
+  (($view->name == 'search ') && ($view->current_display == 'block_3'))||
+  (($view->name == 'search') && ($view->current_display == 'block_4')))
    {
 
     if (isset($_REQUEST['sort_order']) && !empty($_REQUEST['sort_order'])) {
@@ -215,7 +224,6 @@ function chomchom_views_get_parent($tid){
  */
 function chomchom_views_form_views_exposed_form_alter(&$form, &$form_state){
 
-
   if(($form['#id'] == 'views-exposed-form-can-tho-page') ||
     ($form['#id'] == 'views-exposed-form-can-tho-toc-page') ||
     ($form['#id'] == 'views-exposed-form-sang-tiem-nails-page') ||
@@ -225,7 +233,15 @@ function chomchom_views_form_views_exposed_form_alter(&$form, &$form_state){
     ($form['#id'] == 'views-exposed-form-search-page-quang-cao') ||
     ($form['#id'] == 'views-exposed-form-search-page-1') ||
     ($form['#id'] == 'views-exposed-form-search-page-business-directory') ||
-    ($form['#id'] == 'views-exposed-form-quang-cao-rao-vat-page')){
+    ($form['#id'] == 'views-exposed-form-quang-cao-rao-vat-page') ||
+    ($form['#id'] == 'views-exposed-form-can-tho-block-1') ||
+    ($form['#id'] == 'views-exposed-form-sang-tiem-nails-block-1') ||
+    ($form['#id'] == 'views-exposed-form-quang-cao-rao-vat-block-1') ||
+    ($form['#id'] == 'views-exposed-form-business-directory-block-1') ||
+    ($form['#id'] == 'views-exposed-form-search-block-1') ||
+    ($form['#id'] == 'views-exposed-form-search-block-2') ||
+    ($form['#id'] == 'views-exposed-form-search-block-3') ||
+    ($form['#id'] == 'views-exposed-form-search-block-4')){
 
     $form['sort_order']['#options'] = array(
                                         'DESC' => "Newest to Oldest", 
