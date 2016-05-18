@@ -531,8 +531,10 @@ a {
         width: -webkit-calc(100% - 250px);
         width: -moz-calc(100% - 250px);
         width: calc(100% - 250px);
+        margin-bottom: 3px;
         color: $light-black;
         font-size: 14px;
+        line-height: normal;
         font-family: $opensans-bold;
       }
       .views-label {
@@ -541,8 +543,9 @@ a {
         max-width: 230px;
         width: 100%;
         margin-right: 12px;
+        margin-bottom: 3px;
         font-size: 14px;
-        line-height: 25px;
+        line-height: normal;
         text-align: right;
         vertical-align: top;
       }

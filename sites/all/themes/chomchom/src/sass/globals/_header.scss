@@ -133,12 +133,13 @@ header {
   }
   #block-block-5 {
     float: right;
-    width: 135px !important;
+    width: 142px !important;
     margin: 20px 15px 0 0;
     background-color: $orange;
     strong {
-      float: left;
-      width: 135px;
+      display: inline-block;
+      width: 100%;
+      border-bottom: 1px solid $white;
       color: $white;
       font-size: 14px;
       font-family: $opensans-bold;
@@ -153,7 +154,9 @@ header {
       }
     }
     a {
-      border-top: 1px solid $white;
+      display: inline-block;
+      width: 100%;
+      padding: 0 8px;
       color: $white;
       font-size: 12px;
       font-weight: bold;
@@ -187,9 +190,8 @@ header {
 /**
  *  Responsive designing
  */
-
 /* desktop monitor view */
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1800px)  {
   header {
     .region-top-nav {
       max-width: 1600px;
@@ -240,7 +242,7 @@ header {
         }
       }
       #block-block-5 {
-        width: 120px !important;
+        width: 128px !important;
         margin-top: 15px;
         padding: 02px 0;
         strong {
@@ -380,10 +382,14 @@ header {
           margin-left: 0;
           padding-left: 18px;
           text-align: center;
+          img {
+            float: left;
+          }
         }
       }
       .region-navigation {
         margin-top: 95px;
+        line-height: normal;
        /* margin-top: 125px; */
       }
       button {
@@ -392,15 +398,26 @@ header {
     }
   }
 }
+/* iphone 5,6 portrait view only */
+/*@media screen and (max-width: 466px) {
+  header {
+    .manage-header {
+      .region-navigation {
+        right: 0;
+        margin-top: 65px;
+      }
+    }
+  }
+}*/
 /* small mobile portrait view only */
 @media screen and (max-width: 360px) {
   header {
     .manage-header {
-      .region-navigation {
-        margin-top: 125px;
-      }
       button {
         margin-top: 4px;
+      }
+      .region-navigation {
+        margin-top: 123px;
       }
     }
   }
@@ -413,4 +430,15 @@ header {
     }
   }*/
 }/* 360 */
+
+/* small mobile portrait view only */
+/*@media screen and (max-width: 320px) {
+  header {
+    .manage-header {
+      .region-navigation {
+        margin-top: 123px;
+      }
+    }
+  }
+}*/
 

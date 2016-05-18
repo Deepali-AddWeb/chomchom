@@ -314,6 +314,7 @@ select.form-control {
       }
       .views-reset-button {
         display: inline-block;
+        width: 74px;
         margin-top: 13px;
         padding: 0;
         button {
@@ -358,6 +359,7 @@ select.form-control {
       #edit-citycantho-wrapper {
         #edit-citycantho {
           height: 40px;
+          width: 250px;
           border: none;
           background-color: $gray-f6;
           color: $dark-gray;
@@ -474,6 +476,11 @@ select.form-control {
       .views-exposed-form {
         select {
           width: 100%;
+        }
+        #edit-citycantho-wrapper {
+          #edit-citycantho {
+            width: 100%;
+          }
         }
       }
     }
@@ -608,7 +615,7 @@ select.form-control {
       button {
         height: 42px;
         width: auto;
-        margin-top: -16px;
+        margin-top: 5px;
         padding: 20px 28px;
         border: none;
         background-color: $orange;
