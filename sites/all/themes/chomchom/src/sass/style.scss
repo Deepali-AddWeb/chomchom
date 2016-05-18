@@ -1161,6 +1161,7 @@ a {
         .business-top-right-thrid {
           display: inline-block;
           margin: 10px 0 25px;
+          .oh-display { white-space: normal; }
           .business-top-right-thrid-first {
             display: inline-block;
             width: 45%;
@@ -1186,6 +1187,22 @@ a {
             .oh-display-label {
               min-width: 90px;
               width: auto !important;
+            }
+          }
+          @media (max-width: 1200px) {
+            .business-top-right-thrid-first {
+              display: inline-block;
+              width: 100%;
+              padding-left: 30px;
+              background-position: -10px -11px;
+              font-size: 14px;
+            }
+            .business-top-right-thrid-second {
+              width: 100%;
+              margin-top: 13px;
+              padding-left: 33px;
+              background-position: -8px -4px;
+              font-size: 12px;
             }
           }
         }
@@ -1405,22 +1422,9 @@ a {
             padding-left: 26px;
             font-size: 12px;
           }
-          .business-top-right-thrid {
-            .business-top-right-thrid-first {
-              display: inline-block;
-              width: 100%;
-              padding-left: 30px;
-              background-position: -10px -11px;
-              font-size: 14px;
-            }
-            .business-top-right-thrid-second {
-              width: 100%;
-              margin-top: 13px;
-              padding-left: 33px;
-              background-position: -8px -4px;
-              font-size: 12px;
-            }
-          }
+          /*.business-top-right-thrid {
+            
+          }*/
         }
       }
       .business-bottom {
